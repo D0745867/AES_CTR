@@ -2,29 +2,21 @@
 
 module AES_256 (
     output[ 4*4*8 - 1 : 0 ] output_text,
-    output[ 4*4*8 - 1 : 0 ] master_key_out,
     input [ 4*4*8 - 1 : 0 ] input_text,
     input [ 4*4*8*2 - 1 : 0 ] master_key,
     input [3:0] current_state,
     input [3:0] round,
     input signed [4:0] cnt,
+    input mode_switch,
     input clk,
     input rst_n,
     input inv_en
 );
 
-wire mode_switch = (current_state > 4) ? 1'b1 : 1'b0;
-
 reg [ 4*4*8 - 1 : 0 ] state;
 reg [ 4*4*8 - 1 : 0 ] round_key_o;
 
-assign master_key_out = round_key_o;
 assign output_text = state;
-
-// Key Expansion
-key_expansion ke_dut(.round_key_o(round_key_o), .current_state(current_state)
-, .key_in(master_key), .round(round), .cnt(cnt)
-, .rst_n(rst_n), .clk(clk), .inv_en(mode_switch));
 
 // SubBytes input: 8bits, output: 8bits
 wire [7:0] subBytes_i;

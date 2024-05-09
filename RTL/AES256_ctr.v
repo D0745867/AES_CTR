@@ -6,7 +6,7 @@ module AES_256_CTR#(
     parameter block_byte = 16;
 )(
     output [batch_block_byte * 8 - 1 : 0] batch_block_out,
-    input [key_byte_lenth - 1 : 0] key,
+    input [key_byte_lenth * 8 - 1 : 0] master_key,
     input [7:0] nonce_a,
     input [7:0] nonce_b,
     input clk,
@@ -26,6 +26,68 @@ assign IV[3] = {nonce_pad, CTR_cnt + 5'd3};
 reg [3:0] current_state;
 reg [3:0] next_state;
 
+wire [ block_byte*8 - 1 : 0 ] output_text [0 : 4];
+wire [ block_byte*8 - 1 : 0 ] master_key_out [0 : 4];
+wire [ block_byte*8 - 1 : 0 ] round_key_o;
+
+wire mode_switch = (current_state > 4) ? 1'b1 : 1'b0;
+
+AES_256 aes_1 (
+    .output_text(output_text[0]),
+    .input_text(IV[0]),
+    .master_key(round_key_o),
+    .current_state(current_state),
+    .round(round),
+    .cnt(cnt),
+    .mode_switch(mode_switch),
+    .clk(clk),
+    .rst_n(rst_n),
+    .inv_en(inv_en)
+);
+
+AES_256 aes_2 (
+    .output_text(output_text[1]),
+    .input_text(IV[1]),
+    .master_key(round_key_o),
+    .current_state(current_state),
+    .round(round),
+    .cnt(cnt),
+    .mode_switch(mode_switch),
+    .clk(clk),
+    .rst_n(rst_n),
+    .inv_en(inv_en)
+);
+
+AES_256 aes_3 (
+    .output_text(output_text[2]),
+    .input_text(IV[2]),
+    .master_key(round_key_o),
+    .current_state(current_state),
+    .round(round),
+    .cnt(cnt),
+    .mode_switch(mode_switch),
+    .clk(clk),
+    .rst_n(rst_n),
+    .inv_en(inv_en)
+);
+
+AES_256 aes_4 (
+    .output_text(output_text[3]),
+    .input_text(IV[3]),
+    .master_key(round_key_o),
+    .current_state(current_state),
+    .round(round),
+    .cnt(cnt),
+    .mode_switch(mode_switch),
+    .clk(clk),
+    .rst_n(rst_n),
+    .inv_en(inv_en)
+);
+
+// Key Expansion
+key_expansion ke_dut(.round_key_o(round_key_o), .current_state(current_state)
+, .key_in(master_key), .round(round), .cnt(cnt)
+, .rst_n(rst_n), .clk(clk), .inv_en(mode_switch));
 
 // FSM states
 localparam IDLE = 4'd0;
@@ -38,6 +100,16 @@ localparam I_SubBytes = 4'd6;
 localparam I_ShiftRows = 4'd7;
 localparam I_MixColumns = 4'd8;
 localparam DONE = 4'd9;
+
+// CTR counter
+always @(posedge clk or negedge rst_n) begin
+    if (~rst_n) begin
+        CTR_cnt <= 6'd0;
+    end
+    else begin
+        
+    end
+end
 
 // Controller
 // FSM next state
