@@ -4,13 +4,19 @@ module AES_256_CTR#(
     parameter batch_block_byte = 64,
     parameter key_byte_lenth = 32,
     parameter block_byte = 16;
+    parameter XOF_target_blocks = 44,
+    parameter PRF_target_blocks = 8,
+    parameter XOF_mode = 0,
+    parameter PRF_mode = 1
 )(
     output [batch_block_byte * 8 - 1 : 0] batch_block_out,
+    output finished,
     input [key_byte_lenth * 8 - 1 : 0] master_key,
     input [7:0] nonce_a,
     input [7:0] nonce_b,
     input clk,
-    input rst_n
+    input rst_n,
+    input mode //mode0: XOF , mode1: PRF
 );
 
 reg [5 : 0] CTR_cnt;
@@ -31,6 +37,7 @@ wire [ block_byte*8 - 1 : 0 ] master_key_out [0 : 4];
 wire [ block_byte*8 - 1 : 0 ] round_key_o;
 
 wire mode_switch = (current_state > 4) ? 1'b1 : 1'b0;
+assign finished = (current_state == FINISH) ? 1'b1 : 1'b0;
 
 AES_256 aes_1 (
     .output_text(output_text[0]),
@@ -100,14 +107,15 @@ localparam I_SubBytes = 4'd6;
 localparam I_ShiftRows = 4'd7;
 localparam I_MixColumns = 4'd8;
 localparam DONE = 4'd9;
+localparam FINISH = 4'd10;
 
 // CTR counter
-always @(posedge clk or negedge rst_n) begin
-    if (~rst_n) begin
+always @(posedge clk) begin
+    if (current_state == IDLE) begin
         CTR_cnt <= 6'd0;
     end
-    else begin
-        
+    else if (current_state == DONE && CTR_cnt < TARGET_CNT) begin
+        CTR_cnt <= CTR_cnt + 6'd4;
     end
 end
 
@@ -160,7 +168,18 @@ always @(*) begin
             end 
         end
         DONE: begin
-            next_state = IDLE;
+            if (mode == XOF_mode && CTR_cnt == XOF_target_blocks) begin
+                next_state = FINISH;
+            end
+            else if (mode == PRF_mode && CTR_cnt == PRF_target_blocks) begin
+                next_state = FINISH;
+            end
+            else begin
+                next_state = IDLE;
+            end
+        end
+        FINISH: begin
+            next_state = FINISH;
         end
         //=========== Inverse Version ============
         I_AddRoundKey: begin
@@ -224,8 +243,8 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 // Counter
-always @(posedge clk or negedge rst_n) begin
-    if (~rst_n) begin
+always @(posedge clk) begin
+    if (current_state == IDLE) begin
         cnt <= 4'd0;
     end
     else begin
@@ -251,8 +270,8 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 // Round Counter
-always @(posedge clk or negedge rst_n) begin
-    if (~rst_n) begin
+always @(posedge clk) begin
+    if (current_state == IDLE) begin
         if(inv_en == 1'b0) begin
             round <= 4'd0;
         end

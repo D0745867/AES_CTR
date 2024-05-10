@@ -22,6 +22,7 @@ module key_expansion #(
     input rst_n,
     input clk
 );
+localparam IDLE = 4'd0;
 localparam AddRoundKey = 4'd1;
 localparam I_AddRoundKey = 4'd5;
 
@@ -158,8 +159,8 @@ always @(*) begin
 end
 
 // w_matrix
-always @(posedge clk or negedge rst_n) begin
-    if( !rst_n ) begin
+always @(posedge clk) begin
+    if( current_state == IDLE ) begin
             w_matrix[0] <= key_in[255:224];
             w_matrix[1] <= key_in[223:192];
             w_matrix[2] <= key_in[191:160];
@@ -200,8 +201,8 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 // SubBytes and Rcon
-always @(posedge clk or negedge rst_n) begin
-    if ( !rst_n ) begin
+always @(posedge clk) begin
+    if ( current_state == IDLE ) begin
         w_g_sub[0] <= 8'd0;
         w_g_sub[1] <= 8'd0;
         w_g_sub[2] <= 8'd0;

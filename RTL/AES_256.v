@@ -12,6 +12,7 @@ module AES_256 (
     input rst_n,
     input inv_en
 );
+localparam IDLE = 4'd0;
 
 reg [ 4*4*8 - 1 : 0 ] state;
 reg [ 4*4*8 - 1 : 0 ] round_key_o;
@@ -43,7 +44,7 @@ mix_columns mc_dut(.mix_col_o(mc_out), .mix_col_in(mc_in), .inv_en(mode_switch))
 
 // State Matrix
 always @(posedge clk or negedge rst_n) begin
-    if (~rst_n) begin
+    if (current_state == IDLE) begin
         state <= input_text;
     end
     else begin
