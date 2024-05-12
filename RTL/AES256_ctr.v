@@ -3,7 +3,7 @@
 module AES_256_CTR#(
     parameter batch_block_byte = 64,
     parameter key_byte_lenth = 32,
-    parameter block_byte = 16;
+    parameter block_byte = 16,
     parameter XOF_target_blocks = 44,
     parameter PRF_target_blocks = 8,
     parameter XOF_mode = 0,
@@ -19,9 +19,24 @@ module AES_256_CTR#(
     input mode //mode0: XOF , mode1: PRF
 );
 
-reg [5 : 0] CTR_cnt;
+// FSM states
+localparam IDLE = 4'd0;
+localparam AddRoundKey = 4'd1;
+localparam SubBytes = 4'd2;
+localparam ShiftRows = 4'd3;
+localparam MixColumns = 4'd4;
+localparam I_AddRoundKey = 4'd5;
+localparam I_SubBytes = 4'd6;
+localparam I_ShiftRows = 4'd7;
+localparam I_MixColumns = 4'd8;
+localparam DONE = 4'd9;
+localparam FINISH = 4'd10;
+
+reg [5:0] CTR_cnt;
+reg signed [4:0] cnt; // Counter for every module and FSM
+reg [3:0] round; // Round counter
 reg [block_byte*8 - 1 : 0] IV [0:3]; // The input with nonce and CTR;
-wire [122 - 1 : 0] nonce_pad = {nonce_a, nonce_b, (106){1'b0}}; //12 Bytes nonce
+wire [122 - 1 : 0] nonce_pad = {nonce_a, nonce_b, {106{1'b0}}}; //12 Bytes nonce
 
 // Four parallels AES-cores IV totaL 16Bytes contains 12Bytes nonce and 4Bytes counter, but we maximum use 6bits for counter
 assign IV[0] = {nonce_pad, CTR_cnt + 5'd0};
@@ -39,10 +54,14 @@ wire [ block_byte*8 - 1 : 0 ] round_key_o;
 wire mode_switch = (current_state > 4) ? 1'b1 : 1'b0;
 assign finished = (current_state == FINISH) ? 1'b1 : 1'b0;
 
+// Combine 4 blocks to output port, total 512 bits, each block 128 bits
+assign batch_block_out = {output_text[0], output_text[1], output_text[2], output_text[3]};
+wire inv_en = 1'b0;
+
 AES_256 aes_1 (
     .output_text(output_text[0]),
     .input_text(IV[0]),
-    .master_key(round_key_o),
+    .round_key(round_key_o),
     .current_state(current_state),
     .round(round),
     .cnt(cnt),
@@ -55,7 +74,7 @@ AES_256 aes_1 (
 AES_256 aes_2 (
     .output_text(output_text[1]),
     .input_text(IV[1]),
-    .master_key(round_key_o),
+    .round_key(round_key_o),
     .current_state(current_state),
     .round(round),
     .cnt(cnt),
@@ -68,7 +87,7 @@ AES_256 aes_2 (
 AES_256 aes_3 (
     .output_text(output_text[2]),
     .input_text(IV[2]),
-    .master_key(round_key_o),
+    .round_key(round_key_o),
     .current_state(current_state),
     .round(round),
     .cnt(cnt),
@@ -81,7 +100,7 @@ AES_256 aes_3 (
 AES_256 aes_4 (
     .output_text(output_text[3]),
     .input_text(IV[3]),
-    .master_key(round_key_o),
+    .round_key(round_key_o),
     .current_state(current_state),
     .round(round),
     .cnt(cnt),
@@ -96,25 +115,12 @@ key_expansion ke_dut(.round_key_o(round_key_o), .current_state(current_state)
 , .key_in(master_key), .round(round), .cnt(cnt)
 , .rst_n(rst_n), .clk(clk), .inv_en(mode_switch));
 
-// FSM states
-localparam IDLE = 4'd0;
-localparam AddRoundKey = 4'd1;
-localparam SubBytes = 4'd2;
-localparam ShiftRows = 4'd3;
-localparam MixColumns = 4'd4;
-localparam I_AddRoundKey = 4'd5;
-localparam I_SubBytes = 4'd6;
-localparam I_ShiftRows = 4'd7;
-localparam I_MixColumns = 4'd8;
-localparam DONE = 4'd9;
-localparam FINISH = 4'd10;
-
 // CTR counter
 always @(posedge clk) begin
     if (current_state == IDLE) begin
         CTR_cnt <= 6'd0;
     end
-    else if (current_state == DONE && CTR_cnt < TARGET_CNT) begin
+    else if (current_state == DONE) begin
         CTR_cnt <= CTR_cnt + 6'd4;
     end
 end
@@ -183,6 +189,8 @@ always @(*) begin
         end
         //=========== Inverse Version ============
         I_AddRoundKey: begin
+        // When a condition involves signed bits, use the $signed system function to ensure correct comparison results.
+        // The $signed function converts the expression to a signed representation for proper evaluation.
             if (cnt <  $signed(5'd6)) begin
                 case (round)
                     4'd14: begin

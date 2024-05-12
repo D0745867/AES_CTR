@@ -3,7 +3,7 @@
 module AES_256 (
     output[ 4*4*8 - 1 : 0 ] output_text,
     input [ 4*4*8 - 1 : 0 ] input_text,
-    input [ 4*4*8*2 - 1 : 0 ] master_key,
+    input [ 4*4*8 - 1 : 0 ] round_key,
     input [3:0] current_state,
     input [3:0] round,
     input signed [4:0] cnt,
@@ -12,11 +12,21 @@ module AES_256 (
     input rst_n,
     input inv_en
 );
+
+// FSM states
 localparam IDLE = 4'd0;
+localparam AddRoundKey = 4'd1;
+localparam SubBytes = 4'd2;
+localparam ShiftRows = 4'd3;
+localparam MixColumns = 4'd4;
+localparam I_AddRoundKey = 4'd5;
+localparam I_SubBytes = 4'd6;
+localparam I_ShiftRows = 4'd7;
+localparam I_MixColumns = 4'd8;
+localparam DONE = 4'd9;
+localparam FINISH = 4'd10;
 
 reg [ 4*4*8 - 1 : 0 ] state;
-reg [ 4*4*8 - 1 : 0 ] round_key_o;
-
 assign output_text = state;
 
 // SubBytes input: 8bits, output: 8bits
@@ -51,7 +61,7 @@ always @(posedge clk or negedge rst_n) begin
         case (current_state)
             AddRoundKey, I_AddRoundKey : begin
                 if(cnt == 5'd6) begin
-                    state <= state ^ round_key_o;
+                    state <= state ^ round_key;
                     if (inv_en == 1'b0) begin
                         #5 $display("%d %0h\n",round-1 , state);
                     end else begin
@@ -62,7 +72,7 @@ always @(posedge clk or negedge rst_n) begin
                     if((inv_en == 1'b0 && round == 4'd0) ||
                     (inv_en == 1'b1 && round == 4'd14)
                     ) begin
-                        state <= state ^ round_key_o;
+                        state <= state ^ round_key;
                     end
                 end
             end 
