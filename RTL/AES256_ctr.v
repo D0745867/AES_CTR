@@ -35,7 +35,7 @@ localparam FINISH = 4'd10;
 reg [5:0] CTR_cnt;
 reg signed [4:0] cnt; // Counter for every module and FSM
 reg [3:0] round; // Round counter
-reg [block_byte*8 - 1 : 0] IV [0:3]; // The input with nonce and CTR;
+wire [block_byte*8 - 1 : 0] IV [0:3]; // The input with nonce and CTR;
 wire [122 - 1 : 0] nonce_pad = {nonce_a, nonce_b, {106{1'b0}}}; //12 Bytes nonce
 
 // Four parallels AES-cores IV totaL 16Bytes contains 12Bytes nonce and 4Bytes counter, but we maximum use 6bits for counter
@@ -116,8 +116,8 @@ key_expansion ke_dut(.round_key_o(round_key_o), .current_state(current_state)
 , .rst_n(rst_n), .clk(clk), .inv_en(mode_switch));
 
 // CTR counter
-always @(posedge clk) begin
-    if (current_state == IDLE) begin
+always @(posedge clk or negedge rst_n) begin
+    if (~rst_n) begin
         CTR_cnt <= 6'd0;
     end
     else if (current_state == DONE) begin

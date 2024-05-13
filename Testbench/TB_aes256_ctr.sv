@@ -45,13 +45,7 @@ class driver;
     , where ρ is used as the key and i‖j is zeropadded to a 12-byte nonce.
     The counter of CTR mode is initialized to zero. 
     */
-        for (i = 0; i < `Kyber_512_k ; i = i + 1 ) begin
-            for (j = 0 ; j < `Kyber_512_k ; j = j + 1) begin
-                aes.nonce_a = i;
-                aes.nonce_b = j;
-                wait(aes.finished); // Finish one 1/k 
-            end
-        end
+        wait(aes.finished); // Finish one 1/k 
         -> test_done; // Finished the testflow
     endtask
 
@@ -99,13 +93,16 @@ module TB_aes;
     endtask
 
     always #5 aes.clk <= ~aes.clk;
-
     initial begin
-    for(int i=0; i<test_num; i++) begin
-        fork
-        rst();  
-        data_flow();
-        join
+    for(int i=0; i< `Kyber_512_k; i++) begin
+        for (int j =0 ; j < `Kyber_512_k; j++ ) begin
+            fork
+            rst();
+            aes.nonce_a = i;
+            aes.nonce_b = j;
+            data_flow();
+            join
+        end
     end
     $finish;
     end

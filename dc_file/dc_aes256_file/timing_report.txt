@@ -1,0 +1,195 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : AES_256_CTR
+Version: U-2022.12
+Date   : Mon May 13 16:15:00 2024
+****************************************
+
+Operating Conditions: ss_typical_max_0p81v_125c   Library: sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
+Wire Load Model Mode: top
+
+  Startpoint: current_state_reg_1_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: ke_dut/w_g_sub_reg_3__7_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES_256_CTR        Zero                  sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  current_state_reg_1_/CK (DFFRPQ_X2M_A9TR)               0.00       0.00 r
+  current_state_reg_1_/Q (DFFRPQ_X2M_A9TR)                0.12       0.12 f
+  U179/Y (BUFH_X1M_A9TR)                                  0.09       0.21 f
+  U124/Y (INV_X1M_A9TR)                                   0.08       0.29 r
+  U126/Y (AO21A1AI2_X1M_A9TR)                             0.06       0.35 f
+  U125/Y (BUFH_X1M_A9TR)                                  0.06       0.41 f
+  ke_dut/inv_en (key_expansion)                           0.00       0.41 f
+  ke_dut/U119/Y (BUFH_X1M_A9TR)                           0.05       0.46 f
+  ke_dut/U96/Y (BUFH_X1M_A9TR)                            0.04       0.50 f
+  ke_dut/U60/Y (BUFH_X1M_A9TR)                            0.04       0.55 f
+  ke_dut/U15/Y (BUFH_X1M_A9TR)                            0.04       0.59 f
+  ke_dut/U120/Y (OAI21_X1M_A9TR)                          0.14       0.73 r
+  ke_dut/U291/Y (INV_X0P5B_A9TR)                          0.09       0.83 f
+  ke_dut/U61/Y (BUFH_X1M_A9TR)                            0.07       0.89 f
+  ke_dut/U16/Y (BUFH_X1M_A9TR)                            0.07       0.96 f
+  ke_dut/U232/Y (OAI21_X0P5M_A9TR)                        0.08       1.04 r
+  ke_dut/xor4/xor_32b_inB[24] (xor_32b_1)                 0.00       1.04 r
+  ke_dut/xor4/U7/Y (XOR2_X0P7M_A9TR)                      0.05       1.09 r
+  ke_dut/xor4/xor_32b_o[24] (xor_32b_1)                   0.00       1.09 r
+  ke_dut/U1293/Y (INV_X0P5B_A9TR)                         0.05       1.14 f
+  ke_dut/U373/Y (MXIT2_X0P5M_A9TR)                        0.05       1.19 r
+  ke_dut/xor1/xor_32b_inA[24] (xor_32b_0)                 0.00       1.19 r
+  ke_dut/xor1/U7/Y (XOR2_X0P7M_A9TR)                      0.08       1.27 r
+  ke_dut/xor1/xor_32b_o[24] (xor_32b_0)                   0.00       1.27 r
+  ke_dut/U874/Y (INV_X0P5B_A9TR)                          0.04       1.32 f
+  ke_dut/U341/Y (MXIT2_X0P5M_A9TR)                        0.05       1.36 r
+  ke_dut/xor2/xor_32b_inA[24] (xor_32b_3)                 0.00       1.36 r
+  ke_dut/xor2/U7/Y (XOR2_X0P7M_A9TR)                      0.08       1.44 r
+  ke_dut/xor2/xor_32b_o[24] (xor_32b_3)                   0.00       1.44 r
+  ke_dut/U778/Y (INV_X0P5B_A9TR)                          0.04       1.48 f
+  ke_dut/U309/Y (MXIT2_X0P5M_A9TR)                        0.05       1.53 r
+  ke_dut/xor3/xor_32b_inA[24] (xor_32b_2)                 0.00       1.53 r
+  ke_dut/xor3/U7/Y (XOR2_X0P7M_A9TR)                      0.08       1.61 r
+  ke_dut/xor3/xor_32b_o[24] (xor_32b_2)                   0.00       1.61 r
+  ke_dut/U682/Y (INV_X0P5B_A9TR)                          0.04       1.65 f
+  ke_dut/U397/Y (MXIT2_X0P5M_A9TR)                        0.07       1.72 r
+  ke_dut/U166/Y (AOI22_X0P5M_A9TR)                        0.06       1.79 f
+  ke_dut/U167/Y (OAI221_X0P5M_A9TR)                       0.06       1.85 r
+  ke_dut/U421/Y (MXT2_X0P5M_A9TR)                         0.15       2.00 r
+  ke_dut/dut_subBytes/byte_in[0] (SubBytes_1)             0.00       2.00 r
+  ke_dut/dut_subBytes/U3/Y (OAI22BB_X1M_A9TR)             0.13       2.12 r
+  ke_dut/dut_subBytes/dut_g2b/x[0] (G256_new_basis_3)     0.00       2.12 r
+  ke_dut/dut_subBytes/dut_g2b/U42/Y (NAND2_X0P5B_A9TR)
+                                                          0.05       2.17 f
+  ke_dut/dut_subBytes/dut_g2b/U41/Y (XOR2_X0P7M_A9TR)     0.05       2.23 r
+  ke_dut/dut_subBytes/dut_g2b/U17/Y (XOR2_X0P7M_A9TR)     0.08       2.31 r
+  ke_dut/dut_subBytes/dut_g2b/U6/Y (XOR2_X0P7M_A9TR)      0.16       2.46 r
+  ke_dut/dut_subBytes/dut_g2b/g256_nb_o[5] (G256_new_basis_3)
+                                                          0.00       2.46 r
+  ke_dut/dut_subBytes/dut_inv/x[5] (G256_inv_1)           0.00       2.46 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/x[1] (G16_mul_3)
+                                                          0.00       2.46 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/U5/Y (XOR2_X0P7M_A9TR)
+                                                          0.13       2.59 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/g4m1/x[1] (G4_mul_12)
+                                                          0.00       2.59 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/g4m1/U6/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       2.66 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/g4m1/U5/Y (NAND2_X1A_A9TR)
+                                                          0.04       2.71 f
+  ke_dut/dut_subBytes/dut_inv/g16mul1/g4m1/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.06       2.76 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/g4m1/g4mul_o[0] (G4_mul_12)
+                                                          0.00       2.76 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/g4mn/x[0] (G4_mul_N_4)
+                                                          0.00       2.76 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/g4mn/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.10       2.86 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/g4mn/g4mul_N_o[0] (G4_mul_N_4)
+                                                          0.00       2.86 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/U3/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       2.95 r
+  ke_dut/dut_subBytes/dut_inv/g16mul1/g16_mul_o[2] (G16_mul_3)
+                                                          0.00       2.95 r
+  ke_dut/dut_subBytes/dut_inv/U2/Y (XOR2_X0P7M_A9TR)      0.10       3.05 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/x[2] (G16_inv_1)     0.00       3.05 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4m1/x[0] (G4_mul_9)
+                                                          0.00       3.05 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4m1/U5/Y (XOR2_X0P7M_A9TR)
+                                                          0.10       3.15 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4m1/U3/Y (NAND2_X1A_A9TR)
+                                                          0.05       3.19 f
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4m1/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.06       3.25 f
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4m1/g4mul_o[1] (G4_mul_9)
+                                                          0.00       3.25 f
+  ke_dut/dut_subBytes/dut_inv/g16inv/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       3.32 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4inv2/x[1] (G4_inv_1)
+                                                          0.00       3.32 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4inv2/g4_inv_o[0] (G4_inv_1)
+                                                          0.00       3.32 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4m3/x[0] (G4_mul_7)
+                                                          0.00       3.32 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4m3/U5/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       3.42 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4m3/U3/Y (NAND2_X1A_A9TR)
+                                                          0.04       3.46 f
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4m3/U6/Y (XOR2_X0P7M_A9TR)
+                                                          0.11       3.57 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/g4m3/g4mul_o[1] (G4_mul_7)
+                                                          0.00       3.57 r
+  ke_dut/dut_subBytes/dut_inv/g16inv/g16_inv_o[1] (G16_inv_1)
+                                                          0.00       3.57 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/x[1] (G16_mul_1)
+                                                          0.00       3.57 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/U2/Y (XOR2_X0P7M_A9TR)
+                                                          0.12       3.69 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/g4m1/x[1] (G4_mul_3)
+                                                          0.00       3.69 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/g4m1/U7/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       3.76 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/g4m1/U5/Y (NAND2_X1A_A9TR)
+                                                          0.04       3.80 f
+  ke_dut/dut_subBytes/dut_inv/g16mul3/g4m1/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.06       3.86 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/g4m1/g4mul_o[0] (G4_mul_3)
+                                                          0.00       3.86 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/g4mn/x[0] (G4_mul_N_1)
+                                                          0.00       3.86 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/g4mn/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.10       3.96 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/g4mn/g4mul_N_o[0] (G4_mul_N_1)
+                                                          0.00       3.96 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/U4/Y (XOR2_X0P7M_A9TR)
+                                                          0.15       4.11 r
+  ke_dut/dut_subBytes/dut_inv/g16mul3/g16_mul_o[0] (G16_mul_1)
+                                                          0.00       4.11 r
+  ke_dut/dut_subBytes/dut_inv/g256_inv_o[0] (G256_inv_1)
+                                                          0.00       4.11 r
+  ke_dut/dut_subBytes/dut_b2g/x[0] (G256_new_basis_2)     0.00       4.11 r
+  ke_dut/dut_subBytes/dut_b2g/U43/Y (NAND2_X0P5B_A9TR)
+                                                          0.07       4.17 f
+  ke_dut/dut_subBytes/dut_b2g/U41/Y (XOR2_X0P7M_A9TR)     0.06       4.24 r
+  ke_dut/dut_subBytes/dut_b2g/U13/Y (XOR2_X0P7M_A9TR)     0.08       4.31 r
+  ke_dut/dut_subBytes/dut_b2g/U11/Y (XOR2_X0P7M_A9TR)     0.14       4.45 r
+  ke_dut/dut_subBytes/dut_b2g/g256_nb_o[5] (G256_new_basis_2)
+                                                          0.00       4.45 r
+  ke_dut/dut_subBytes/dut_A/x[5] (G256_new_basis_1)       0.00       4.45 r
+  ke_dut/dut_subBytes/dut_A/U31/Y (NAND2_X0P5B_A9TR)      0.07       4.53 f
+  ke_dut/dut_subBytes/dut_A/U27/Y (XOR2_X0P7M_A9TR)       0.05       4.57 r
+  ke_dut/dut_subBytes/dut_A/U25/Y (XOR2_X0P7M_A9TR)       0.09       4.66 r
+  ke_dut/dut_subBytes/dut_A/U29/Y (XOR2_X0P7M_A9TR)       0.06       4.72 r
+  ke_dut/dut_subBytes/dut_A/g256_nb_o[7] (G256_new_basis_1)
+                                                          0.00       4.72 r
+  ke_dut/dut_subBytes/U9/Y (AO22_X1M_A9TR)                0.06       4.78 r
+  ke_dut/dut_subBytes/byte_o[7] (SubBytes_1)              0.00       4.78 r
+  ke_dut/U1290/Y (INV_X0P5B_A9TR)                         0.04       4.82 f
+  ke_dut/U1255/Y (OAI222_X0P5M_A9TR)                      0.09       4.91 r
+  ke_dut/w_g_sub_reg_3__7_/D (DFFQN_X1M_A9TR)             0.00       4.91 r
+  data arrival time                                                  4.91
+
+  clock clk (rise edge)                                  30.00      30.00
+  clock network delay (ideal)                             0.00      30.00
+  ke_dut/w_g_sub_reg_3__7_/CK (DFFQN_X1M_A9TR)            0.00      30.00 r
+  library setup time                                     -0.06      29.94
+  data required time                                                29.94
+  --------------------------------------------------------------------------
+  data required time                                                29.94
+  data arrival time                                                 -4.91
+  --------------------------------------------------------------------------
+  slack (MET)                                                       25.03
+
+
+1

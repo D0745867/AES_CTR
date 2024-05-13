@@ -1,0 +1,296 @@
+ 
+****************************************
+Report : area
+Design : AES_256_CTR
+Version: U-2022.12
+Date   : Mon May 13 16:15:00 2024
+****************************************
+
+Library(s) Used:
+
+    sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c (File: /cad/CBDK/CBDK_TSMC40_Arm_f2.0/CIC/SynopsysDC/db/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db)
+
+Number of ports:                         8720
+Number of nets:                         19903
+Number of cells:                        11946
+Number of combinational cells:          10876
+Number of sequential cells:               817
+Number of macros/black boxes:               0
+Number of buf/inv:                       1913
+Number of references:                      47
+
+Combinational area:              11545.253826
+Buf/Inv area:                      979.095592
+Noncombinational area:            3155.468494
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 14700.722320
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  -----------------
+AES_256_CTR                       14700.7223    100.0    114.5340    70.9884  0.0000  AES_256_CTR
+aes_1                              2768.0940     18.8    978.8688   493.5168  0.0000  AES_256_0
+aes_1/dut_subBytes                  727.5744      4.9     28.8036     0.0000  0.0000  SubBytes_0
+aes_1/dut_subBytes/dut_A            132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_17
+aes_1/dut_subBytes/dut_IAT          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_0
+aes_1/dut_subBytes/dut_b2g          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_18
+aes_1/dut_subBytes/dut_g2b          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_19
+aes_1/dut_subBytes/dut_inv          168.9660      1.1     12.7008     0.0000  0.0000  G256_inv_0
+aes_1/dut_subBytes/dut_inv/g16inv    33.1128      0.2      6.3504     0.0000  0.0000  G16_inv_0
+aes_1/dut_subBytes/dut_inv/g16inv/g4inv1     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_18
+aes_1/dut_subBytes/dut_inv/g16inv/g4inv2     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_17
+aes_1/dut_subBytes/dut_inv/g16inv/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_57
+aes_1/dut_subBytes/dut_inv/g16inv/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_56
+aes_1/dut_subBytes/dut_inv/g16inv/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_55
+aes_1/dut_subBytes/dut_inv/g16inv/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_19
+aes_1/dut_subBytes/dut_inv/g16mul1    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_0
+aes_1/dut_subBytes/dut_inv/g16mul1/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_0
+aes_1/dut_subBytes/dut_inv/g16mul1/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_59
+aes_1/dut_subBytes/dut_inv/g16mul1/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_58
+aes_1/dut_subBytes/dut_inv/g16mul1/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_0
+aes_1/dut_subBytes/dut_inv/g16mul2    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_14
+aes_1/dut_subBytes/dut_inv/g16mul2/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_54
+aes_1/dut_subBytes/dut_inv/g16mul2/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_53
+aes_1/dut_subBytes/dut_inv/g16mul2/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_52
+aes_1/dut_subBytes/dut_inv/g16mul2/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_18
+aes_1/dut_subBytes/dut_inv/g16mul3    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_13
+aes_1/dut_subBytes/dut_inv/g16mul3/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_51
+aes_1/dut_subBytes/dut_inv/g16mul3/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_50
+aes_1/dut_subBytes/dut_inv/g16mul3/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_49
+aes_1/dut_subBytes/dut_inv/g16mul3/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_17
+aes_1/dut_subBytes/dut_inv/g16sq      4.7628      0.0      3.1752     0.0000  0.0000  G16_sq_mul_u_0
+aes_1/dut_subBytes/dut_inv/g16sq/g4inv1     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_0
+aes_1/dut_subBytes/dut_inv/g16sq/g4inv2     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_19
+aes_1/dut_subBytes/dut_inv/g16sq/g4mulN2     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N2_0
+aes_1/mc_dut                        459.9504      3.1    250.3872     0.0000  0.0000  mix_columns_0
+aes_1/mc_dut/xor1                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_0
+aes_1/mc_dut/xor10                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_51
+aes_1/mc_dut/xor11                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_50
+aes_1/mc_dut/xor12                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_49
+aes_1/mc_dut/xor13                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_48
+aes_1/mc_dut/xor14                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_47
+aes_1/mc_dut/xor15                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_46
+aes_1/mc_dut/xor2                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_59
+aes_1/mc_dut/xor3                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_58
+aes_1/mc_dut/xor4                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_57
+aes_1/mc_dut/xor5                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_56
+aes_1/mc_dut/xor6                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_55
+aes_1/mc_dut/xor7                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_54
+aes_1/mc_dut/xor8                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_53
+aes_1/mc_dut/xor9                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_52
+aes_1/mc_dut/xtime1                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_0
+aes_1/mc_dut/xtime2                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_15
+aes_1/mc_dut/xtime3                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_14
+aes_1/mc_dut/xtime4                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_13
+aes_1/sr_dut                        108.1836      0.7    108.1836     0.0000  0.0000  shift_rows_0
+aes_2                              2768.0940     18.8    978.8688   493.5168  0.0000  AES_256_3
+aes_2/dut_subBytes                  727.5744      4.9     28.8036     0.0000  0.0000  SubBytes_4
+aes_2/dut_subBytes/dut_A            132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_13
+aes_2/dut_subBytes/dut_IAT          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_16
+aes_2/dut_subBytes/dut_b2g          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_14
+aes_2/dut_subBytes/dut_g2b          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_15
+aes_2/dut_subBytes/dut_inv          168.9660      1.1     12.7008     0.0000  0.0000  G256_inv_4
+aes_2/dut_subBytes/dut_inv/g16inv    33.1128      0.2      6.3504     0.0000  0.0000  G16_inv_4
+aes_2/dut_subBytes/dut_inv/g16inv/g4inv1     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_14
+aes_2/dut_subBytes/dut_inv/g16inv/g4inv2     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_13
+aes_2/dut_subBytes/dut_inv/g16inv/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_45
+aes_2/dut_subBytes/dut_inv/g16inv/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_44
+aes_2/dut_subBytes/dut_inv/g16inv/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_43
+aes_2/dut_subBytes/dut_inv/g16inv/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_15
+aes_2/dut_subBytes/dut_inv/g16mul1    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_12
+aes_2/dut_subBytes/dut_inv/g16mul1/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_48
+aes_2/dut_subBytes/dut_inv/g16mul1/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_47
+aes_2/dut_subBytes/dut_inv/g16mul1/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_46
+aes_2/dut_subBytes/dut_inv/g16mul1/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_16
+aes_2/dut_subBytes/dut_inv/g16mul2    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_11
+aes_2/dut_subBytes/dut_inv/g16mul2/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_42
+aes_2/dut_subBytes/dut_inv/g16mul2/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_41
+aes_2/dut_subBytes/dut_inv/g16mul2/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_40
+aes_2/dut_subBytes/dut_inv/g16mul2/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_14
+aes_2/dut_subBytes/dut_inv/g16mul3    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_10
+aes_2/dut_subBytes/dut_inv/g16mul3/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_39
+aes_2/dut_subBytes/dut_inv/g16mul3/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_38
+aes_2/dut_subBytes/dut_inv/g16mul3/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_37
+aes_2/dut_subBytes/dut_inv/g16mul3/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_13
+aes_2/dut_subBytes/dut_inv/g16sq      4.7628      0.0      3.1752     0.0000  0.0000  G16_sq_mul_u_4
+aes_2/dut_subBytes/dut_inv/g16sq/g4inv1     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_16
+aes_2/dut_subBytes/dut_inv/g16sq/g4inv2     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_15
+aes_2/dut_subBytes/dut_inv/g16sq/g4mulN2     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N2_4
+aes_2/mc_dut                        459.9504      3.1    250.3872     0.0000  0.0000  mix_columns_3
+aes_2/mc_dut/xor1                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_45
+aes_2/mc_dut/xor10                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_36
+aes_2/mc_dut/xor11                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_35
+aes_2/mc_dut/xor12                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_34
+aes_2/mc_dut/xor13                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_33
+aes_2/mc_dut/xor14                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_32
+aes_2/mc_dut/xor15                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_31
+aes_2/mc_dut/xor2                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_44
+aes_2/mc_dut/xor3                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_43
+aes_2/mc_dut/xor4                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_42
+aes_2/mc_dut/xor5                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_41
+aes_2/mc_dut/xor6                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_40
+aes_2/mc_dut/xor7                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_39
+aes_2/mc_dut/xor8                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_38
+aes_2/mc_dut/xor9                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_37
+aes_2/mc_dut/xtime1                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_12
+aes_2/mc_dut/xtime2                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_11
+aes_2/mc_dut/xtime3                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_10
+aes_2/mc_dut/xtime4                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_9
+aes_2/sr_dut                        108.1836      0.7    108.1836     0.0000  0.0000  shift_rows_3
+aes_3                              2768.0940     18.8    978.8688   493.5168  0.0000  AES_256_2
+aes_3/dut_subBytes                  727.5744      4.9     28.8036     0.0000  0.0000  SubBytes_3
+aes_3/dut_subBytes/dut_A            132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_9
+aes_3/dut_subBytes/dut_IAT          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_12
+aes_3/dut_subBytes/dut_b2g          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_10
+aes_3/dut_subBytes/dut_g2b          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_11
+aes_3/dut_subBytes/dut_inv          168.9660      1.1     12.7008     0.0000  0.0000  G256_inv_3
+aes_3/dut_subBytes/dut_inv/g16inv    33.1128      0.2      6.3504     0.0000  0.0000  G16_inv_3
+aes_3/dut_subBytes/dut_inv/g16inv/g4inv1     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_10
+aes_3/dut_subBytes/dut_inv/g16inv/g4inv2     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_9
+aes_3/dut_subBytes/dut_inv/g16inv/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_33
+aes_3/dut_subBytes/dut_inv/g16inv/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_32
+aes_3/dut_subBytes/dut_inv/g16inv/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_31
+aes_3/dut_subBytes/dut_inv/g16inv/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_11
+aes_3/dut_subBytes/dut_inv/g16mul1    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_9
+aes_3/dut_subBytes/dut_inv/g16mul1/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_36
+aes_3/dut_subBytes/dut_inv/g16mul1/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_35
+aes_3/dut_subBytes/dut_inv/g16mul1/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_34
+aes_3/dut_subBytes/dut_inv/g16mul1/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_12
+aes_3/dut_subBytes/dut_inv/g16mul2    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_8
+aes_3/dut_subBytes/dut_inv/g16mul2/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_30
+aes_3/dut_subBytes/dut_inv/g16mul2/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_29
+aes_3/dut_subBytes/dut_inv/g16mul2/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_28
+aes_3/dut_subBytes/dut_inv/g16mul2/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_10
+aes_3/dut_subBytes/dut_inv/g16mul3    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_7
+aes_3/dut_subBytes/dut_inv/g16mul3/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_27
+aes_3/dut_subBytes/dut_inv/g16mul3/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_26
+aes_3/dut_subBytes/dut_inv/g16mul3/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_25
+aes_3/dut_subBytes/dut_inv/g16mul3/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_9
+aes_3/dut_subBytes/dut_inv/g16sq      4.7628      0.0      3.1752     0.0000  0.0000  G16_sq_mul_u_3
+aes_3/dut_subBytes/dut_inv/g16sq/g4inv1     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_12
+aes_3/dut_subBytes/dut_inv/g16sq/g4inv2     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_11
+aes_3/dut_subBytes/dut_inv/g16sq/g4mulN2     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N2_3
+aes_3/mc_dut                        459.9504      3.1    250.3872     0.0000  0.0000  mix_columns_2
+aes_3/mc_dut/xor1                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_30
+aes_3/mc_dut/xor10                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_21
+aes_3/mc_dut/xor11                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_20
+aes_3/mc_dut/xor12                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_19
+aes_3/mc_dut/xor13                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_18
+aes_3/mc_dut/xor14                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_17
+aes_3/mc_dut/xor15                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_16
+aes_3/mc_dut/xor2                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_29
+aes_3/mc_dut/xor3                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_28
+aes_3/mc_dut/xor4                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_27
+aes_3/mc_dut/xor5                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_26
+aes_3/mc_dut/xor6                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_25
+aes_3/mc_dut/xor7                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_24
+aes_3/mc_dut/xor8                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_23
+aes_3/mc_dut/xor9                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_22
+aes_3/mc_dut/xtime1                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_8
+aes_3/mc_dut/xtime2                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_7
+aes_3/mc_dut/xtime3                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_6
+aes_3/mc_dut/xtime4                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_5
+aes_3/sr_dut                        108.1836      0.7    108.1836     0.0000  0.0000  shift_rows_2
+aes_4                              2768.0940     18.8    978.8688   493.5168  0.0000  AES_256_1
+aes_4/dut_subBytes                  727.5744      4.9     28.8036     0.0000  0.0000  SubBytes_2
+aes_4/dut_subBytes/dut_A            132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_5
+aes_4/dut_subBytes/dut_IAT          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_8
+aes_4/dut_subBytes/dut_b2g          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_6
+aes_4/dut_subBytes/dut_g2b          132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_7
+aes_4/dut_subBytes/dut_inv          168.9660      1.1     12.7008     0.0000  0.0000  G256_inv_2
+aes_4/dut_subBytes/dut_inv/g16inv    33.1128      0.2      6.3504     0.0000  0.0000  G16_inv_2
+aes_4/dut_subBytes/dut_inv/g16inv/g4inv1     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_6
+aes_4/dut_subBytes/dut_inv/g16inv/g4inv2     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_5
+aes_4/dut_subBytes/dut_inv/g16inv/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_21
+aes_4/dut_subBytes/dut_inv/g16inv/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_20
+aes_4/dut_subBytes/dut_inv/g16inv/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_19
+aes_4/dut_subBytes/dut_inv/g16inv/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_7
+aes_4/dut_subBytes/dut_inv/g16mul1    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_6
+aes_4/dut_subBytes/dut_inv/g16mul1/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_24
+aes_4/dut_subBytes/dut_inv/g16mul1/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_23
+aes_4/dut_subBytes/dut_inv/g16mul1/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_22
+aes_4/dut_subBytes/dut_inv/g16mul1/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_8
+aes_4/dut_subBytes/dut_inv/g16mul2    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_5
+aes_4/dut_subBytes/dut_inv/g16mul2/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_18
+aes_4/dut_subBytes/dut_inv/g16mul2/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_17
+aes_4/dut_subBytes/dut_inv/g16mul2/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_16
+aes_4/dut_subBytes/dut_inv/g16mul2/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_6
+aes_4/dut_subBytes/dut_inv/g16mul3    39.4632     0.3     12.7008     0.0000  0.0000  G16_mul_4
+aes_4/dut_subBytes/dut_inv/g16mul3/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_15
+aes_4/dut_subBytes/dut_inv/g16mul3/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_14
+aes_4/dut_subBytes/dut_inv/g16mul3/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_13
+aes_4/dut_subBytes/dut_inv/g16mul3/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_5
+aes_4/dut_subBytes/dut_inv/g16sq      4.7628      0.0      3.1752     0.0000  0.0000  G16_sq_mul_u_2
+aes_4/dut_subBytes/dut_inv/g16sq/g4inv1     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_8
+aes_4/dut_subBytes/dut_inv/g16sq/g4inv2     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_7
+aes_4/dut_subBytes/dut_inv/g16sq/g4mulN2     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N2_2
+aes_4/mc_dut                        459.9504      3.1    250.3872     0.0000  0.0000  mix_columns_1
+aes_4/mc_dut/xor1                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_15
+aes_4/mc_dut/xor10                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_6
+aes_4/mc_dut/xor11                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_5
+aes_4/mc_dut/xor12                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_4
+aes_4/mc_dut/xor13                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_3
+aes_4/mc_dut/xor14                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_2
+aes_4/mc_dut/xor15                   12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_1
+aes_4/mc_dut/xor2                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_14
+aes_4/mc_dut/xor3                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_13
+aes_4/mc_dut/xor4                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_12
+aes_4/mc_dut/xor5                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_11
+aes_4/mc_dut/xor6                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_10
+aes_4/mc_dut/xor7                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_9
+aes_4/mc_dut/xor8                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_8
+aes_4/mc_dut/xor9                    12.7008      0.1     12.7008     0.0000  0.0000  xor_8b_7
+aes_4/mc_dut/xtime1                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_4
+aes_4/mc_dut/xtime2                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_3
+aes_4/mc_dut/xtime3                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_2
+aes_4/mc_dut/xtime4                   4.7628      0.0      4.7628     0.0000  0.0000  xtime_1
+aes_4/sr_dut                        108.1836      0.7    108.1836     0.0000  0.0000  shift_rows_1
+ke_dut                             3442.8240     23.4   1403.2116  1110.4128  0.0000  key_expansion
+ke_dut/dut_subBytes                 725.9868      4.9     27.2160     0.0000  0.0000  SubBytes_1
+ke_dut/dut_subBytes/dut_A           132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_1
+ke_dut/dut_subBytes/dut_IAT         132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_4
+ke_dut/dut_subBytes/dut_b2g         132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_2
+ke_dut/dut_subBytes/dut_g2b         132.4512      0.9    132.4512     0.0000  0.0000  G256_new_basis_3
+ke_dut/dut_subBytes/dut_inv         168.9660      1.1     12.7008     0.0000  0.0000  G256_inv_1
+ke_dut/dut_subBytes/dut_inv/g16inv    33.1128     0.2      6.3504     0.0000  0.0000  G16_inv_1
+ke_dut/dut_subBytes/dut_inv/g16inv/g4inv1     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_2
+ke_dut/dut_subBytes/dut_inv/g16inv/g4inv2     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_1
+ke_dut/dut_subBytes/dut_inv/g16inv/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_9
+ke_dut/dut_subBytes/dut_inv/g16inv/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_8
+ke_dut/dut_subBytes/dut_inv/g16inv/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_7
+ke_dut/dut_subBytes/dut_inv/g16inv/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_3
+ke_dut/dut_subBytes/dut_inv/g16mul1    39.4632     0.3    12.7008     0.0000  0.0000  G16_mul_3
+ke_dut/dut_subBytes/dut_inv/g16mul1/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_12
+ke_dut/dut_subBytes/dut_inv/g16mul1/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_11
+ke_dut/dut_subBytes/dut_inv/g16mul1/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_10
+ke_dut/dut_subBytes/dut_inv/g16mul1/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_4
+ke_dut/dut_subBytes/dut_inv/g16mul2    39.4632     0.3    12.7008     0.0000  0.0000  G16_mul_2
+ke_dut/dut_subBytes/dut_inv/g16mul2/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_6
+ke_dut/dut_subBytes/dut_inv/g16mul2/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_5
+ke_dut/dut_subBytes/dut_inv/g16mul2/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_4
+ke_dut/dut_subBytes/dut_inv/g16mul2/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_2
+ke_dut/dut_subBytes/dut_inv/g16mul3    39.4632     0.3    12.7008     0.0000  0.0000  G16_mul_1
+ke_dut/dut_subBytes/dut_inv/g16mul3/g4m1     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_3
+ke_dut/dut_subBytes/dut_inv/g16mul3/g4m2     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_2
+ke_dut/dut_subBytes/dut_inv/g16mul3/g4m3     8.3916     0.1     8.3916    0.0000 0.0000 G4_mul_1
+ke_dut/dut_subBytes/dut_inv/g16mul3/g4mn     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N_1
+ke_dut/dut_subBytes/dut_inv/g16sq     4.7628      0.0      3.1752     0.0000  0.0000  G16_sq_mul_u_1
+ke_dut/dut_subBytes/dut_inv/g16sq/g4inv1     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_4
+ke_dut/dut_subBytes/dut_inv/g16sq/g4inv2     0.0000     0.0     0.0000    0.0000 0.0000 G4_inv_3
+ke_dut/dut_subBytes/dut_inv/g16sq/g4mulN2     1.5876     0.0     1.5876    0.0000 0.0000 G4_mul_N2_1
+ke_dut/xor1                          50.8032      0.3     50.8032     0.0000  0.0000  xor_32b_0
+ke_dut/xor2                          50.8032      0.3     50.8032     0.0000  0.0000  xor_32b_3
+ke_dut/xor3                          50.8032      0.3     50.8032     0.0000  0.0000  xor_32b_2
+ke_dut/xor4                          50.8032      0.3     50.8032     0.0000  0.0000  xor_32b_1
+--------------------------------  ----------  -------  ----------  ---------  ------  -----------------
+Total                                                  11545.2538  3155.4685  0.0000
+
+1

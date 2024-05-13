@@ -53,7 +53,7 @@ assign mc_in = (cnt <= 4'd3) ? state[(127 - (32 * cnt))  -: 32] : 32'd0;
 mix_columns mc_dut(.mix_col_o(mc_out), .mix_col_in(mc_in), .inv_en(mode_switch));
 
 // State Matrix
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if (current_state == IDLE) begin
         state <= input_text;
     end
