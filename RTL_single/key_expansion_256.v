@@ -2,6 +2,7 @@
 
 // Single round keygeneration
 // Key_in only needed when first round
+// vcs TB_key_expansion_256_single.sv ../RTL_single/key_expansion_256.v ../RTL_single/sub_bytes.v -R -debug_access+all +v2k -sverilog -full64
 
 module key_expansion #(
     parameter KEY_WIDTH = 256) (
@@ -42,14 +43,14 @@ wire [7:0]w_g_in[0:3];
 // New Round Key
 reg [31:0] w_matrix_cur [0:3];
 
-assign subBytes_i = w_rot[cnt];
+assign subBytes_i = (round[0] == 1'b1) ? w_g_in[cnt] :  w_rot[cnt];
 
 SubBytes dut_subBytes(.byte_o(subBytes_o), .byte_in(subBytes_i));
 
 assign w_g_in[0] = w_matrix[7][7:0];
-assign w_g_in[1] = w_matrix[8][15:8];
-assign w_g_in[2] = w_matrix[9][23:16];
-assign w_g_in[3] = w_matrix[10][31:24];
+assign w_g_in[1] = w_matrix[7][15:8];
+assign w_g_in[2] = w_matrix[7][23:16];
+assign w_g_in[3] = w_matrix[7][31:24];
 
 // RotWord (Lest Shift - 1)
 always @(*) begin
@@ -128,7 +129,7 @@ always @(posedge clk or negedge rst_n) begin
                 w_g_sub[cnt] <= subBytes_o;
             end
             else if(cnt == 5'd4) begin
-                w_g_sub[3] <=  (is_odd == 1'b1) ? w_g_sub[3] :  w_g_sub[3] ^ rc_table[round - 4'd1];
+                w_g_sub[3] <=  (is_odd == 1'b1) ? w_g_sub[3] :  w_g_sub[3] ^ rc_table[round_to_RCnum];
             end  
         end
     end

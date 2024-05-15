@@ -51,7 +51,7 @@ wire [7:0]w_g_in[0:3];
 // New Round Key
 reg [31:0] w_matrix_cur [0:3];
 
-SubBytes dut_subBytes(.byte_o(subBytes_o), .byte_in(subBytes_i), .inv_en(1'b0));
+SubBytes dut_subBytes(.byte_o(subBytes_o), .byte_in(subBytes_i));
 
 // 4 XORs
 reg [31:0]  xor_A4_in, xor_B4_in;
