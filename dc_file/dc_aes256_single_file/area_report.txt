@@ -1,0 +1,91 @@
+ 
+****************************************
+Report : area
+Design : AES_256_CTR
+Version: U-2022.12
+Date   : Thu May 16 21:06:20 2024
+****************************************
+
+Library(s) Used:
+
+    sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c (File: /cad/CBDK/CBDK_TSMC40_Arm_f2.0/CIC/SynopsysDC/db/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db)
+
+Number of ports:                         4859
+Number of nets:                         12757
+Number of cells:                         8456
+Number of combinational cells:           7591
+Number of sequential cells:               817
+Number of macros/black boxes:               0
+Number of buf/inv:                       1450
+Number of references:                      37
+
+Combinational area:               7790.353054
+Buf/Inv area:                      767.717997
+Noncombinational area:            3177.241283
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 10967.594338
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area           Local cell area
+                                  -------------------  ---------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-     Noncombi-  Black-
+                                  Total       Total    national   national   boxes   Design
+--------------------------------  ----------  -------  ---------  ---------  ------  -------------
+AES_256_CTR                       10967.5943    100.0    88.4520    70.9884  0.0000  AES_256_CTR
+aes_1                              2070.2304     18.9  1251.2556   493.5168  0.0000  AES_256_0
+aes_1/dut_subBytes                  150.8220      1.4     0.0000     0.0000  0.0000  SubBytes_0
+aes_1/dut_subBytes/fbot_inst         50.8032      0.5    50.8032     0.0000  0.0000  fbot_0
+aes_1/dut_subBytes/ftop_inst         38.5560      0.4    38.5560     0.0000  0.0000  ftop_0
+aes_1/dut_subBytes/inv_inst          11.5668      0.1    11.5668     0.0000  0.0000  inv_0
+aes_1/dut_subBytes/muln_inst         12.2472      0.1    12.2472     0.0000  0.0000  muln_0
+aes_1/dut_subBytes/mulx_inst         27.2160      0.2    27.2160     0.0000  0.0000  mulx_0
+aes_1/dut_subBytes/s1_inst           10.4328      0.1    10.4328     0.0000  0.0000  s1_0
+aes_1/mc_dut                        174.6360      1.6   174.6360     0.0000  0.0000  mix_columns_0
+aes_1/sr_dut                          0.0000      0.0     0.0000     0.0000  0.0000  shift_rows_0
+aes_2                              2072.0448     18.9  1253.0700   493.5168  0.0000  AES_256_3
+aes_2/dut_subBytes                  150.8220      1.4     0.0000     0.0000  0.0000  SubBytes_4
+aes_2/dut_subBytes/fbot_inst         50.8032      0.5    50.8032     0.0000  0.0000  fbot_4
+aes_2/dut_subBytes/ftop_inst         38.5560      0.4    38.5560     0.0000  0.0000  ftop_4
+aes_2/dut_subBytes/inv_inst          11.5668      0.1    11.5668     0.0000  0.0000  inv_4
+aes_2/dut_subBytes/muln_inst         12.2472      0.1    12.2472     0.0000  0.0000  muln_4
+aes_2/dut_subBytes/mulx_inst         27.2160      0.2    27.2160     0.0000  0.0000  mulx_4
+aes_2/dut_subBytes/s1_inst           10.4328      0.1    10.4328     0.0000  0.0000  s1_4
+aes_2/mc_dut                        174.6360      1.6   174.6360     0.0000  0.0000  mix_columns_3
+aes_2/sr_dut                          0.0000      0.0     0.0000     0.0000  0.0000  shift_rows_3
+aes_3                              2072.0448     18.9  1253.0700   493.5168  0.0000  AES_256_2
+aes_3/dut_subBytes                  150.8220      1.4     0.0000     0.0000  0.0000  SubBytes_3
+aes_3/dut_subBytes/fbot_inst         50.8032      0.5    50.8032     0.0000  0.0000  fbot_3
+aes_3/dut_subBytes/ftop_inst         38.5560      0.4    38.5560     0.0000  0.0000  ftop_3
+aes_3/dut_subBytes/inv_inst          11.5668      0.1    11.5668     0.0000  0.0000  inv_3
+aes_3/dut_subBytes/muln_inst         12.2472      0.1    12.2472     0.0000  0.0000  muln_3
+aes_3/dut_subBytes/mulx_inst         27.2160      0.2    27.2160     0.0000  0.0000  mulx_3
+aes_3/dut_subBytes/s1_inst           10.4328      0.1    10.4328     0.0000  0.0000  s1_3
+aes_3/mc_dut                        174.6360      1.6   174.6360     0.0000  0.0000  mix_columns_2
+aes_3/sr_dut                          0.0000      0.0     0.0000     0.0000  0.0000  shift_rows_2
+aes_4                              2071.1376     18.9  1252.1628   493.5168  0.0000  AES_256_1
+aes_4/dut_subBytes                  150.8220      1.4     0.0000     0.0000  0.0000  SubBytes_2
+aes_4/dut_subBytes/fbot_inst         50.8032      0.5    50.8032     0.0000  0.0000  fbot_2
+aes_4/dut_subBytes/ftop_inst         38.5560      0.4    38.5560     0.0000  0.0000  ftop_2
+aes_4/dut_subBytes/inv_inst          11.5668      0.1    11.5668     0.0000  0.0000  inv_2
+aes_4/dut_subBytes/muln_inst         12.2472      0.1    12.2472     0.0000  0.0000  muln_2
+aes_4/dut_subBytes/mulx_inst         27.2160      0.2    27.2160     0.0000  0.0000  mulx_2
+aes_4/dut_subBytes/s1_inst           10.4328      0.1    10.4328     0.0000  0.0000  s1_2
+aes_4/mc_dut                        174.6360      1.6   174.6360     0.0000  0.0000  mix_columns_1
+aes_4/sr_dut                          0.0000      0.0     0.0000     0.0000  0.0000  shift_rows_1
+ke_dut                             2522.6964     23.0  1239.2352  1132.1856  0.0000  key_expansion
+ke_dut/dut_subBytes                 151.2756      1.4     0.0000     0.0000  0.0000  SubBytes_1
+ke_dut/dut_subBytes/fbot_inst        51.2568      0.5    51.2568     0.0000  0.0000  fbot_1
+ke_dut/dut_subBytes/ftop_inst        38.5560      0.4    38.5560     0.0000  0.0000  ftop_1
+ke_dut/dut_subBytes/inv_inst         11.5668      0.1    11.5668     0.0000  0.0000  inv_1
+ke_dut/dut_subBytes/muln_inst        12.2472      0.1    12.2472     0.0000  0.0000  muln_1
+ke_dut/dut_subBytes/mulx_inst        27.2160      0.2    27.2160     0.0000  0.0000  mulx_1
+ke_dut/dut_subBytes/s1_inst          10.4328      0.1    10.4328     0.0000  0.0000  s1_1
+--------------------------------  ----------  -------  ---------  ---------  ------  -------------
+Total                                                  7790.3531  3177.2413  0.0000
+
+1
