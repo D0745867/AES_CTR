@@ -1,0 +1,161 @@
+ 
+****************************************
+Report : area
+Design : AES_256_roundop
+Version: U-2022.12
+Date   : Fri May 17 22:47:26 2024
+****************************************
+
+Library(s) Used:
+
+    sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c (File: /cad/CBDK/CBDK_TSMC40_Arm_f2.0/CIC/SynopsysDC/db/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db)
+
+Number of ports:                         3840
+Number of nets:                          6252
+Number of cells:                         2658
+Number of combinational cells:           2540
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                        156
+Number of references:                      22
+
+Combinational area:               3314.908788
+Buf/Inv area:                       70.761598
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  3314.908788
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  -------------
+AES_256_roundop                   3314.9088    100.0     0.0000     0.0000  0.0000  AES_256_roundop
+ark_dut                            203.2128      6.1   203.2128     0.0000  0.0000  ARK
+genblk1_0__dut_subBytes            150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_0
+genblk1_0__dut_subBytes/fbot_inst   50.8032      1.5    50.8032     0.0000  0.0000  fbot_0
+genblk1_0__dut_subBytes/ftop_inst   38.5560      1.2    38.5560     0.0000  0.0000  ftop_0
+genblk1_0__dut_subBytes/inv_inst    11.5668      0.3    11.5668     0.0000  0.0000  inv_0
+genblk1_0__dut_subBytes/muln_inst   12.2472      0.4    12.2472     0.0000  0.0000  muln_0
+genblk1_0__dut_subBytes/mulx_inst   27.2160      0.8    27.2160     0.0000  0.0000  mulx_0
+genblk1_0__dut_subBytes/s1_inst     10.4328      0.3    10.4328     0.0000  0.0000  s1_0
+genblk1_10__dut_subBytes           150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_6
+genblk1_10__dut_subBytes/fbot_inst   50.8032     1.5    50.8032     0.0000  0.0000  fbot_6
+genblk1_10__dut_subBytes/ftop_inst   38.5560     1.2    38.5560     0.0000  0.0000  ftop_6
+genblk1_10__dut_subBytes/inv_inst   11.5668      0.3    11.5668     0.0000  0.0000  inv_6
+genblk1_10__dut_subBytes/muln_inst   12.2472     0.4    12.2472     0.0000  0.0000  muln_6
+genblk1_10__dut_subBytes/mulx_inst   27.2160     0.8    27.2160     0.0000  0.0000  mulx_6
+genblk1_10__dut_subBytes/s1_inst    10.4328      0.3    10.4328     0.0000  0.0000  s1_6
+genblk1_11__dut_subBytes           150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_5
+genblk1_11__dut_subBytes/fbot_inst   50.8032     1.5    50.8032     0.0000  0.0000  fbot_5
+genblk1_11__dut_subBytes/ftop_inst   38.5560     1.2    38.5560     0.0000  0.0000  ftop_5
+genblk1_11__dut_subBytes/inv_inst   11.5668      0.3    11.5668     0.0000  0.0000  inv_5
+genblk1_11__dut_subBytes/muln_inst   12.2472     0.4    12.2472     0.0000  0.0000  muln_5
+genblk1_11__dut_subBytes/mulx_inst   27.2160     0.8    27.2160     0.0000  0.0000  mulx_5
+genblk1_11__dut_subBytes/s1_inst    10.4328      0.3    10.4328     0.0000  0.0000  s1_5
+genblk1_12__dut_subBytes           150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_4
+genblk1_12__dut_subBytes/fbot_inst   50.8032     1.5    50.8032     0.0000  0.0000  fbot_4
+genblk1_12__dut_subBytes/ftop_inst   38.5560     1.2    38.5560     0.0000  0.0000  ftop_4
+genblk1_12__dut_subBytes/inv_inst   11.5668      0.3    11.5668     0.0000  0.0000  inv_4
+genblk1_12__dut_subBytes/muln_inst   12.2472     0.4    12.2472     0.0000  0.0000  muln_4
+genblk1_12__dut_subBytes/mulx_inst   27.2160     0.8    27.2160     0.0000  0.0000  mulx_4
+genblk1_12__dut_subBytes/s1_inst    10.4328      0.3    10.4328     0.0000  0.0000  s1_4
+genblk1_13__dut_subBytes           150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_3
+genblk1_13__dut_subBytes/fbot_inst   50.8032     1.5    50.8032     0.0000  0.0000  fbot_3
+genblk1_13__dut_subBytes/ftop_inst   38.5560     1.2    38.5560     0.0000  0.0000  ftop_3
+genblk1_13__dut_subBytes/inv_inst   11.5668      0.3    11.5668     0.0000  0.0000  inv_3
+genblk1_13__dut_subBytes/muln_inst   12.2472     0.4    12.2472     0.0000  0.0000  muln_3
+genblk1_13__dut_subBytes/mulx_inst   27.2160     0.8    27.2160     0.0000  0.0000  mulx_3
+genblk1_13__dut_subBytes/s1_inst    10.4328      0.3    10.4328     0.0000  0.0000  s1_3
+genblk1_14__dut_subBytes           150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_2
+genblk1_14__dut_subBytes/fbot_inst   50.8032     1.5    50.8032     0.0000  0.0000  fbot_2
+genblk1_14__dut_subBytes/ftop_inst   38.5560     1.2    38.5560     0.0000  0.0000  ftop_2
+genblk1_14__dut_subBytes/inv_inst   11.5668      0.3    11.5668     0.0000  0.0000  inv_2
+genblk1_14__dut_subBytes/muln_inst   12.2472     0.4    12.2472     0.0000  0.0000  muln_2
+genblk1_14__dut_subBytes/mulx_inst   27.2160     0.8    27.2160     0.0000  0.0000  mulx_2
+genblk1_14__dut_subBytes/s1_inst    10.4328      0.3    10.4328     0.0000  0.0000  s1_2
+genblk1_15__dut_subBytes           150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_1
+genblk1_15__dut_subBytes/fbot_inst   50.8032     1.5    50.8032     0.0000  0.0000  fbot_1
+genblk1_15__dut_subBytes/ftop_inst   38.5560     1.2    38.5560     0.0000  0.0000  ftop_1
+genblk1_15__dut_subBytes/inv_inst   11.5668      0.3    11.5668     0.0000  0.0000  inv_1
+genblk1_15__dut_subBytes/muln_inst   12.2472     0.4    12.2472     0.0000  0.0000  muln_1
+genblk1_15__dut_subBytes/mulx_inst   27.2160     0.8    27.2160     0.0000  0.0000  mulx_1
+genblk1_15__dut_subBytes/s1_inst    10.4328      0.3    10.4328     0.0000  0.0000  s1_1
+genblk1_1__dut_subBytes            150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_15
+genblk1_1__dut_subBytes/fbot_inst   50.8032      1.5    50.8032     0.0000  0.0000  fbot_15
+genblk1_1__dut_subBytes/ftop_inst   38.5560      1.2    38.5560     0.0000  0.0000  ftop_15
+genblk1_1__dut_subBytes/inv_inst    11.5668      0.3    11.5668     0.0000  0.0000  inv_15
+genblk1_1__dut_subBytes/muln_inst   12.2472      0.4    12.2472     0.0000  0.0000  muln_15
+genblk1_1__dut_subBytes/mulx_inst   27.2160      0.8    27.2160     0.0000  0.0000  mulx_15
+genblk1_1__dut_subBytes/s1_inst     10.4328      0.3    10.4328     0.0000  0.0000  s1_15
+genblk1_2__dut_subBytes            150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_14
+genblk1_2__dut_subBytes/fbot_inst   50.8032      1.5    50.8032     0.0000  0.0000  fbot_14
+genblk1_2__dut_subBytes/ftop_inst   38.5560      1.2    38.5560     0.0000  0.0000  ftop_14
+genblk1_2__dut_subBytes/inv_inst    11.5668      0.3    11.5668     0.0000  0.0000  inv_14
+genblk1_2__dut_subBytes/muln_inst   12.2472      0.4    12.2472     0.0000  0.0000  muln_14
+genblk1_2__dut_subBytes/mulx_inst   27.2160      0.8    27.2160     0.0000  0.0000  mulx_14
+genblk1_2__dut_subBytes/s1_inst     10.4328      0.3    10.4328     0.0000  0.0000  s1_14
+genblk1_3__dut_subBytes            150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_13
+genblk1_3__dut_subBytes/fbot_inst   50.8032      1.5    50.8032     0.0000  0.0000  fbot_13
+genblk1_3__dut_subBytes/ftop_inst   38.5560      1.2    38.5560     0.0000  0.0000  ftop_13
+genblk1_3__dut_subBytes/inv_inst    11.5668      0.3    11.5668     0.0000  0.0000  inv_13
+genblk1_3__dut_subBytes/muln_inst   12.2472      0.4    12.2472     0.0000  0.0000  muln_13
+genblk1_3__dut_subBytes/mulx_inst   27.2160      0.8    27.2160     0.0000  0.0000  mulx_13
+genblk1_3__dut_subBytes/s1_inst     10.4328      0.3    10.4328     0.0000  0.0000  s1_13
+genblk1_4__dut_subBytes            150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_12
+genblk1_4__dut_subBytes/fbot_inst   50.8032      1.5    50.8032     0.0000  0.0000  fbot_12
+genblk1_4__dut_subBytes/ftop_inst   38.5560      1.2    38.5560     0.0000  0.0000  ftop_12
+genblk1_4__dut_subBytes/inv_inst    11.5668      0.3    11.5668     0.0000  0.0000  inv_12
+genblk1_4__dut_subBytes/muln_inst   12.2472      0.4    12.2472     0.0000  0.0000  muln_12
+genblk1_4__dut_subBytes/mulx_inst   27.2160      0.8    27.2160     0.0000  0.0000  mulx_12
+genblk1_4__dut_subBytes/s1_inst     10.4328      0.3    10.4328     0.0000  0.0000  s1_12
+genblk1_5__dut_subBytes            150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_11
+genblk1_5__dut_subBytes/fbot_inst   50.8032      1.5    50.8032     0.0000  0.0000  fbot_11
+genblk1_5__dut_subBytes/ftop_inst   38.5560      1.2    38.5560     0.0000  0.0000  ftop_11
+genblk1_5__dut_subBytes/inv_inst    11.5668      0.3    11.5668     0.0000  0.0000  inv_11
+genblk1_5__dut_subBytes/muln_inst   12.2472      0.4    12.2472     0.0000  0.0000  muln_11
+genblk1_5__dut_subBytes/mulx_inst   27.2160      0.8    27.2160     0.0000  0.0000  mulx_11
+genblk1_5__dut_subBytes/s1_inst     10.4328      0.3    10.4328     0.0000  0.0000  s1_11
+genblk1_6__dut_subBytes            150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_10
+genblk1_6__dut_subBytes/fbot_inst   50.8032      1.5    50.8032     0.0000  0.0000  fbot_10
+genblk1_6__dut_subBytes/ftop_inst   38.5560      1.2    38.5560     0.0000  0.0000  ftop_10
+genblk1_6__dut_subBytes/inv_inst    11.5668      0.3    11.5668     0.0000  0.0000  inv_10
+genblk1_6__dut_subBytes/muln_inst   12.2472      0.4    12.2472     0.0000  0.0000  muln_10
+genblk1_6__dut_subBytes/mulx_inst   27.2160      0.8    27.2160     0.0000  0.0000  mulx_10
+genblk1_6__dut_subBytes/s1_inst     10.4328      0.3    10.4328     0.0000  0.0000  s1_10
+genblk1_7__dut_subBytes            150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_9
+genblk1_7__dut_subBytes/fbot_inst   50.8032      1.5    50.8032     0.0000  0.0000  fbot_9
+genblk1_7__dut_subBytes/ftop_inst   38.5560      1.2    38.5560     0.0000  0.0000  ftop_9
+genblk1_7__dut_subBytes/inv_inst    11.5668      0.3    11.5668     0.0000  0.0000  inv_9
+genblk1_7__dut_subBytes/muln_inst   12.2472      0.4    12.2472     0.0000  0.0000  muln_9
+genblk1_7__dut_subBytes/mulx_inst   27.2160      0.8    27.2160     0.0000  0.0000  mulx_9
+genblk1_7__dut_subBytes/s1_inst     10.4328      0.3    10.4328     0.0000  0.0000  s1_9
+genblk1_8__dut_subBytes            150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_8
+genblk1_8__dut_subBytes/fbot_inst   50.8032      1.5    50.8032     0.0000  0.0000  fbot_8
+genblk1_8__dut_subBytes/ftop_inst   38.5560      1.2    38.5560     0.0000  0.0000  ftop_8
+genblk1_8__dut_subBytes/inv_inst    11.5668      0.3    11.5668     0.0000  0.0000  inv_8
+genblk1_8__dut_subBytes/muln_inst   12.2472      0.4    12.2472     0.0000  0.0000  muln_8
+genblk1_8__dut_subBytes/mulx_inst   27.2160      0.8    27.2160     0.0000  0.0000  mulx_8
+genblk1_8__dut_subBytes/s1_inst     10.4328      0.3    10.4328     0.0000  0.0000  s1_8
+genblk1_9__dut_subBytes            150.8220      4.5     0.0000     0.0000  0.0000  SubBytes_7
+genblk1_9__dut_subBytes/fbot_inst   50.8032      1.5    50.8032     0.0000  0.0000  fbot_7
+genblk1_9__dut_subBytes/ftop_inst   38.5560      1.2    38.5560     0.0000  0.0000  ftop_7
+genblk1_9__dut_subBytes/inv_inst    11.5668      0.3    11.5668     0.0000  0.0000  inv_7
+genblk1_9__dut_subBytes/muln_inst   12.2472      0.4    12.2472     0.0000  0.0000  muln_7
+genblk1_9__dut_subBytes/mulx_inst   27.2160      0.8    27.2160     0.0000  0.0000  mulx_7
+genblk1_9__dut_subBytes/s1_inst     10.4328      0.3    10.4328     0.0000  0.0000  s1_7
+genblk2_0__mc_dut                  174.6360      5.3   174.6360     0.0000  0.0000  mix_columns_0
+genblk2_1__mc_dut                  174.6360      5.3   174.6360     0.0000  0.0000  mix_columns_3
+genblk2_2__mc_dut                  174.6360      5.3   174.6360     0.0000  0.0000  mix_columns_2
+genblk2_3__mc_dut                  174.6360      5.3   174.6360     0.0000  0.0000  mix_columns_1
+sr_dut                               0.0000      0.0     0.0000     0.0000  0.0000  shift_rows
+--------------------------------  ---------  -------  ---------  ---------  ------  -------------
+Total                                                 3314.9088     0.0000  0.0000
+
+1

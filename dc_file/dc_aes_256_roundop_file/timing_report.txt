@@ -1,0 +1,105 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : AES_256_roundop
+Version: U-2022.12
+Date   : Fri May 17 22:47:26 2024
+****************************************
+
+Operating Conditions: ss_typical_max_0p81v_125c   Library: sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
+Wire Load Model Mode: top
+
+  Startpoint: input_text[34]
+              (input port clocked by clk)
+  Endpoint: output_text[19]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES_256_roundop    Zero                  sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  input_text[34] (in)                                     0.00       0.00 r
+  genblk1_4__dut_subBytes/byte_in[2] (SubBytes_12)        0.00       0.00 r
+  genblk1_4__dut_subBytes/ftop_inst/U5 (ftop_12)          0.00       0.00 r
+  genblk1_4__dut_subBytes/ftop_inst/U9/Y (XOR2_X0P7M_A9TR)
+                                                          0.12       0.12 r
+  genblk1_4__dut_subBytes/ftop_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.14       0.26 r
+  genblk1_4__dut_subBytes/ftop_inst/U200/Y (INV_X1M_A9TR)
+                                                          0.07       0.33 f
+  genblk1_4__dut_subBytes/ftop_inst/U100/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       0.40 f
+  genblk1_4__dut_subBytes/ftop_inst/Q17 (ftop_12)         0.00       0.40 f
+  genblk1_4__dut_subBytes/mulx_inst/Q17 (mulx_12)         0.00       0.40 f
+  genblk1_4__dut_subBytes/mulx_inst/U1/Y (NAND2_X1A_A9TR)
+                                                          0.04       0.45 r
+  genblk1_4__dut_subBytes/mulx_inst/U22/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       0.52 r
+  genblk1_4__dut_subBytes/mulx_inst/U20/Y (XOR2_X0P7M_A9TR)
+                                                          0.13       0.65 r
+  genblk1_4__dut_subBytes/mulx_inst/x3 (mulx_12)          0.00       0.65 r
+  genblk1_4__dut_subBytes/inv_inst/x3 (inv_12)            0.00       0.65 r
+  genblk1_4__dut_subBytes/inv_inst/U11/Y (NOR2_X1A_A9TR)
+                                                          0.05       0.69 f
+  genblk1_4__dut_subBytes/inv_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       0.79 f
+  genblk1_4__dut_subBytes/inv_inst/U3/Y (INV_X1M_A9TR)
+                                                          0.05       0.84 r
+  genblk1_4__dut_subBytes/inv_inst/U2/Y (OAI22_X1M_A9TR)
+                                                          0.05       0.89 f
+  genblk1_4__dut_subBytes/inv_inst/Y0 (inv_12)            0.00       0.89 f
+  genblk1_4__dut_subBytes/s1_inst/Y0 (s1_12)              0.00       0.89 f
+  genblk1_4__dut_subBytes/s1_inst/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       0.98 f
+  genblk1_4__dut_subBytes/s1_inst/Y02 (s1_12)             0.00       0.98 f
+  genblk1_4__dut_subBytes/muln_inst/Y02 (muln_12)         0.00       0.98 f
+  genblk1_4__dut_subBytes/muln_inst/U18/Y (NAND2_X1A_A9TR)
+                                                          0.03       1.01 r
+  genblk1_4__dut_subBytes/muln_inst/N17 (muln_12)         0.00       1.01 r
+  genblk1_4__dut_subBytes/fbot_inst/N17 (fbot_12)         0.00       1.01 r
+  genblk1_4__dut_subBytes/fbot_inst/U32/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       1.11 r
+  genblk1_4__dut_subBytes/fbot_inst/U26/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       1.20 r
+  genblk1_4__dut_subBytes/fbot_inst/U3/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       1.28 r
+  genblk1_4__dut_subBytes/fbot_inst/U1/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       1.37 r
+  genblk1_4__dut_subBytes/fbot_inst/U4/Y (XOR2_X0P7M_A9TR)
+                                                          0.11       1.47 r
+  genblk1_4__dut_subBytes/fbot_inst/R4 (fbot_12)          0.00       1.47 r
+  genblk1_4__dut_subBytes/byte_o[3] (SubBytes_12)         0.00       1.47 r
+  sr_dut/shift_rows_in[35] (shift_rows)                   0.00       1.47 r
+  sr_dut/shift_rows_o[3] (shift_rows)                     0.00       1.47 r
+  genblk2_3__mc_dut/mix_col_in[3] (mix_columns_1)         0.00       1.47 r
+  genblk2_3__mc_dut/U7/Y (XNOR2_X0P7M_A9TR)               0.13       1.60 r
+  genblk2_3__mc_dut/U1/Y (INV_X1M_A9TR)                   0.03       1.63 f
+  genblk2_3__mc_dut/U34/Y (XOR2_X0P7M_A9TR)               0.07       1.70 f
+  genblk2_3__mc_dut/U32/Y (XOR2_X0P7M_A9TR)               0.08       1.78 f
+  genblk2_3__mc_dut/mix_col_o[19] (mix_columns_1)         0.00       1.78 f
+  ark_dut/ARK_in[19] (ARK)                                0.00       1.78 f
+  ark_dut/U1/Y (XOR2_X0P7M_A9TR)                          0.06       1.84 f
+  ark_dut/ARK_out[19] (ARK)                               0.00       1.84 f
+  output_text[19] (out)                                   0.00       1.84 f
+  data arrival time                                                  1.84
+
+  max_delay                                              30.00      30.00
+  output external delay                                   0.00      30.00
+  data required time                                                30.00
+  --------------------------------------------------------------------------
+  data required time                                                30.00
+  data arrival time                                                 -1.84
+  --------------------------------------------------------------------------
+  slack (MET)                                                       28.16
+
+
+1

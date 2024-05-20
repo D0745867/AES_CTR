@@ -22,13 +22,13 @@ alias h history
 #Path_Syn:合成後report.txt檔案要放置的根位置，需自行在目錄下創建名為dc_out_file之資料夾
 #Dump_file_name:合成後產生檔案之名字
 set Path_Top		"./"
-set Path_Syn		"./dc_aes256_file"
+set Path_Syn		"./dc_aes256_KE_file"
 if {![file exists $Path_Syn]} {
     file mkdir $Path_Syn
 }
-set Dump_file_name "aes256_syn"
+set Dump_file_name "key_expansion_syn"
 #設定Top module 名稱，需跟自行設計之電路的top module name相同
-set Top				"AES_256_CTR"
+set Top				"key_expansion"
 #Specify Clock，clock名需和top module中clk port相同
 set Clk_pin			"clk"
 set Clk_period		"30"
@@ -38,12 +38,8 @@ set Clk_period		"30"
 # read_file -format verilog {/home/m103040049/HDL_HW/multiplier.v}
 # current_design $Top
 analyze -format verilog {
-/home/che0514/AES_CTR/RTL/AES256_ctr.v
-/home/che0514/AES_CTR/RTL/AES_256.v
-/home/che0514/AES_CTR/RTL/key_expansion_256.v 
-/home/che0514/AES_CTR/RTL/sub_bytes_4.v
-/home/che0514/AES_CTR/RTL/mix_columns.v
-/home/che0514/AES_CTR/RTL/shift_rows.v
+/home/che0514/AES_CTR/RTL_com/key_expansion_256.v
+/home/che0514/AES_CTR/RTL_com/sub_bytes_v4.v
 }
 elaborate $Top
 

@@ -1,14 +1,13 @@
 Loading db file '/cad/CBDK/CBDK_TSMC40_Arm_f2.0/CIC/SynopsysDC/db/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db'
 Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
 Warning: Design has unannotated primary inputs. (PWR-414)
-Warning: Design has unannotated sequential cell outputs. (PWR-415)
  
 ****************************************
 Report : power
         -analysis_effort low
-Design : AES_256_CTR
+Design : AES_256_roundop
 Version: U-2022.12
-Date   : Fri May 17 13:33:55 2024
+Date   : Sat May 18 21:23:55 2024
 ****************************************
 
 
@@ -22,7 +21,7 @@ Wire Load Model Mode: top
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-AES_256_CTR            Zero              sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
+AES_256_roundop        Zero              sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
 
 
 Global Operating Voltage = 0.81 
@@ -39,13 +38,14 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   1.5750 mW   (86%)
-  Net Switching Power  = 259.3893 uW   (14%)
+  Cell Internal Power  =   2.3249 mW   (66%)
+  Net Switching Power  =   1.1971 mW   (34%)
                          ---------
-Total Dynamic Power    =   1.8344 mW  (100%)
+Total Dynamic Power    =   3.5220 mW  (100%)
 
-Cell Leakage Power     =  88.5782 uW
+Cell Leakage Power     = 177.7795 uW
 
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
@@ -53,10 +53,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network      1.1795            0.0000            0.0000            1.1795  (  61.34%)  i
-register       6.5615e-02        2.3901e-02           23.4794            0.1130  (   5.88%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      0.3299            0.2355           65.0959            0.6305  (  32.79%)
+combinational      2.3249            1.1971          177.7795            3.6998  ( 100.00%)
 --------------------------------------------------------------------------------------------------
-Total              1.5750 mW         0.2594 mW        88.5753 uW         1.9230 mW
+Total              2.3249 mW         1.1971 mW       177.7795 uW         3.6998 mW
 1

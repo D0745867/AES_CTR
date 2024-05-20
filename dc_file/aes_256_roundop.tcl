@@ -22,28 +22,27 @@ alias h history
 #Path_Syn:合成後report.txt檔案要放置的根位置，需自行在目錄下創建名為dc_out_file之資料夾
 #Dump_file_name:合成後產生檔案之名字
 set Path_Top		"./"
-set Path_Syn		"./dc_aes256_file"
+set Path_Syn		"./dc_aes_256_roundop_file_1ns"
 if {![file exists $Path_Syn]} {
     file mkdir $Path_Syn
 }
-set Dump_file_name "aes256_syn"
+set Dump_file_name "dc_aes_256_roundop_syn"
 #設定Top module 名稱，需跟自行設計之電路的top module name相同
-set Top				"AES_256_CTR"
+set Top				"AES_256_roundop"
 #Specify Clock，clock名需和top module中clk port相同
 set Clk_pin			"clk"
-set Clk_period		"30"
+set Clk_period		"1"
 
 #Read Design
 #如果設計有parameter設計，read_file指定不能用，需使用analyze + elaborate指令並自行更改路徑
 # read_file -format verilog {/home/m103040049/HDL_HW/multiplier.v}
 # current_design $Top
 analyze -format verilog {
-/home/che0514/AES_CTR/RTL/AES256_ctr.v
-/home/che0514/AES_CTR/RTL/AES_256.v
-/home/che0514/AES_CTR/RTL/key_expansion_256.v 
-/home/che0514/AES_CTR/RTL/sub_bytes_4.v
-/home/che0514/AES_CTR/RTL/mix_columns.v
-/home/che0514/AES_CTR/RTL/shift_rows.v
+/home/che0514/AES_CTR/RTL_com/AES_256.v
+/home/che0514/AES_CTR/RTL_com/sub_bytes_v4.v
+/home/che0514/AES_CTR/RTL_com/mix_columns.v
+/home/che0514/AES_CTR/RTL_com/shift_rows.v
+/home/che0514/AES_CTR/RTL_com/add_roundkey.v
 }
 elaborate $Top
 
@@ -51,14 +50,14 @@ elaborate $Top
 link
 
 #Max Delay (For Combinational Circurt)
-#set_max_delay $Clk_period  -from [all_inputs] -to [all_outputs]
-#create_clock -name $Clk_pin -period $Clk_period 
+set_max_delay $Clk_period  -from [all_inputs] -to [all_outputs]
+create_clock -name $Clk_pin -period $Clk_period 
 
 #Setting Timing Constraints、Specify Clock (For Sequential Circurt)
-create_clock -name $Clk_pin -period $Clk_period [get_ports $Clk_pin]
-set_dont_touch_network						[get_clocks $Clk_pin]
-set_fix_hold									[get_clocks $Clk_pin]
-set_ideal_network								[get_ports $Clk_pin]
+# create_clock -name $Clk_pin -period $Clk_period [get_ports $Clk_pin]
+# set_dont_touch_network						[get_clocks $Clk_pin]
+# set_fix_hold									[get_clocks $Clk_pin]
+# set_ideal_network								[get_ports $Clk_pin]
 
 #Setting Input / Output Delay
 set_input_delay    	0    -clock $Clk_pin [remove_from_collection [all_inputs] [get_ports $Clk_pin]]

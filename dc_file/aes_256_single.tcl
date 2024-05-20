@@ -31,7 +31,7 @@ set Dump_file_name "aes256_single_syn"
 set Top				"AES_256_CTR"
 #Specify Clock，clock名需和top module中clk port相同
 set Clk_pin			"clk"
-set Clk_period		"30"
+set Clk_period		"2.01"
 
 #Read Design
 #如果設計有parameter設計，read_file指定不能用，需使用analyze + elaborate指令並自行更改路徑

@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : area
+Design : key_expansion
+Version: U-2022.12
+Date   : Sat May 18 22:02:55 2024
+****************************************
+
+Library(s) Used:
+
+    sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c (File: /cad/CBDK/CBDK_TSMC40_Arm_f2.0/CIC/SynopsysDC/db/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db)
+
+Number of ports:                          559
+Number of nets:                          2162
+Number of cells:                         1738
+Number of combinational cells:           1443
+Number of sequential cells:               288
+Number of macros/black boxes:               0
+Number of buf/inv:                        437
+Number of references:                      28
+
+Combinational area:               1402.531168
+Buf/Inv area:                      229.521599
+Noncombinational area:            1132.185623
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  2534.716791
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------
+key_expansion                     2534.7168    100.0  1251.2556  1132.1856  0.0000  key_expansion
+dut_subBytes                       151.2756      6.0     0.0000     0.0000  0.0000  SubBytes
+dut_subBytes/fbot_inst              51.2568      2.0    51.2568     0.0000  0.0000  fbot
+dut_subBytes/ftop_inst              38.5560      1.5    38.5560     0.0000  0.0000  ftop
+dut_subBytes/inv_inst               11.5668      0.5    11.5668     0.0000  0.0000  inv
+dut_subBytes/muln_inst              12.2472      0.5    12.2472     0.0000  0.0000  muln
+dut_subBytes/mulx_inst              27.2160      1.1    27.2160     0.0000  0.0000  mulx
+dut_subBytes/s1_inst                10.4328      0.4    10.4328     0.0000  0.0000  s1
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------
+Total                                                 1402.5312  1132.1856  0.0000
+
+1
