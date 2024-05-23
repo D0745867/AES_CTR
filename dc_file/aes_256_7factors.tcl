@@ -22,11 +22,11 @@ alias h history
 #Path_Syn:合成後report.txt檔案要放置的根位置，需自行在目錄下創建名為dc_out_file之資料夾
 #Dump_file_name:合成後產生檔案之名字
 set Path_Top		"./"
-set Path_Syn		"./dc_aes256_unroll7_file"
+set Path_Syn		"./dc_AES_256_unrolling_7_file"
 if {![file exists $Path_Syn]} {
     file mkdir $Path_Syn
 }
-set Dump_file_name "AES_256_unrolling_7_syn"
+set Dump_file_name "dc_AES_256_unrolling_7_syn"
 #設定Top module 名稱，需跟自行設計之電路的top module name相同
 set Top				"AES_256_unrolling_7"
 #Specify Clock，clock名需和top module中clk port相同
@@ -38,8 +38,12 @@ set Clk_period		"30"
 # read_file -format verilog {/home/m103040049/HDL_HW/multiplier.v}
 # current_design $Top
 analyze -format verilog {
-/home/che0514/AES_CTR/RTL_com/key_expansion_256.v
-/home/che0514/AES_CTR/RTL_com/sub_bytes_v4.v
+/home/che0514/AES_CTR/RTL_unroll_7/AES_256_unroll_7.v
+/home/che0514/AES_CTR/RTL_unroll_7/AES_256.v
+/home/che0514/AES_CTR/RTL_unroll_7/sub_bytes_v4.v
+/home/che0514/AES_CTR/RTL_unroll_7/mix_columns.v
+/home/che0514/AES_CTR/RTL_unroll_7/shift_rows.v
+/home/che0514/AES_CTR/RTL_unroll_7/add_roundkey.v
 }
 elaborate $Top
 
@@ -51,10 +55,10 @@ set_max_delay $Clk_period  -from [all_inputs] -to [all_outputs]
 create_clock -name $Clk_pin -period $Clk_period 
 
 #Setting Timing Constraints、Specify Clock (For Sequential Circurt)
-#create_clock -name $Clk_pin -period $Clk_period [get_ports $Clk_pin]
-#set_dont_touch_network						[get_clocks $Clk_pin]
-#set_fix_hold									[get_clocks $Clk_pin]
-#set_ideal_network								[get_ports $Clk_pin]
+# create_clock -name $Clk_pin -period $Clk_period [get_ports $Clk_pin]
+# set_dont_touch_network						[get_clocks $Clk_pin]
+# set_fix_hold									[get_clocks $Clk_pin]
+# set_ideal_network								[get_ports $Clk_pin]
 
 #Setting Input / Output Delay
 set_input_delay    	0    -clock $Clk_pin [remove_from_collection [all_inputs] [get_ports $Clk_pin]]

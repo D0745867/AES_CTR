@@ -19,14 +19,12 @@ module SubBytes (
 
     assign byte_o = {R0, R1, R2, R3, R4, R5, R6, R7};
      
-    // 信号连接
     wire Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17;
     wire x0, x1, x2, x3;
     wire Y00, Y01, Y02, Y13, Y23, Y0, Y1, Y2, Y3;
     wire N0, N1, N2, N3, N4, N5, N6, N7, N8, N9, N10, N11, N12, N13, N14, N15, N16, N17;
     wire T0, T3;
 
-    // 实例化 ftop 模块
     ftop ftop_inst (
         .U0(U0), .U1(U1), .U2(U2), .U3(U3), .U4(U4), .U5(U5), .U6(U6), .U7(U7),
         .Q0(Q0), .Q1(Q1), .Q2(Q2), .Q3(Q3), .Q4(Q4), .Q5(Q5), .Q6(Q6), .Q7(Q7),
@@ -34,28 +32,24 @@ module SubBytes (
         .Q16(Q16), .Q17(Q17)
     );
 
-    // 实例化 mulx 模块
     mulx mulx_inst (
         .Q0(Q0), .Q1(Q1), .Q2(Q2), .Q3(Q3), .Q4(Q4), .Q5(Q5), .Q6(Q6), .Q7(Q7), .Q8(Q8), .Q9(Q9),
         .Q10(Q10), .Q11(Q11), .Q12(Q12), .Q13(Q13), .Q14(Q14), .Q15(Q15), .Q16(Q16), .Q17(Q17),
         .x0(x0), .x1(x1), .x2(x2), .x3(x3)
     );
 
-    // 实例化 inv 模块
     inv inv_inst (
         .x0(x0), .x1(x1), .x2(x2), .x3(x3),
         .T0(T0), .T3(T3),
         .Y0(Y0), .Y1(Y1), .Y2(Y2), .Y3(Y3)
     );
 
-    // 实例化 s1 模块
     s1 s1_inst (
         .x0(x0), .x1(x1), .x2(x2), .x3(x3), .T0(T0), .T3(T3),
         .Y0(Y0), .Y1(Y1), .Y2(Y2), .Y3(Y3),
         .Y00(Y00), .Y01(Y01), .Y02(Y02), .Y13(Y13), .Y23(Y23)
     );
 
-    // 实例化 muln 模块
     muln muln_inst (
         .Y00(Y00), .Y01(Y01), .Y02(Y02), .Y0(Y0), .Y1(Y1), .Y2(Y2), .Y3(Y3), .Y13(Y13), .Y23(Y23),
         .Q0(Q0), .Q1(Q1), .Q2(Q2), .Q3(Q3), .Q4(Q4), .Q5(Q5), .Q6(Q6), .Q7(Q7),
@@ -64,7 +58,6 @@ module SubBytes (
         .N8(N8), .N9(N9), .N10(N10), .N11(N11), .N12(N12), .N13(N13), .N14(N14), .N15(N15), .N16(N16), .N17(N17)
     );
 
-    // 实例化 fbot 模块
     fbot fbot_inst (
         .N0(N0), .N1(N1), .N2(N2), .N3(N3), .N4(N4), .N5(N5), .N6(N6), .N7(N7),
         .N8(N8), .N9(N9), .N10(N10), .N11(N11), .N12(N12), .N13(N13), .N14(N14), .N15(N15), .N16(N16), .N17(N17),

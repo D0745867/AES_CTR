@@ -1,0 +1,511 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : AES_256_unrolling_7
+Version: U-2022.12
+Date   : Mon May 20 15:29:12 2024
+****************************************
+
+Operating Conditions: ss_typical_max_0p81v_125c   Library: sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
+Wire Load Model Mode: top
+
+  Startpoint: input_text[2]
+              (input port clocked by clk)
+  Endpoint: output_text[19]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES_256_unrolling_7
+                     Zero                  sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  input_text[2] (in)                                      0.00       0.00 r
+  op1/input_text[2] (AES_256_roundop_0)                   0.00       0.00 r
+  op1/genblk1_0__dut_subBytes/byte_in[2] (SubBytes_0)     0.00       0.00 r
+  op1/genblk1_0__dut_subBytes/ftop_inst/U5 (ftop_0)       0.00       0.00 r
+  op1/genblk1_0__dut_subBytes/ftop_inst/U9/Y (XOR2_X0P7M_A9TR)
+                                                          0.12       0.12 r
+  op1/genblk1_0__dut_subBytes/ftop_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.14       0.26 r
+  op1/genblk1_0__dut_subBytes/ftop_inst/U200/Y (INV_X1M_A9TR)
+                                                          0.07       0.33 f
+  op1/genblk1_0__dut_subBytes/ftop_inst/U100/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       0.40 f
+  op1/genblk1_0__dut_subBytes/ftop_inst/Q17 (ftop_0)      0.00       0.40 f
+  op1/genblk1_0__dut_subBytes/mulx_inst/Q17 (mulx_0)      0.00       0.40 f
+  op1/genblk1_0__dut_subBytes/mulx_inst/U1/Y (NAND2_X1A_A9TR)
+                                                          0.04       0.45 r
+  op1/genblk1_0__dut_subBytes/mulx_inst/U22/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       0.52 r
+  op1/genblk1_0__dut_subBytes/mulx_inst/U20/Y (XOR2_X0P7M_A9TR)
+                                                          0.13       0.65 r
+  op1/genblk1_0__dut_subBytes/mulx_inst/x3 (mulx_0)       0.00       0.65 r
+  op1/genblk1_0__dut_subBytes/inv_inst/x3 (inv_0)         0.00       0.65 r
+  op1/genblk1_0__dut_subBytes/inv_inst/U11/Y (NOR2_X1A_A9TR)
+                                                          0.05       0.69 f
+  op1/genblk1_0__dut_subBytes/inv_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       0.79 f
+  op1/genblk1_0__dut_subBytes/inv_inst/U3/Y (INV_X1M_A9TR)
+                                                          0.05       0.84 r
+  op1/genblk1_0__dut_subBytes/inv_inst/U2/Y (OAI22_X1M_A9TR)
+                                                          0.05       0.89 f
+  op1/genblk1_0__dut_subBytes/inv_inst/Y0 (inv_0)         0.00       0.89 f
+  op1/genblk1_0__dut_subBytes/s1_inst/Y0 (s1_0)           0.00       0.89 f
+  op1/genblk1_0__dut_subBytes/s1_inst/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       0.98 f
+  op1/genblk1_0__dut_subBytes/s1_inst/Y02 (s1_0)          0.00       0.98 f
+  op1/genblk1_0__dut_subBytes/muln_inst/Y02 (muln_0)      0.00       0.98 f
+  op1/genblk1_0__dut_subBytes/muln_inst/U18/Y (NAND2_X1A_A9TR)
+                                                          0.03       1.01 r
+  op1/genblk1_0__dut_subBytes/muln_inst/N17 (muln_0)      0.00       1.01 r
+  op1/genblk1_0__dut_subBytes/fbot_inst/N17 (fbot_0)      0.00       1.01 r
+  op1/genblk1_0__dut_subBytes/fbot_inst/U32/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       1.11 r
+  op1/genblk1_0__dut_subBytes/fbot_inst/U26/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       1.20 r
+  op1/genblk1_0__dut_subBytes/fbot_inst/U3/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       1.28 r
+  op1/genblk1_0__dut_subBytes/fbot_inst/U1/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       1.37 r
+  op1/genblk1_0__dut_subBytes/fbot_inst/U4/Y (XOR2_X0P7M_A9TR)
+                                                          0.11       1.47 r
+  op1/genblk1_0__dut_subBytes/fbot_inst/R4 (fbot_0)       0.00       1.47 r
+  op1/genblk1_0__dut_subBytes/byte_o[3] (SubBytes_0)      0.00       1.47 r
+  op1/sr_dut/shift_rows_in[3] (shift_rows_0)              0.00       1.47 r
+  op1/sr_dut/shift_rows_o[99] (shift_rows_0)              0.00       1.47 r
+  op1/genblk2_0__mc_dut/mix_col_in[3] (mix_columns_0)     0.00       1.47 r
+  op1/genblk2_0__mc_dut/U7/Y (XNOR2_X0P7M_A9TR)           0.13       1.60 r
+  op1/genblk2_0__mc_dut/U37/Y (XOR2_X0P7M_A9TR)           0.07       1.67 r
+  op1/genblk2_0__mc_dut/U35/Y (XOR2_X0P7M_A9TR)           0.08       1.76 r
+  op1/genblk2_0__mc_dut/mix_col_o[27] (mix_columns_0)     0.00       1.76 r
+  op1/ark_dut/ARK_in[123] (ARK_0)                         0.00       1.76 r
+  op1/ark_dut/U24/Y (XOR2_X0P7M_A9TR)                     0.10       1.86 r
+  op1/ark_dut/ARK_out[123] (ARK_0)                        0.00       1.86 r
+  op1/output_text[123] (AES_256_roundop_0)                0.00       1.86 r
+  op2/input_text[123] (AES_256_roundop_6)                 0.00       1.86 r
+  op2/genblk1_15__dut_subBytes/byte_in[3] (SubBytes_81)
+                                                          0.00       1.86 r
+  op2/genblk1_15__dut_subBytes/ftop_inst/U4 (ftop_81)     0.00       1.86 r
+  op2/genblk1_15__dut_subBytes/ftop_inst/U9/Y (XOR2_X0P7M_A9TR)
+                                                          0.12       1.98 r
+  op2/genblk1_15__dut_subBytes/ftop_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.14       2.12 r
+  op2/genblk1_15__dut_subBytes/ftop_inst/U200/Y (INV_X1M_A9TR)
+                                                          0.07       2.19 f
+  op2/genblk1_15__dut_subBytes/ftop_inst/U100/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       2.27 f
+  op2/genblk1_15__dut_subBytes/ftop_inst/Q17 (ftop_81)
+                                                          0.00       2.27 f
+  op2/genblk1_15__dut_subBytes/mulx_inst/Q17 (mulx_81)
+                                                          0.00       2.27 f
+  op2/genblk1_15__dut_subBytes/mulx_inst/U1/Y (NAND2_X1A_A9TR)
+                                                          0.04       2.31 r
+  op2/genblk1_15__dut_subBytes/mulx_inst/U22/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       2.38 r
+  op2/genblk1_15__dut_subBytes/mulx_inst/U20/Y (XOR2_X0P7M_A9TR)
+                                                          0.13       2.51 r
+  op2/genblk1_15__dut_subBytes/mulx_inst/x3 (mulx_81)     0.00       2.51 r
+  op2/genblk1_15__dut_subBytes/inv_inst/x3 (inv_81)       0.00       2.51 r
+  op2/genblk1_15__dut_subBytes/inv_inst/U11/Y (NOR2_X1A_A9TR)
+                                                          0.05       2.55 f
+  op2/genblk1_15__dut_subBytes/inv_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       2.65 f
+  op2/genblk1_15__dut_subBytes/inv_inst/U3/Y (INV_X1M_A9TR)
+                                                          0.05       2.70 r
+  op2/genblk1_15__dut_subBytes/inv_inst/U2/Y (OAI22_X1M_A9TR)
+                                                          0.05       2.75 f
+  op2/genblk1_15__dut_subBytes/inv_inst/Y0 (inv_81)       0.00       2.75 f
+  op2/genblk1_15__dut_subBytes/s1_inst/Y0 (s1_81)         0.00       2.75 f
+  op2/genblk1_15__dut_subBytes/s1_inst/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       2.84 f
+  op2/genblk1_15__dut_subBytes/s1_inst/Y02 (s1_81)        0.00       2.84 f
+  op2/genblk1_15__dut_subBytes/muln_inst/Y02 (muln_81)
+                                                          0.00       2.84 f
+  op2/genblk1_15__dut_subBytes/muln_inst/U18/Y (NAND2_X1A_A9TR)
+                                                          0.03       2.88 r
+  op2/genblk1_15__dut_subBytes/muln_inst/N17 (muln_81)
+                                                          0.00       2.88 r
+  op2/genblk1_15__dut_subBytes/fbot_inst/N17 (fbot_81)
+                                                          0.00       2.88 r
+  op2/genblk1_15__dut_subBytes/fbot_inst/U32/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       2.98 r
+  op2/genblk1_15__dut_subBytes/fbot_inst/U26/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       3.07 r
+  op2/genblk1_15__dut_subBytes/fbot_inst/U4/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       3.15 r
+  op2/genblk1_15__dut_subBytes/fbot_inst/U1/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       3.24 r
+  op2/genblk1_15__dut_subBytes/fbot_inst/U3/Y (XOR2_X0P7M_A9TR)
+                                                          0.11       3.35 r
+  op2/genblk1_15__dut_subBytes/fbot_inst/R4 (fbot_81)     0.00       3.35 r
+  op2/genblk1_15__dut_subBytes/byte_o[3] (SubBytes_81)
+                                                          0.00       3.35 r
+  op2/sr_dut/shift_rows_in[123] (shift_rows_6)            0.00       3.35 r
+  op2/sr_dut/shift_rows_o[123] (shift_rows_6)             0.00       3.35 r
+  op2/genblk2_0__mc_dut/mix_col_in[27] (mix_columns_24)
+                                                          0.00       3.35 r
+  op2/genblk2_0__mc_dut/U7/Y (XOR2_X0P7M_A9TR)            0.11       3.46 r
+  op2/genblk2_0__mc_dut/U40/Y (XOR2_X0P7M_A9TR)           0.09       3.55 r
+  op2/genblk2_0__mc_dut/U38/Y (XOR2_X0P7M_A9TR)           0.08       3.63 r
+  op2/genblk2_0__mc_dut/mix_col_o[3] (mix_columns_24)     0.00       3.63 r
+  op2/ark_dut/ARK_in[99] (ARK_6)                          0.00       3.63 r
+  op2/ark_dut/U26/Y (XOR2_X0P7M_A9TR)                     0.10       3.73 r
+  op2/ark_dut/ARK_out[99] (ARK_6)                         0.00       3.73 r
+  op2/output_text[99] (AES_256_roundop_6)                 0.00       3.73 r
+  op3/input_text[99] (AES_256_roundop_5)                  0.00       3.73 r
+  op3/genblk1_12__dut_subBytes/byte_in[3] (SubBytes_68)
+                                                          0.00       3.73 r
+  op3/genblk1_12__dut_subBytes/ftop_inst/U4 (ftop_68)     0.00       3.73 r
+  op3/genblk1_12__dut_subBytes/ftop_inst/U9/Y (XOR2_X0P7M_A9TR)
+                                                          0.12       3.85 r
+  op3/genblk1_12__dut_subBytes/ftop_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.14       3.99 r
+  op3/genblk1_12__dut_subBytes/ftop_inst/U200/Y (INV_X1M_A9TR)
+                                                          0.07       4.06 f
+  op3/genblk1_12__dut_subBytes/ftop_inst/U100/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       4.14 f
+  op3/genblk1_12__dut_subBytes/ftop_inst/Q17 (ftop_68)
+                                                          0.00       4.14 f
+  op3/genblk1_12__dut_subBytes/mulx_inst/Q17 (mulx_68)
+                                                          0.00       4.14 f
+  op3/genblk1_12__dut_subBytes/mulx_inst/U1/Y (NAND2_X1A_A9TR)
+                                                          0.04       4.18 r
+  op3/genblk1_12__dut_subBytes/mulx_inst/U22/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       4.25 r
+  op3/genblk1_12__dut_subBytes/mulx_inst/U20/Y (XOR2_X0P7M_A9TR)
+                                                          0.13       4.38 r
+  op3/genblk1_12__dut_subBytes/mulx_inst/x3 (mulx_68)     0.00       4.38 r
+  op3/genblk1_12__dut_subBytes/inv_inst/x3 (inv_68)       0.00       4.38 r
+  op3/genblk1_12__dut_subBytes/inv_inst/U11/Y (NOR2_X1A_A9TR)
+                                                          0.05       4.43 f
+  op3/genblk1_12__dut_subBytes/inv_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       4.52 f
+  op3/genblk1_12__dut_subBytes/inv_inst/U3/Y (INV_X1M_A9TR)
+                                                          0.05       4.57 r
+  op3/genblk1_12__dut_subBytes/inv_inst/U2/Y (OAI22_X1M_A9TR)
+                                                          0.05       4.63 f
+  op3/genblk1_12__dut_subBytes/inv_inst/Y0 (inv_68)       0.00       4.63 f
+  op3/genblk1_12__dut_subBytes/s1_inst/Y0 (s1_68)         0.00       4.63 f
+  op3/genblk1_12__dut_subBytes/s1_inst/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       4.71 f
+  op3/genblk1_12__dut_subBytes/s1_inst/Y02 (s1_68)        0.00       4.71 f
+  op3/genblk1_12__dut_subBytes/muln_inst/Y02 (muln_68)
+                                                          0.00       4.71 f
+  op3/genblk1_12__dut_subBytes/muln_inst/U18/Y (NAND2_X1A_A9TR)
+                                                          0.03       4.75 r
+  op3/genblk1_12__dut_subBytes/muln_inst/N17 (muln_68)
+                                                          0.00       4.75 r
+  op3/genblk1_12__dut_subBytes/fbot_inst/N17 (fbot_68)
+                                                          0.00       4.75 r
+  op3/genblk1_12__dut_subBytes/fbot_inst/U32/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       4.85 r
+  op3/genblk1_12__dut_subBytes/fbot_inst/U26/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       4.94 r
+  op3/genblk1_12__dut_subBytes/fbot_inst/U3/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       5.03 r
+  op3/genblk1_12__dut_subBytes/fbot_inst/U1/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       5.11 r
+  op3/genblk1_12__dut_subBytes/fbot_inst/U4/Y (XOR2_X0P7M_A9TR)
+                                                          0.11       5.22 r
+  op3/genblk1_12__dut_subBytes/fbot_inst/R4 (fbot_68)     0.00       5.22 r
+  op3/genblk1_12__dut_subBytes/byte_o[3] (SubBytes_68)
+                                                          0.00       5.22 r
+  op3/sr_dut/shift_rows_in[99] (shift_rows_5)             0.00       5.22 r
+  op3/sr_dut/shift_rows_o[67] (shift_rows_5)              0.00       5.22 r
+  op3/genblk2_1__mc_dut/mix_col_in[3] (mix_columns_19)
+                                                          0.00       5.22 r
+  op3/genblk2_1__mc_dut/U7/Y (XNOR2_X0P7M_A9TR)           0.13       5.34 r
+  op3/genblk2_1__mc_dut/U37/Y (XOR2_X0P7M_A9TR)           0.07       5.42 r
+  op3/genblk2_1__mc_dut/U35/Y (XOR2_X0P7M_A9TR)           0.08       5.50 r
+  op3/genblk2_1__mc_dut/mix_col_o[27] (mix_columns_19)
+                                                          0.00       5.50 r
+  op3/ark_dut/ARK_in[91] (ARK_5)                          0.00       5.50 r
+  op3/ark_dut/U21/Y (XOR2_X0P7M_A9TR)                     0.10       5.60 r
+  op3/ark_dut/ARK_out[91] (ARK_5)                         0.00       5.60 r
+  op3/output_text[91] (AES_256_roundop_5)                 0.00       5.60 r
+  op4/input_text[91] (AES_256_roundop_4)                  0.00       5.60 r
+  op4/genblk1_11__dut_subBytes/byte_in[3] (SubBytes_53)
+                                                          0.00       5.60 r
+  op4/genblk1_11__dut_subBytes/ftop_inst/U4 (ftop_53)     0.00       5.60 r
+  op4/genblk1_11__dut_subBytes/ftop_inst/U9/Y (XOR2_X0P7M_A9TR)
+                                                          0.12       5.72 r
+  op4/genblk1_11__dut_subBytes/ftop_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.14       5.86 r
+  op4/genblk1_11__dut_subBytes/ftop_inst/U200/Y (INV_X1M_A9TR)
+                                                          0.07       5.94 f
+  op4/genblk1_11__dut_subBytes/ftop_inst/U100/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       6.01 f
+  op4/genblk1_11__dut_subBytes/ftop_inst/Q17 (ftop_53)
+                                                          0.00       6.01 f
+  op4/genblk1_11__dut_subBytes/mulx_inst/Q17 (mulx_53)
+                                                          0.00       6.01 f
+  op4/genblk1_11__dut_subBytes/mulx_inst/U1/Y (NAND2_X1A_A9TR)
+                                                          0.04       6.06 r
+  op4/genblk1_11__dut_subBytes/mulx_inst/U22/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       6.12 r
+  op4/genblk1_11__dut_subBytes/mulx_inst/U20/Y (XOR2_X0P7M_A9TR)
+                                                          0.13       6.25 r
+  op4/genblk1_11__dut_subBytes/mulx_inst/x3 (mulx_53)     0.00       6.25 r
+  op4/genblk1_11__dut_subBytes/inv_inst/x3 (inv_53)       0.00       6.25 r
+  op4/genblk1_11__dut_subBytes/inv_inst/U11/Y (NOR2_X1A_A9TR)
+                                                          0.05       6.30 f
+  op4/genblk1_11__dut_subBytes/inv_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       6.40 f
+  op4/genblk1_11__dut_subBytes/inv_inst/U3/Y (INV_X1M_A9TR)
+                                                          0.05       6.45 r
+  op4/genblk1_11__dut_subBytes/inv_inst/U2/Y (OAI22_X1M_A9TR)
+                                                          0.05       6.50 f
+  op4/genblk1_11__dut_subBytes/inv_inst/Y0 (inv_53)       0.00       6.50 f
+  op4/genblk1_11__dut_subBytes/s1_inst/Y0 (s1_53)         0.00       6.50 f
+  op4/genblk1_11__dut_subBytes/s1_inst/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       6.59 f
+  op4/genblk1_11__dut_subBytes/s1_inst/Y02 (s1_53)        0.00       6.59 f
+  op4/genblk1_11__dut_subBytes/muln_inst/Y02 (muln_53)
+                                                          0.00       6.59 f
+  op4/genblk1_11__dut_subBytes/muln_inst/U18/Y (NAND2_X1A_A9TR)
+                                                          0.03       6.62 r
+  op4/genblk1_11__dut_subBytes/muln_inst/N17 (muln_53)
+                                                          0.00       6.62 r
+  op4/genblk1_11__dut_subBytes/fbot_inst/N17 (fbot_53)
+                                                          0.00       6.62 r
+  op4/genblk1_11__dut_subBytes/fbot_inst/U32/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       6.72 r
+  op4/genblk1_11__dut_subBytes/fbot_inst/U26/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       6.81 r
+  op4/genblk1_11__dut_subBytes/fbot_inst/U4/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       6.90 r
+  op4/genblk1_11__dut_subBytes/fbot_inst/U1/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       6.98 r
+  op4/genblk1_11__dut_subBytes/fbot_inst/U3/Y (XOR2_X0P7M_A9TR)
+                                                          0.11       7.09 r
+  op4/genblk1_11__dut_subBytes/fbot_inst/R4 (fbot_53)     0.00       7.09 r
+  op4/genblk1_11__dut_subBytes/byte_o[3] (SubBytes_53)
+                                                          0.00       7.09 r
+  op4/sr_dut/shift_rows_in[91] (shift_rows_4)             0.00       7.09 r
+  op4/sr_dut/shift_rows_o[91] (shift_rows_4)              0.00       7.09 r
+  op4/genblk2_1__mc_dut/mix_col_in[27] (mix_columns_15)
+                                                          0.00       7.09 r
+  op4/genblk2_1__mc_dut/U7/Y (XOR2_X0P7M_A9TR)            0.11       7.20 r
+  op4/genblk2_1__mc_dut/U40/Y (XOR2_X0P7M_A9TR)           0.09       7.29 r
+  op4/genblk2_1__mc_dut/U38/Y (XOR2_X0P7M_A9TR)           0.08       7.37 r
+  op4/genblk2_1__mc_dut/mix_col_o[3] (mix_columns_15)     0.00       7.37 r
+  op4/ark_dut/ARK_in[67] (ARK_4)                          0.00       7.37 r
+  op4/ark_dut/U28/Y (XOR2_X0P7M_A9TR)                     0.10       7.48 r
+  op4/ark_dut/ARK_out[67] (ARK_4)                         0.00       7.48 r
+  op4/output_text[67] (AES_256_roundop_4)                 0.00       7.48 r
+  op5/input_text[67] (AES_256_roundop_3)                  0.00       7.48 r
+  op5/genblk1_8__dut_subBytes/byte_in[3] (SubBytes_40)
+                                                          0.00       7.48 r
+  op5/genblk1_8__dut_subBytes/ftop_inst/U4 (ftop_40)      0.00       7.48 r
+  op5/genblk1_8__dut_subBytes/ftop_inst/U9/Y (XOR2_X0P7M_A9TR)
+                                                          0.12       7.60 r
+  op5/genblk1_8__dut_subBytes/ftop_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.14       7.74 r
+  op5/genblk1_8__dut_subBytes/ftop_inst/U200/Y (INV_X1M_A9TR)
+                                                          0.07       7.81 f
+  op5/genblk1_8__dut_subBytes/ftop_inst/U100/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       7.88 f
+  op5/genblk1_8__dut_subBytes/ftop_inst/Q17 (ftop_40)     0.00       7.88 f
+  op5/genblk1_8__dut_subBytes/mulx_inst/Q17 (mulx_40)     0.00       7.88 f
+  op5/genblk1_8__dut_subBytes/mulx_inst/U1/Y (NAND2_X1A_A9TR)
+                                                          0.04       7.93 r
+  op5/genblk1_8__dut_subBytes/mulx_inst/U22/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       8.00 r
+  op5/genblk1_8__dut_subBytes/mulx_inst/U20/Y (XOR2_X0P7M_A9TR)
+                                                          0.13       8.13 r
+  op5/genblk1_8__dut_subBytes/mulx_inst/x3 (mulx_40)      0.00       8.13 r
+  op5/genblk1_8__dut_subBytes/inv_inst/x3 (inv_40)        0.00       8.13 r
+  op5/genblk1_8__dut_subBytes/inv_inst/U11/Y (NOR2_X1A_A9TR)
+                                                          0.05       8.17 f
+  op5/genblk1_8__dut_subBytes/inv_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       8.27 f
+  op5/genblk1_8__dut_subBytes/inv_inst/U3/Y (INV_X1M_A9TR)
+                                                          0.05       8.32 r
+  op5/genblk1_8__dut_subBytes/inv_inst/U2/Y (OAI22_X1M_A9TR)
+                                                          0.05       8.37 f
+  op5/genblk1_8__dut_subBytes/inv_inst/Y0 (inv_40)        0.00       8.37 f
+  op5/genblk1_8__dut_subBytes/s1_inst/Y0 (s1_40)          0.00       8.37 f
+  op5/genblk1_8__dut_subBytes/s1_inst/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       8.46 f
+  op5/genblk1_8__dut_subBytes/s1_inst/Y02 (s1_40)         0.00       8.46 f
+  op5/genblk1_8__dut_subBytes/muln_inst/Y02 (muln_40)     0.00       8.46 f
+  op5/genblk1_8__dut_subBytes/muln_inst/U18/Y (NAND2_X1A_A9TR)
+                                                          0.03       8.49 r
+  op5/genblk1_8__dut_subBytes/muln_inst/N17 (muln_40)     0.00       8.49 r
+  op5/genblk1_8__dut_subBytes/fbot_inst/N17 (fbot_40)     0.00       8.49 r
+  op5/genblk1_8__dut_subBytes/fbot_inst/U32/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       8.60 r
+  op5/genblk1_8__dut_subBytes/fbot_inst/U26/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       8.68 r
+  op5/genblk1_8__dut_subBytes/fbot_inst/U3/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       8.77 r
+  op5/genblk1_8__dut_subBytes/fbot_inst/U1/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       8.85 r
+  op5/genblk1_8__dut_subBytes/fbot_inst/U4/Y (XOR2_X0P7M_A9TR)
+                                                          0.11       8.96 r
+  op5/genblk1_8__dut_subBytes/fbot_inst/R4 (fbot_40)      0.00       8.96 r
+  op5/genblk1_8__dut_subBytes/byte_o[3] (SubBytes_40)     0.00       8.96 r
+  op5/sr_dut/shift_rows_in[67] (shift_rows_3)             0.00       8.96 r
+  op5/sr_dut/shift_rows_o[35] (shift_rows_3)              0.00       8.96 r
+  op5/genblk2_2__mc_dut/mix_col_in[3] (mix_columns_10)
+                                                          0.00       8.96 r
+  op5/genblk2_2__mc_dut/U7/Y (XNOR2_X0P7M_A9TR)           0.13       9.09 r
+  op5/genblk2_2__mc_dut/U37/Y (XOR2_X0P7M_A9TR)           0.07       9.16 r
+  op5/genblk2_2__mc_dut/U35/Y (XOR2_X0P7M_A9TR)           0.08       9.24 r
+  op5/genblk2_2__mc_dut/mix_col_o[27] (mix_columns_10)
+                                                          0.00       9.24 r
+  op5/ark_dut/ARK_in[59] (ARK_3)                          0.00       9.24 r
+  op5/ark_dut/U21/Y (XOR2_X0P7M_A9TR)                     0.10       9.35 r
+  op5/ark_dut/ARK_out[59] (ARK_3)                         0.00       9.35 r
+  op5/output_text[59] (AES_256_roundop_3)                 0.00       9.35 r
+  op6/input_text[59] (AES_256_roundop_2)                  0.00       9.35 r
+  op6/genblk1_7__dut_subBytes/byte_in[3] (SubBytes_25)
+                                                          0.00       9.35 r
+  op6/genblk1_7__dut_subBytes/ftop_inst/U4 (ftop_25)      0.00       9.35 r
+  op6/genblk1_7__dut_subBytes/ftop_inst/U9/Y (XOR2_X0P7M_A9TR)
+                                                          0.12       9.47 r
+  op6/genblk1_7__dut_subBytes/ftop_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.14       9.61 r
+  op6/genblk1_7__dut_subBytes/ftop_inst/U200/Y (INV_X1M_A9TR)
+                                                          0.07       9.68 f
+  op6/genblk1_7__dut_subBytes/ftop_inst/U100/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       9.76 f
+  op6/genblk1_7__dut_subBytes/ftop_inst/Q17 (ftop_25)     0.00       9.76 f
+  op6/genblk1_7__dut_subBytes/mulx_inst/Q17 (mulx_25)     0.00       9.76 f
+  op6/genblk1_7__dut_subBytes/mulx_inst/U1/Y (NAND2_X1A_A9TR)
+                                                          0.04       9.80 r
+  op6/genblk1_7__dut_subBytes/mulx_inst/U22/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       9.87 r
+  op6/genblk1_7__dut_subBytes/mulx_inst/U20/Y (XOR2_X0P7M_A9TR)
+                                                          0.13      10.00 r
+  op6/genblk1_7__dut_subBytes/mulx_inst/x3 (mulx_25)      0.00      10.00 r
+  op6/genblk1_7__dut_subBytes/inv_inst/x3 (inv_25)        0.00      10.00 r
+  op6/genblk1_7__dut_subBytes/inv_inst/U11/Y (NOR2_X1A_A9TR)
+                                                          0.05      10.04 f
+  op6/genblk1_7__dut_subBytes/inv_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10      10.14 f
+  op6/genblk1_7__dut_subBytes/inv_inst/U3/Y (INV_X1M_A9TR)
+                                                          0.05      10.19 r
+  op6/genblk1_7__dut_subBytes/inv_inst/U2/Y (OAI22_X1M_A9TR)
+                                                          0.05      10.24 f
+  op6/genblk1_7__dut_subBytes/inv_inst/Y0 (inv_25)        0.00      10.24 f
+  op6/genblk1_7__dut_subBytes/s1_inst/Y0 (s1_25)          0.00      10.24 f
+  op6/genblk1_7__dut_subBytes/s1_inst/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.09      10.33 f
+  op6/genblk1_7__dut_subBytes/s1_inst/Y02 (s1_25)         0.00      10.33 f
+  op6/genblk1_7__dut_subBytes/muln_inst/Y02 (muln_25)     0.00      10.33 f
+  op6/genblk1_7__dut_subBytes/muln_inst/U18/Y (NAND2_X1A_A9TR)
+                                                          0.03      10.36 r
+  op6/genblk1_7__dut_subBytes/muln_inst/N17 (muln_25)     0.00      10.36 r
+  op6/genblk1_7__dut_subBytes/fbot_inst/N17 (fbot_25)     0.00      10.36 r
+  op6/genblk1_7__dut_subBytes/fbot_inst/U32/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10      10.47 r
+  op6/genblk1_7__dut_subBytes/fbot_inst/U26/Y (XOR2_X0P7M_A9TR)
+                                                          0.09      10.56 r
+  op6/genblk1_7__dut_subBytes/fbot_inst/U4/Y (XOR2_X0P7M_A9TR)
+                                                          0.09      10.64 r
+  op6/genblk1_7__dut_subBytes/fbot_inst/U1/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08      10.73 r
+  op6/genblk1_7__dut_subBytes/fbot_inst/U3/Y (XOR2_X0P7M_A9TR)
+                                                          0.11      10.84 r
+  op6/genblk1_7__dut_subBytes/fbot_inst/R4 (fbot_25)      0.00      10.84 r
+  op6/genblk1_7__dut_subBytes/byte_o[3] (SubBytes_25)     0.00      10.84 r
+  op6/sr_dut/shift_rows_in[59] (shift_rows_2)             0.00      10.84 r
+  op6/sr_dut/shift_rows_o[59] (shift_rows_2)              0.00      10.84 r
+  op6/genblk2_2__mc_dut/mix_col_in[27] (mix_columns_6)
+                                                          0.00      10.84 r
+  op6/genblk2_2__mc_dut/U7/Y (XOR2_X0P7M_A9TR)            0.11      10.95 r
+  op6/genblk2_2__mc_dut/U37/Y (XOR2_X0P7M_A9TR)           0.09      11.04 r
+  op6/genblk2_2__mc_dut/U35/Y (XOR2_X0P7M_A9TR)           0.08      11.12 r
+  op6/genblk2_2__mc_dut/mix_col_o[3] (mix_columns_6)      0.00      11.12 r
+  op6/ark_dut/ARK_in[35] (ARK_2)                          0.00      11.12 r
+  op6/ark_dut/U21/Y (XOR2_X0P7M_A9TR)                     0.10      11.22 r
+  op6/ark_dut/ARK_out[35] (ARK_2)                         0.00      11.22 r
+  op6/output_text[35] (AES_256_roundop_2)                 0.00      11.22 r
+  op7/input_text[35] (AES_256_roundop_1)                  0.00      11.22 r
+  op7/genblk1_4__dut_subBytes/byte_in[3] (SubBytes_12)
+                                                          0.00      11.22 r
+  op7/genblk1_4__dut_subBytes/ftop_inst/U4 (ftop_12)      0.00      11.22 r
+  op7/genblk1_4__dut_subBytes/ftop_inst/U9/Y (XOR2_X0P7M_A9TR)
+                                                          0.12      11.34 r
+  op7/genblk1_4__dut_subBytes/ftop_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.14      11.48 r
+  op7/genblk1_4__dut_subBytes/ftop_inst/U200/Y (INV_X1M_A9TR)
+                                                          0.07      11.55 f
+  op7/genblk1_4__dut_subBytes/ftop_inst/U100/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08      11.63 f
+  op7/genblk1_4__dut_subBytes/ftop_inst/Q17 (ftop_12)     0.00      11.63 f
+  op7/genblk1_4__dut_subBytes/mulx_inst/Q17 (mulx_12)     0.00      11.63 f
+  op7/genblk1_4__dut_subBytes/mulx_inst/U1/Y (NAND2_X1A_A9TR)
+                                                          0.04      11.67 r
+  op7/genblk1_4__dut_subBytes/mulx_inst/U22/Y (XOR2_X0P7M_A9TR)
+                                                          0.07      11.74 r
+  op7/genblk1_4__dut_subBytes/mulx_inst/U20/Y (XOR2_X0P7M_A9TR)
+                                                          0.13      11.87 r
+  op7/genblk1_4__dut_subBytes/mulx_inst/x3 (mulx_12)      0.00      11.87 r
+  op7/genblk1_4__dut_subBytes/inv_inst/x3 (inv_12)        0.00      11.87 r
+  op7/genblk1_4__dut_subBytes/inv_inst/U11/Y (NOR2_X1A_A9TR)
+                                                          0.05      11.91 f
+  op7/genblk1_4__dut_subBytes/inv_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10      12.01 f
+  op7/genblk1_4__dut_subBytes/inv_inst/U3/Y (INV_X1M_A9TR)
+                                                          0.05      12.06 r
+  op7/genblk1_4__dut_subBytes/inv_inst/U2/Y (OAI22_X1M_A9TR)
+                                                          0.05      12.11 f
+  op7/genblk1_4__dut_subBytes/inv_inst/Y0 (inv_12)        0.00      12.11 f
+  op7/genblk1_4__dut_subBytes/s1_inst/Y0 (s1_12)          0.00      12.11 f
+  op7/genblk1_4__dut_subBytes/s1_inst/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.09      12.20 f
+  op7/genblk1_4__dut_subBytes/s1_inst/Y02 (s1_12)         0.00      12.20 f
+  op7/genblk1_4__dut_subBytes/muln_inst/Y02 (muln_12)     0.00      12.20 f
+  op7/genblk1_4__dut_subBytes/muln_inst/U18/Y (NAND2_X1A_A9TR)
+                                                          0.03      12.24 r
+  op7/genblk1_4__dut_subBytes/muln_inst/N17 (muln_12)     0.00      12.24 r
+  op7/genblk1_4__dut_subBytes/fbot_inst/N17 (fbot_12)     0.00      12.24 r
+  op7/genblk1_4__dut_subBytes/fbot_inst/U32/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10      12.34 r
+  op7/genblk1_4__dut_subBytes/fbot_inst/U26/Y (XOR2_X0P7M_A9TR)
+                                                          0.09      12.43 r
+  op7/genblk1_4__dut_subBytes/fbot_inst/U3/Y (XOR2_X0P7M_A9TR)
+                                                          0.09      12.52 r
+  op7/genblk1_4__dut_subBytes/fbot_inst/U1/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08      12.60 r
+  op7/genblk1_4__dut_subBytes/fbot_inst/U4/Y (XOR2_X0P7M_A9TR)
+                                                          0.11      12.70 r
+  op7/genblk1_4__dut_subBytes/fbot_inst/R4 (fbot_12)      0.00      12.70 r
+  op7/genblk1_4__dut_subBytes/byte_o[3] (SubBytes_12)     0.00      12.70 r
+  op7/sr_dut/shift_rows_in[35] (shift_rows_1)             0.00      12.70 r
+  op7/sr_dut/shift_rows_o[3] (shift_rows_1)               0.00      12.70 r
+  op7/genblk2_3__mc_dut/mix_col_in[3] (mix_columns_1)     0.00      12.70 r
+  op7/genblk2_3__mc_dut/U7/Y (XNOR2_X0P7M_A9TR)           0.13      12.83 r
+  op7/genblk2_3__mc_dut/U1/Y (INV_X1M_A9TR)               0.03      12.86 f
+  op7/genblk2_3__mc_dut/U34/Y (XOR2_X0P7M_A9TR)           0.07      12.93 f
+  op7/genblk2_3__mc_dut/U32/Y (XOR2_X0P7M_A9TR)           0.08      13.01 f
+  op7/genblk2_3__mc_dut/mix_col_o[19] (mix_columns_1)     0.00      13.01 f
+  op7/ark_dut/ARK_in[19] (ARK_1)                          0.00      13.01 f
+  op7/ark_dut/U1/Y (XOR2_X0P7M_A9TR)                      0.06      13.08 f
+  op7/ark_dut/ARK_out[19] (ARK_1)                         0.00      13.08 f
+  op7/output_text[19] (AES_256_roundop_1)                 0.00      13.08 f
+  output_text[19] (out)                                   0.00      13.08 f
+  data arrival time                                                 13.08
+
+  max_delay                                              30.00      30.00
+  output external delay                                   0.00      30.00
+  data required time                                                30.00
+  --------------------------------------------------------------------------
+  data required time                                                30.00
+  data arrival time                                                -13.08
+  --------------------------------------------------------------------------
+  slack (MET)                                                       16.92
+
+
+1
