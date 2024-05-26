@@ -28,7 +28,7 @@ if {![file exists $Path_Syn]} {
 }
 set Dump_file_name "dc_AES_256_unrolling_7_syn"
 #設定Top module 名稱，需跟自行設計之電路的top module name相同
-set Top				"AES_256_unrolling_7"
+set Top				"AES_256_CTR"
 #Specify Clock，clock名需和top module中clk port相同
 set Clk_pin			"clk"
 set Clk_period		"30"
@@ -38,13 +38,16 @@ set Clk_period		"30"
 # read_file -format verilog {/home/m103040049/HDL_HW/multiplier.v}
 # current_design $Top
 analyze -format verilog {
+/home/che0514/AES_CTR/RTL_unroll_7/AES256_ctr.v
 /home/che0514/AES_CTR/RTL_unroll_7/AES_256_unroll_7_p.v
 /home/che0514/AES_CTR/RTL_unroll_7/AES_256.v
 /home/che0514/AES_CTR/RTL_unroll_7/sub_bytes_v4.v
+/home/che0514/AES_CTR/RTL_unroll_7/key_expansion_256.v
 /home/che0514/AES_CTR/RTL_unroll_7/mix_columns.v
 /home/che0514/AES_CTR/RTL_unroll_7/shift_rows.v
 /home/che0514/AES_CTR/RTL_unroll_7/add_roundkey.v
 }
+
 elaborate $Top
 
 #檢查是否讀取成功

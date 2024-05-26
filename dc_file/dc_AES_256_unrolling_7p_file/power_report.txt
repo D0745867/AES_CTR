@@ -6,9 +6,9 @@ Warning: Design has unannotated sequential cell outputs. (PWR-415)
 ****************************************
 Report : power
         -analysis_effort low
-Design : AES_256_unrolling_7
+Design : AES_256_CTR
 Version: U-2022.12
-Date   : Mon May 20 20:50:27 2024
+Date   : Sun May 26 17:39:34 2024
 ****************************************
 
 
@@ -22,7 +22,7 @@ Wire Load Model Mode: top
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-AES_256_unrolling_7    Zero              sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
+AES_256_CTR            Zero              sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
 
 
 Global Operating Voltage = 0.81 
@@ -39,12 +39,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  = 269.5589 uW   (75%)
-  Net Switching Power  =  90.5302 uW   (25%)
+  Cell Internal Power  =   1.0808 mW   (79%)
+  Net Switching Power  = 290.3614 uW   (21%)
                          ---------
-Total Dynamic Power    = 360.0892 uW  (100%)
+Total Dynamic Power    =   1.3711 mW  (100%)
 
-Cell Leakage Power     = 285.4985 uW
+Cell Leakage Power     =   1.0289 mW
 
 
                  Internal         Switching           Leakage            Total
@@ -53,10 +53,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  9.7449e-02            0.0000            0.0000        9.7449e-02  (  15.09%)  i
-register       2.7905e-02        6.4571e-03           41.3755        7.5738e-02  (  11.73%)
+clock_network      0.5465            0.0000            0.0000            0.5465  (  22.77%)  i
+register           0.1169        2.7372e-02          217.9954            0.3623  (  15.10%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      0.1442        8.4073e-02          244.1229            0.4724  (  73.17%)
+combinational      0.4174            0.2630          810.9105            1.4913  (  62.14%)
 --------------------------------------------------------------------------------------------------
-Total              0.2696 mW     9.0530e-02 mW       285.4985 uW         0.6456 mW
+Total              1.0808 mW         0.2904 mW     1.0289e+03 uW         2.4000 mW
 1

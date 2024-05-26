@@ -82,7 +82,7 @@ module TB_key_expand;
     end
 
     initial begin
-        $fsdbDumpfile("Key_expand_256.fsdb");
+        $fsdbDumpfile("Key_expand_256_com.fsdb");
         $fsdbDumpvars;
         $fsdbDumpMDA();
     end
