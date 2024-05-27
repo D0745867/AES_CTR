@@ -3,29 +3,29 @@
 Report : area
 Design : AES_256_CTR
 Version: U-2022.12
-Date   : Sun May 26 17:39:30 2024
+Date   : Sun May 26 22:47:44 2024
 ****************************************
 
 Library(s) Used:
 
     sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c (File: /cad/CBDK/CBDK_TSMC40_Arm_f2.0/CIC/SynopsysDC/db/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db)
 
-Number of ports:                        87072
-Number of nets:                        153734
-Number of cells:                        69698
-Number of combinational cells:          62015
-Number of sequential cells:              5149
+Number of ports:                        87080
+Number of nets:                        153868
+Number of cells:                        69802
+Number of combinational cells:          62103
+Number of sequential cells:              5165
 Number of macros/black boxes:               0
-Number of buf/inv:                       6911
-Number of references:                      27
+Number of buf/inv:                       6890
+Number of references:                      38
 
-Combinational area:              77770.399984
-Buf/Inv area:                     3447.359961
-Noncombinational area:           22920.407244
+Combinational area:              77900.356379
+Buf/Inv area:                     3429.896360
+Noncombinational area:           22992.983241
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                100690.807228
+Total cell area:                100893.339619
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -36,11 +36,11 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute     Percent  Combi-      Noncombi-   Black-
                                   Total        Total    national    national    boxes   Design
 --------------------------------  -----------  -------  ----------  ----------  ------  ---------------------
-AES_256_CTR                       100690.8072    100.0   5257.6774   9392.2414  0.0000  AES_256_CTR
-AES_core_1                         27352.7601     27.2     84.1428   4064.2558  0.0000  AES_256_unrolling_7_0
+AES_256_CTR                       100893.3396    100.0   5403.0562   9392.2414  0.0000  AES_256_CTR
+AES_core_1                         27352.7601     27.1     84.1428   4064.2558  0.0000  AES_256_unrolling_7_0
 AES_core_1/op1                      3314.9088      3.3      0.0000      0.0000  0.0000  AES_256_roundop_0
 AES_core_1/op1/ark_dut               203.2128      0.2    203.2128      0.0000  0.0000  ARK_21
-AES_core_1/op1/genblk1_0__dut_subBytes    150.8220     0.1     0.0000     0.0000 0.0000 SubBytes_336
+AES_core_1/op1/genblk1_0__dut_subBytes    150.8220     0.1     0.0000     0.0000 0.0000 SubBytes_0
 AES_core_1/op1/genblk1_0__dut_subBytes/fbot_inst     50.8032     0.1    50.8032     0.0000 0.0000 fbot_336
 AES_core_1/op1/genblk1_0__dut_subBytes/ftop_inst     38.5560     0.0    38.5560     0.0000 0.0000 ftop_336
 AES_core_1/op1/genblk1_0__dut_subBytes/inv_inst     11.5668     0.0    11.5668     0.0000 0.0000 inv_336
@@ -871,7 +871,7 @@ AES_core_1/op7/genblk2_1__mc_dut     174.6360      0.2    174.6360      0.0000  
 AES_core_1/op7/genblk2_2__mc_dut     174.6360      0.2    174.6360      0.0000  0.0000  mix_columns_58
 AES_core_1/op7/genblk2_3__mc_dut     174.6360      0.2    174.6360      0.0000  0.0000  mix_columns_57
 AES_core_1/op7/sr_dut                  0.0000      0.0      0.0000      0.0000  0.0000  shift_rows_15
-AES_core_2                         27352.7601     27.2     84.1428   4064.2558  0.0000  AES_256_unrolling_7_2
+AES_core_2                         27352.7601     27.1     84.1428   4064.2558  0.0000  AES_256_unrolling_7_2
 AES_core_2/op1                      3314.9088      3.3      0.0000      0.0000  0.0000  AES_256_roundop_14
 AES_core_2/op1/ark_dut               203.2128      0.2    203.2128      0.0000  0.0000  ARK_14
 AES_core_2/op1/genblk1_0__dut_subBytes    150.8220     0.1     0.0000     0.0000 0.0000 SubBytes_224
@@ -1705,7 +1705,7 @@ AES_core_2/op7/genblk2_1__mc_dut     174.6360      0.2    174.6360      0.0000  
 AES_core_2/op7/genblk2_2__mc_dut     174.6360      0.2    174.6360      0.0000  0.0000  mix_columns_30
 AES_core_2/op7/genblk2_3__mc_dut     174.6360      0.2    174.6360      0.0000  0.0000  mix_columns_29
 AES_core_2/op7/sr_dut                  0.0000      0.0      0.0000      0.0000  0.0000  shift_rows_8
-AES_core_3                         27352.7601     27.2     84.1428   4064.2558  0.0000  AES_256_unrolling_7_1
+AES_core_3                         27352.7601     27.1     84.1428   4064.2558  0.0000  AES_256_unrolling_7_1
 AES_core_3/op1                      3314.9088      3.3      0.0000      0.0000  0.0000  AES_256_roundop_7
 AES_core_3/op1/ark_dut               203.2128      0.2    203.2128      0.0000  0.0000  ARK_7
 AES_core_3/op1/genblk1_0__dut_subBytes    150.8220     0.1     0.0000     0.0000 0.0000 SubBytes_112
@@ -2542,29 +2542,29 @@ AES_core_3/op7/sr_dut                  0.0000      0.0      0.0000      0.0000  
 ark_dut_1                            203.2128      0.2    203.2128      0.0000  0.0000  ARK_0
 ark_dut_2                            203.2128      0.2    203.2128      0.0000  0.0000  ARK_23
 ark_dut_3                            203.2128      0.2    203.2128      0.0000  0.0000  ARK_22
-ke_dut                              3372.9696      3.3   1432.4688   1335.3984  0.0000  key_expansion
-ke_dut/dut_subBytes_1                151.2756      0.2      0.0000      0.0000  0.0000  SubBytes_0
+ke_dut                              3430.1232      3.4   1415.2320   1335.3984  0.0000  key_expansion
+ke_dut/dut_subBytes_1                169.8732      0.2      0.4536     18.1440  0.0000  SubBytes_pipe_0
 ke_dut/dut_subBytes_1/fbot_inst       51.2568      0.1     51.2568      0.0000  0.0000  fbot_0
 ke_dut/dut_subBytes_1/ftop_inst       38.5560      0.0     38.5560      0.0000  0.0000  ftop_0
 ke_dut/dut_subBytes_1/inv_inst        11.5668      0.0     11.5668      0.0000  0.0000  inv_0
 ke_dut/dut_subBytes_1/muln_inst       12.2472      0.0     12.2472      0.0000  0.0000  muln_0
 ke_dut/dut_subBytes_1/mulx_inst       27.2160      0.0     27.2160      0.0000  0.0000  mulx_0
 ke_dut/dut_subBytes_1/s1_inst         10.4328      0.0     10.4328      0.0000  0.0000  s1_0
-ke_dut/dut_subBytes_2                151.2756      0.2      0.0000      0.0000  0.0000  SubBytes_339
+ke_dut/dut_subBytes_2                169.8732      0.2      0.4536     18.1440  0.0000  SubBytes_pipe_3
 ke_dut/dut_subBytes_2/fbot_inst       51.2568      0.1     51.2568      0.0000  0.0000  fbot_339
 ke_dut/dut_subBytes_2/ftop_inst       38.5560      0.0     38.5560      0.0000  0.0000  ftop_339
 ke_dut/dut_subBytes_2/inv_inst        11.5668      0.0     11.5668      0.0000  0.0000  inv_339
 ke_dut/dut_subBytes_2/muln_inst       12.2472      0.0     12.2472      0.0000  0.0000  muln_339
 ke_dut/dut_subBytes_2/mulx_inst       27.2160      0.0     27.2160      0.0000  0.0000  mulx_339
 ke_dut/dut_subBytes_2/s1_inst         10.4328      0.0     10.4328      0.0000  0.0000  s1_339
-ke_dut/dut_subBytes_3                151.2756      0.2      0.0000      0.0000  0.0000  SubBytes_338
+ke_dut/dut_subBytes_3                169.8732      0.2      0.4536     18.1440  0.0000  SubBytes_pipe_2
 ke_dut/dut_subBytes_3/fbot_inst       51.2568      0.1     51.2568      0.0000  0.0000  fbot_338
 ke_dut/dut_subBytes_3/ftop_inst       38.5560      0.0     38.5560      0.0000  0.0000  ftop_338
 ke_dut/dut_subBytes_3/inv_inst        11.5668      0.0     11.5668      0.0000  0.0000  inv_338
 ke_dut/dut_subBytes_3/muln_inst       12.2472      0.0     12.2472      0.0000  0.0000  muln_338
 ke_dut/dut_subBytes_3/mulx_inst       27.2160      0.0     27.2160      0.0000  0.0000  mulx_338
 ke_dut/dut_subBytes_3/s1_inst         10.4328      0.0     10.4328      0.0000  0.0000  s1_338
-ke_dut/dut_subBytes_4                151.2756      0.2      0.0000      0.0000  0.0000  SubBytes_337
+ke_dut/dut_subBytes_4                169.8732      0.2      0.4536     18.1440  0.0000  SubBytes_pipe_1
 ke_dut/dut_subBytes_4/fbot_inst       51.2568      0.1     51.2568      0.0000  0.0000  fbot_337
 ke_dut/dut_subBytes_4/ftop_inst       38.5560      0.0     38.5560      0.0000  0.0000  ftop_337
 ke_dut/dut_subBytes_4/inv_inst        11.5668      0.0     11.5668      0.0000  0.0000  inv_337
@@ -2572,6 +2572,6 @@ ke_dut/dut_subBytes_4/muln_inst       12.2472      0.0     12.2472      0.0000  
 ke_dut/dut_subBytes_4/mulx_inst       27.2160      0.0     27.2160      0.0000  0.0000  mulx_337
 ke_dut/dut_subBytes_4/s1_inst         10.4328      0.0     10.4328      0.0000  0.0000  s1_337
 --------------------------------  -----------  -------  ----------  ----------  ------  ---------------------
-Total                                                   77770.4000  22920.4072  0.0000
+Total                                                   77900.3564  22992.9832  0.0000
 
 1

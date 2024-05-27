@@ -1,5 +1,98 @@
 // Trade off version
 
+module SubBytes_pipe (
+    output [7:0] byte_o,
+    input [7:0] byte_in,
+    input clk,
+    input rst_n
+);
+    // Top Signal
+    wire U0, U1, U2, U3, U4, U5, U6, U7;
+    wire R0, R1, R2, R3, R4, R5, R6, R7;
+
+    assign U0 = byte_in[7];
+    assign U1 = byte_in[6];
+    assign U2 = byte_in[5];
+    assign U3 = byte_in[4];
+    assign U4 = byte_in[3];
+    assign U5 = byte_in[2];
+    assign U6 = byte_in[1];
+    assign U7 = byte_in[0];
+
+    assign byte_o = {R0, R1, R2, R3, R4, R5, R6, R7};
+     
+    // All signals
+    wire Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17;
+    wire x0, x1, x2, x3;
+    wire Y00, Y01, Y02, Y13, Y23, Y0, Y1, Y2, Y3;
+    wire N0, N1, N2, N3, N4, N5, N6, N7, N8, N9, N10, N11, N12, N13, N14, N15, N16, N17;
+    wire T0, T3;
+
+    // ftop 
+    ftop ftop_inst (
+        .U0(U0), .U1(U1), .U2(U2), .U3(U3), .U4(U4), .U5(U5), .U6(U6), .U7(U7),
+        .Q0(Q0), .Q1(Q1), .Q2(Q2), .Q3(Q3), .Q4(Q4), .Q5(Q5), .Q6(Q6), .Q7(Q7),
+        .Q8(Q8), .Q9(Q9), .Q10(Q10), .Q11(Q11), .Q12(Q12), .Q13(Q13), .Q14(Q14), .Q15(Q15),
+        .Q16(Q16), .Q17(Q17)
+    );
+
+    // mulx
+    mulx mulx_inst (
+        .Q0(Q0), .Q1(Q1), .Q2(Q2), .Q3(Q3), .Q4(Q4), .Q5(Q5), .Q6(Q6), .Q7(Q7), .Q8(Q8), .Q9(Q9),
+        .Q10(Q10), .Q11(Q11), .Q12(Q12), .Q13(Q13), .Q14(Q14), .Q15(Q15), .Q16(Q16), .Q17(Q17),
+        .x0(x0), .x1(x1), .x2(x2), .x3(x3)
+    );
+
+    // Insert pipeline
+    reg pipe_x0, pipe_x1, pipe_x2, pipe_x3;
+    always @(posedge clk or negedge rst_n) begin
+       if (~rst_n) begin
+            pipe_x0 <= 1'b0;
+            pipe_x1 <= 1'b0;
+            pipe_x2 <= 1'b0;
+            pipe_x3 <= 1'b0;
+       end
+       else begin
+            pipe_x0 <= x0;
+            pipe_x1 <= x1;
+            pipe_x2 <= x2;
+            pipe_x3 <= x3;
+       end
+    end
+
+    // inv
+    inv inv_inst (
+        .x0(pipe_x0), .x1(pipe_x1), .x2(pipe_x2), .x3(pipe_x3),
+        .T0(T0), .T3(T3),
+        .Y0(Y0), .Y1(Y1), .Y2(Y2), .Y3(Y3)
+    );
+
+    // s1
+    s1 s1_inst (
+        .x0(pipe_x0), .x1(pipe_x1), .x2(pipe_x2), .x3(pipe_x3), .T0(T0), .T3(T3),
+        .Y0(Y0), .Y1(Y1), .Y2(Y2), .Y3(Y3),
+        .Y00(Y00), .Y01(Y01), .Y02(Y02), .Y13(Y13), .Y23(Y23)
+    );
+
+    // muln
+    muln muln_inst (
+        .Y00(Y00), .Y01(Y01), .Y02(Y02), .Y0(Y0), .Y1(Y1), .Y2(Y2), .Y3(Y3), .Y13(Y13), .Y23(Y23),
+        .Q0(Q0), .Q1(Q1), .Q2(Q2), .Q3(Q3), .Q4(Q4), .Q5(Q5), .Q6(Q6), .Q7(Q7),
+        .Q8(Q8), .Q9(Q9), .Q10(Q10), .Q11(Q11), .Q12(Q12), .Q13(Q13), .Q14(Q14), .Q15(Q15), .Q16(Q16), .Q17(Q17),
+        .N0(N0), .N1(N1), .N2(N2), .N3(N3), .N4(N4), .N5(N5), .N6(N6), .N7(N7),
+        .N8(N8), .N9(N9), .N10(N10), .N11(N11), .N12(N12), .N13(N13), .N14(N14), .N15(N15), .N16(N16), .N17(N17)
+    );
+
+    // fbot
+    fbot fbot_inst (
+        .N0(N0), .N1(N1), .N2(N2), .N3(N3), .N4(N4), .N5(N5), .N6(N6), .N7(N7),
+        .N8(N8), .N9(N9), .N10(N10), .N11(N11), .N12(N12), .N13(N13), .N14(N14), .N15(N15), .N16(N16), .N17(N17),
+        .R0(R0), .R1(R1), .R2(R2), .R3(R3), .R4(R4), .R5(R5), .R6(R6), .R7(R7)
+    );
+
+endmodule
+
+
 module SubBytes (
     output [7:0] byte_o,
     input [7:0] byte_in
@@ -251,3 +344,4 @@ module fbot (
     assign R7 = ~(H9 ^ H18);  // XNOR
 
 endmodule
+

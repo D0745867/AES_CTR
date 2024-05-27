@@ -44,10 +44,10 @@ assign subBytes_i[1] = (round[0] == 1'b1) ? w_g_in[1] :  w_rot[1];
 assign subBytes_i[2] = (round[0] == 1'b1) ? w_g_in[2] :  w_rot[2];
 assign subBytes_i[3] = (round[0] == 1'b1) ? w_g_in[3] :  w_rot[3];
 
-SubBytes dut_subBytes_1(.byte_o(subBytes_o[0]), .byte_in(subBytes_i[0]));
-SubBytes dut_subBytes_2(.byte_o(subBytes_o[1]), .byte_in(subBytes_i[1]));
-SubBytes dut_subBytes_3(.byte_o(subBytes_o[2]), .byte_in(subBytes_i[2]));
-SubBytes dut_subBytes_4(.byte_o(subBytes_o[3]), .byte_in(subBytes_i[3]));
+SubBytes_pipe dut_subBytes_1(.byte_o(subBytes_o[0]), .byte_in(subBytes_i[0]), .clk(clk), .rst_n(rst_n));
+SubBytes_pipe dut_subBytes_2(.byte_o(subBytes_o[1]), .byte_in(subBytes_i[1]), .clk(clk), .rst_n(rst_n));
+SubBytes_pipe dut_subBytes_3(.byte_o(subBytes_o[2]), .byte_in(subBytes_i[2]), .clk(clk), .rst_n(rst_n));
+SubBytes_pipe dut_subBytes_4(.byte_o(subBytes_o[3]), .byte_in(subBytes_i[3]), .clk(clk), .rst_n(rst_n));
 
 assign w_g_in[0] = w_matrix[7][7:0];
 assign w_g_in[1] = w_matrix[7][15:8];
