@@ -15,6 +15,7 @@ module AES_256_CTR#(
     input [key_byte_length * 8 - 1 : 0] master_key,
     input [7:0] nonce_a,
     input [7:0] nonce_b,
+    input inv_en,
     input clk,
     input rst_n,
     input mode //mode0: XOF , mode1: PRF
@@ -98,7 +99,7 @@ end
 // Key Expansion 
 // TODO: KE256 combinatial
 key_expansion ke_dut(.round_key_o(round_key_o)
-, .key_in(master_key), .round(PIPE_CNT), .rst_n(rst_n), .clk(clk));
+, .key_in(master_key), .round(PIPE_CNT), inv_en(inv_en), .rst_n(rst_n), .clk(clk));
 
 // For round key input
 reg [block_size - 1 : 0] RK [0 : 13]; // Store all keys
@@ -208,6 +209,7 @@ AES_256_unrolling_7 AES_core_1(
     .input_text(ARK_out_1),
     .round_key(RK_port),
     .load(load),
+    .inv_en(inv_en),
     .clk(clk),
     .rst_n(rst_n)
 );
@@ -217,6 +219,7 @@ AES_256_unrolling_7 AES_core_2(
     .input_text(ARK_out_2),
     .round_key(RK_port),
     .load(load),
+    .inv_en(inv_en),
     .clk(clk),
     .rst_n(rst_n)
 );
@@ -226,6 +229,7 @@ AES_256_unrolling_7 AES_core_3(
     .input_text(ARK_out_3),
     .round_key(RK_port),
     .load(load),
+    .inv_en(inv_en),
     .clk(clk),
     .rst_n(rst_n)
 );

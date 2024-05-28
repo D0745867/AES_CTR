@@ -3,7 +3,8 @@
 module AES_256_roundop (
     output[ 4*4*8 - 1 : 0 ] output_text,
     input [ 4*4*8 - 1 : 0 ] input_text,
-    input [ 4*4*8 - 1 : 0 ] round_key
+    input [ 4*4*8 - 1 : 0 ] round_key,
+    input inv_en
 );
 
 wire [ 4*4*8 - 1 : 0 ] state;
@@ -16,6 +17,21 @@ reg [7:0] subBytes_o [0:15];
 integer i;
 assign state = input_text;
 
+// ----------------INV mix column for encryption with Roundkey-------------
+
+// // Inverse Mix Columns
+// module mix_columns_mix (
+//     output [4*8 - 1 : 0] mix_col_o,
+//     input [4*8 - 1 : 0] mix_col_in,
+//     input inv_en
+// );
+wire [4*4*8 - 1 : 0] round_key_imc;
+
+mix_columns_mix mcm (.mix_col_o(round_key_imc[(32*4 - 1) -: 32]), .mix_col_in(round_key[(32*4 - 1) -: 32]), .inv_en(1'b1));
+mix_columns_mix mcm (.mix_col_o(round_key_imc[(32*3 - 1) -: 32]), .mix_col_in(round_key[(32*3 - 1) -: 32]), .inv_en(1'b1));
+mix_columns_mix mcm (.mix_col_o(round_key_imc[(32*2 - 1) -: 32]), .mix_col_in(round_key[(32*2 - 1) -: 32]), .inv_en(1'b1));
+mix_columns_mix mcm (.mix_col_o(round_key_imc[(32*1 - 1) -: 32]), .mix_col_in(round_key[(32*1 - 1) -: 32]), .inv_en(1'b1));
+
 //------------------SubBytes matrix--------------------
 always @(*) begin
     for(i = 0 ; i < 16; i = i + 1) begin
@@ -25,7 +41,7 @@ end
 genvar SB_para;
 generate
     for (SB_para = 0 ; SB_para < 16 ; SB_para = SB_para + 1) begin
-        SubBytes dut_subBytes(.byte_o(subBytes_o[SB_para]), .byte_in(subBytes_i[SB_para]));
+        SubBytes_mix dut_subBytes(.byte_o(subBytes_o[SB_para]), .byte_in(subBytes_i[SB_para]), .ZF(~inv_en));
     end
 endgenerate
 //------------------------------------------------------
@@ -41,7 +57,7 @@ always @(*) begin
     end
 end
 
-shift_rows sr_dut(.shift_rows_o(sr_out), .shift_rows_in(sr_in));
+shift_rows_mix sr_dut(.shift_rows_o(sr_out), .shift_rows_in(sr_in), .inv_en(inv_en));
 //------------------------------------------------------
 
 //------------------Mix Columns------------------
@@ -56,7 +72,7 @@ end
 genvar MC_para;
 generate
     for (MC_para = 0 ; MC_para < 4 ; MC_para = MC_para + 1) begin
-        mix_columns mc_dut(.mix_col_o(mc_out[MC_para]), .mix_col_in(mc_in[MC_para]));
+        mix_columns_mix mc_dut(.mix_col_o(mc_out[MC_para]), .mix_col_in(mc_in[MC_para]), .inv_en(inv_en));
     end
 endgenerate
 //------------------------------------------------------
@@ -64,6 +80,9 @@ endgenerate
 //------------------Add Round Key------------------
 wire [4*4*8 - 1 : 0] ARK_in;
 assign ARK_in = {mc_out[0], mc_out[1], mc_out[2], mc_out[3]};
-ARK ark_dut(.ARK_out(output_text), .ARK_in(ARK_in), .ARK_key(round_key));
+wire [4*4*8 - 1 : 0] ARK_key_in;
+assign ARK_key_in = (inv_en == 1'b0) ? round_key : round_key_imc;
+
+ARK ark_dut(.ARK_out(output_text), .ARK_in(ARK_in), .ARK_key(ARK_key_in));
 
 endmodule

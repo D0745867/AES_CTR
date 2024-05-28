@@ -21,7 +21,6 @@ endmodule
 module key_expansion #(
     parameter KEY_WIDTH = 256) (
     output [ KEY_WIDTH / 2 - 1 : 0 ] round_key_o,
-    input [3:0] current_state,
     input [ KEY_WIDTH - 1 : 0 ] key_in,
     input [3:0] round,
     input inv_en,

@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module shift_rows (
+module shift_rows_mix (
     output reg [4*4*8 - 1 : 0] shift_rows_o,
     input [4*4*8 - 1 : 0] shift_rows_in,
     input inv_en  // low: ShiftRows, high: INV_ShiftRows
