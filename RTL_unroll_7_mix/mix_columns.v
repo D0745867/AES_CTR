@@ -1,5 +1,19 @@
 `timescale 1ns/1ns
 
+// Inverse Mix Columns
+module mix_columns_mix (
+    output [4*8 - 1 : 0] mix_col_o,
+    input [4*8 - 1 : 0] mix_col_in,
+    input inv_en
+);
+    wire [4*8 - 1 : 0] imc_o;
+    wire [4*8 - 1 : 0] mc_in;
+    assign mc_in = (inv_en == 1'b0) ? mix_col_in : imc_o; 
+    inv_mix_columns imc (.i_mix_col_o(imc_o), .i_mix_col_in(mix_col_in));
+    mix_columns mc(.mix_col_o(mix_col_o), .mix_col_in(mc_in));
+    
+endmodule
+
 module mix_columns (
     output [4*8 - 1 : 0] mix_col_o,
     input [4*8 - 1 : 0] mix_col_in
@@ -60,14 +74,14 @@ module inv_mix_columns (
     endfunction
 
     wire [7:0] u, v, u_temp, v_temp;
-    u_temp = xtime(mix_col_in_2d[0] ^ mix_col_in_2d[2]);
-    u = xtime(u_temp);
-    v_temp = xtime(mix_col_in_2d[1] ^ mix_col_in_2d[3]);
-    v = xtime(v_temp);
+    assign u_temp = xtime(mix_col_in_2d[0] ^ mix_col_in_2d[2]);
+    assign u = xtime(u_temp);
+    assign v_temp = xtime(mix_col_in_2d[1] ^ mix_col_in_2d[3]);
+    assign v = xtime(v_temp);
 
-    assign mix_col_o[31:24] = mix_col_in_2d[0] ^ u;
-    assign mix_col_o[23:16] = mix_col_in_2d[1] ^ v;
-    assign mix_col_o[15:8] = mix_col_in_2d[2] ^ u;
-    assign mix_col_o[7:0] = mix_col_in_2d[3] ^ v;
+    assign i_mix_col_o[31:24] = mix_col_in_2d[0] ^ u;
+    assign i_mix_col_o[23:16] = mix_col_in_2d[1] ^ v;
+    assign i_mix_col_o[15:8] = mix_col_in_2d[2] ^ u;
+    assign i_mix_col_o[7:0] = mix_col_in_2d[3] ^ v;
     
 endmodule
