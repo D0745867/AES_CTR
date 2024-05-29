@@ -27,10 +27,10 @@ assign state = input_text;
 // );
 wire [4*4*8 - 1 : 0] round_key_imc;
 
-mix_columns_mix mcm (.mix_col_o(round_key_imc[(32*4 - 1) -: 32]), .mix_col_in(round_key[(32*4 - 1) -: 32]), .inv_en(1'b1));
-mix_columns_mix mcm (.mix_col_o(round_key_imc[(32*3 - 1) -: 32]), .mix_col_in(round_key[(32*3 - 1) -: 32]), .inv_en(1'b1));
-mix_columns_mix mcm (.mix_col_o(round_key_imc[(32*2 - 1) -: 32]), .mix_col_in(round_key[(32*2 - 1) -: 32]), .inv_en(1'b1));
-mix_columns_mix mcm (.mix_col_o(round_key_imc[(32*1 - 1) -: 32]), .mix_col_in(round_key[(32*1 - 1) -: 32]), .inv_en(1'b1));
+mix_columns_mix mcm_1 (.mix_col_o(round_key_imc[(32*4 - 1) -: 32]), .mix_col_in(round_key[(32*4 - 1) -: 32]), .inv_en(1'b1));
+mix_columns_mix mcm_2 (.mix_col_o(round_key_imc[(32*3 - 1) -: 32]), .mix_col_in(round_key[(32*3 - 1) -: 32]), .inv_en(1'b1));
+mix_columns_mix mcm_3 (.mix_col_o(round_key_imc[(32*2 - 1) -: 32]), .mix_col_in(round_key[(32*2 - 1) -: 32]), .inv_en(1'b1));
+mix_columns_mix mcm_4 (.mix_col_o(round_key_imc[(32*1 - 1) -: 32]), .mix_col_in(round_key[(32*1 - 1) -: 32]), .inv_en(1'b1));
 
 //------------------SubBytes matrix--------------------
 always @(*) begin

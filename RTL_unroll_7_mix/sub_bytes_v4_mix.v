@@ -230,7 +230,7 @@ module cbot(
     input wire N0, N1, N2, N3, N4, N5, N6, N7, N8, N9, N10, N11, N12, N13, N14, N15, N16, N17, ZF,
     output wire R0, R1, R2, R3, R4, R5, R6, R7
 );
-    wire H1, H3, H4, H5, H6, H8, H9, S4, H10, H11, S14, H12, H13, H14, H15, H16, H17, H18, H30, S1, H19, S6, S11, H20, S0, S5, H21, H22, S12, S13, H23, H24, H25, H26, S7, S2, S3, H27, H28, S15, R3_temp, R4_temp, R5_temp, R6_temp, R7_temp;
+    wire H1, H3, H4, H5, H6, H8, H9, S4, H10, H11, S14, H12, H13, H14, H15, H16, H17, H18, H29, H30, S1, H19, S6, S11, H20, S0, S5, H21, H22, S12, S13, H23, H24, H25, H26, S7, S2, S3, H27, H28, S15, R3_temp, R4_temp, R5_temp, R6_temp, R7_temp;
 
     assign H1 = N1 ^ N3;
     assign H3 = N15 ^ N17;

@@ -70,7 +70,7 @@ wire [2:0] round_to_RCnum;
 assign round_to_RCnum = (round >> 1) - 4'd1;
 
 // 4 XORs
-reg [31:0]  xor_A4_in, xor_B4_in;
+wire [31:0]  xor_A4_in, xor_B4_in;
 wire [31:0] xor_A1_in, xor_A2_in, xor_A3_in
          , xor_B1_in, xor_B2_in, xor_B3_in;
 // XOR output C
@@ -123,7 +123,7 @@ always @(*) begin
 end
 
 // w_matrix
-always @(posedge clk or rst_n) begin
+always @(posedge clk or negedge rst_n) begin
     if( ~rst_n ) begin
             w_matrix[0] <= key_in[255:224];
             w_matrix[1] <= key_in[223:192];

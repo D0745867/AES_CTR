@@ -99,7 +99,7 @@ end
 // Key Expansion 
 // TODO: KE256 combinatial
 key_expansion ke_dut(.round_key_o(round_key_o)
-, .key_in(master_key), .round(PIPE_CNT), inv_en(inv_en), .rst_n(rst_n), .clk(clk));
+, .key_in(master_key), .round(PIPE_CNT), .inv_en(inv_en), .rst_n(rst_n), .clk(clk));
 
 // For round key input
 reg [block_size - 1 : 0] RK [0 : 13]; // Store all keys

@@ -1,0 +1,9 @@
+./Testbench/TB_aes256_ctr_com_mix.sv 
+./RTL_unroll_7_mix/AES256_ctr.v
+./RTL_unroll_7_mix/AES_256_unroll_7_p.v
+./RTL_unroll_7_mix/AES_256.v
+./RTL_unroll_7_mix/key_expansion_256_mix.v 
+./RTL_unroll_7_mix/sub_bytes_v4_mix.v
+./RTL_unroll_7_mix/mix_columns.v
+./RTL_unroll_7_mix/shift_rows.v
+./RTL_unroll_7_mix/add_roundkey.v
