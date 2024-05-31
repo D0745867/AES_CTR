@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : area
+Design : SubBytes_mix
+Version: U-2022.12
+Date   : Wed May 29 10:39:32 2024
+****************************************
+
+Library(s) Used:
+
+    sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c (File: /cad/CBDK/CBDK_TSMC40_Arm_f2.0/CIC/SynopsysDC/db/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db)
+
+Number of ports:                          163
+Number of nets:                           446
+Number of cells:                          297
+Number of combinational cells:            291
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                         93
+Number of references:                      22
+
+Combinational area:                752.522396
+Buf/Inv area:                      106.369200
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                   752.522396
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+SubBytes_mix                       752.5224    100.0   17.4636     0.0000  0.0000  SubBytes_mix
+cbot_inst                          208.2024     27.7  208.2024     0.0000  0.0000  cbot
+ctop_inst                          339.2928     45.1  339.2928     0.0000  0.0000  ctop
+inv_inst                            47.1744      6.3   47.1744     0.0000  0.0000  inv
+muln_inst                           24.7212      3.3   24.7212     0.0000  0.0000  muln
+mulx_inst                           80.9676     10.8   80.9676     0.0000  0.0000  mulx
+s1_inst                             34.7004      4.6   34.7004     0.0000  0.0000  s1
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                 752.5224     0.0000  0.0000
+
+1

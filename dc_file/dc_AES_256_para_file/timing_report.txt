@@ -1,0 +1,153 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'AES_256_CTR' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : AES_256_CTR
+Version: U-2022.12
+Date   : Fri May 31 22:13:20 2024
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_typical_max_0p81v_125c   Library: sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
+Wire Load Model Mode: top
+
+  Startpoint: PIPE_CNT_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: batch_block_out_reg_1107_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES_256_CTR        Zero                  sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  PIPE_CNT_reg_0_/CK (DFFRPQ_X2M_A9TR)                    0.00 #     0.00 r
+  PIPE_CNT_reg_0_/Q (DFFRPQ_X2M_A9TR)                     0.16       0.16 f
+  ke_dut/round[0] (key_expansion)                         0.00       0.16 f
+  ke_dut/U473/Y (NOR2_X1A_A9TR)                           0.09       0.25 r
+  ke_dut/U472/Y (NOR3BB_X1M_A9TR)                         0.24       0.49 r
+  ke_dut/U139/Y (BUFH_X1M_A9TR)                           0.30       0.79 r
+  ke_dut/U475/Y (AO22_X1M_A9TR)                           0.12       0.91 r
+  ke_dut/round_key_o[10] (key_expansion)                  0.00       0.91 r
+  U3476/Y (BUFH_X1M_A9TR)                                 0.15       1.06 r
+  genblk1_8__ark_dut/ARK_key[10] (ARK_24)                 0.00       1.06 r
+  genblk1_8__ark_dut/U5/Y (XOR2_X0P7M_A9TR)               0.09       1.15 r
+  genblk1_8__ark_dut/ARK_out[10] (ARK_24)                 0.00       1.15 r
+  U3514/Y (AO22_X1M_A9TR)                                 0.07       1.22 r
+  AES_para_16/input_text[1034] (AES_256_para_16)          0.00       1.22 r
+  AES_para_16/genblk1_8__AES_PE/input_text[10] (AES_256_roundop_8)
+                                                          0.00       1.22 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/byte_in[2] (SubBytes_127)
+                                                          0.00       1.22 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/ftop_inst/U5 (ftop_127)
+                                                          0.00       1.22 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/ftop_inst/U9/Y (XOR2_X0P7M_A9TR)
+                                                          0.13       1.35 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/ftop_inst/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.14       1.49 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/ftop_inst/U200/Y (INV_X1M_A9TR)
+                                                          0.07       1.56 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/ftop_inst/U100/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       1.64 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/ftop_inst/Q17 (ftop_127)
+                                                          0.00       1.64 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/mulx_inst/Q17 (mulx_127)
+                                                          0.00       1.64 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/mulx_inst/U1/Y (NAND2_X1A_A9TR)
+                                                          0.04       1.68 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/mulx_inst/U9/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       1.75 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/mulx_inst/U7/Y (XOR2_X0P7M_A9TR)
+                                                          0.13       1.88 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/mulx_inst/x3 (mulx_127)
+                                                          0.00       1.88 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/inv_inst/x3 (inv_127)
+                                                          0.00       1.88 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/inv_inst/U5/Y (NOR2_X1A_A9TR)
+                                                          0.05       1.93 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/inv_inst/U4/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       2.02 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/inv_inst/U2/Y (INV_X1M_A9TR)
+                                                          0.05       2.07 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/inv_inst/U1/Y (OAI22_X1M_A9TR)
+                                                          0.05       2.13 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/inv_inst/Y0 (inv_127)
+                                                          0.00       2.13 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/s1_inst/Y0 (s1_127)
+                                                          0.00       2.13 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/s1_inst/U1/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       2.21 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/s1_inst/Y02 (s1_127)
+                                                          0.00       2.21 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/muln_inst/Y02 (muln_127)
+                                                          0.00       2.21 f
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/muln_inst/U18/Y (NAND2_X1A_A9TR)
+                                                          0.03       2.25 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/muln_inst/N17 (muln_127)
+                                                          0.00       2.25 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/fbot_inst/N17 (fbot_127)
+                                                          0.00       2.25 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/fbot_inst/U32/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       2.34 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/fbot_inst/U26/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       2.43 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/fbot_inst/U4/Y (XOR2_X0P7M_A9TR)
+                                                          0.09       2.52 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/fbot_inst/U1/Y (XNOR2_X0P7M_A9TR)
+                                                          0.08       2.60 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/fbot_inst/U3/Y (XOR2_X0P7M_A9TR)
+                                                          0.13       2.73 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/fbot_inst/R4 (fbot_127)
+                                                          0.00       2.73 r
+  AES_para_16/genblk1_8__AES_PE/genblk1_1__dut_subBytes/byte_o[3] (SubBytes_127)
+                                                          0.00       2.73 r
+  AES_para_16/genblk1_8__AES_PE/sr_dut/shift_rows_in[11] (shift_rows_8)
+                                                          0.00       2.73 r
+  AES_para_16/genblk1_8__AES_PE/sr_dut/shift_rows_o[75] (shift_rows_8)
+                                                          0.00       2.73 r
+  AES_para_16/genblk1_8__AES_PE/genblk2_1__mc_dut/mix_col_in[11] (mix_columns_31)
+                                                          0.00       2.73 r
+  AES_para_16/genblk1_8__AES_PE/genblk2_1__mc_dut/U10/Y (XNOR2_X0P7M_A9TR)
+                                                          0.12       2.85 r
+  AES_para_16/genblk1_8__AES_PE/genblk2_1__mc_dut/U11/Y (XNOR2_X0P7M_A9TR)
+                                                          0.10       2.95 r
+  AES_para_16/genblk1_8__AES_PE/genblk2_1__mc_dut/U44/Y (XOR2_X0P7M_A9TR)
+                                                          0.08       3.03 r
+  AES_para_16/genblk1_8__AES_PE/genblk2_1__mc_dut/mix_col_o[19] (mix_columns_31)
+                                                          0.00       3.03 r
+  AES_para_16/genblk1_8__AES_PE/U8/Y (AO22_X1M_A9TR)      0.08       3.11 r
+  AES_para_16/genblk1_8__AES_PE/ark_dut/ARK_in[83] (ARK_8)
+                                                          0.00       3.11 r
+  AES_para_16/genblk1_8__AES_PE/ark_dut/U6/Y (XOR2_X0P7M_A9TR)
+                                                          0.07       3.18 r
+  AES_para_16/genblk1_8__AES_PE/ark_dut/ARK_out[83] (ARK_8)
+                                                          0.00       3.18 r
+  AES_para_16/genblk1_8__AES_PE/output_text[83] (AES_256_roundop_8)
+                                                          0.00       3.18 r
+  AES_para_16/output_text[1107] (AES_256_para_16)         0.00       3.18 r
+  batch_block_out_reg_1107_/D (DFFRPQ_X2M_A9TR)           0.00       3.18 r
+  data arrival time                                                  3.18
+
+  clock clk (rise edge)                                  30.00      30.00
+  clock network delay (ideal)                             0.00      30.00
+  batch_block_out_reg_1107_/CK (DFFRPQ_X2M_A9TR)          0.00      30.00 r
+  library setup time                                     -0.05      29.95
+  data required time                                                29.95
+  --------------------------------------------------------------------------
+  data required time                                                29.95
+  data arrival time                                                 -3.18
+  --------------------------------------------------------------------------
+  slack (MET)                                                       26.76
+
+
+1

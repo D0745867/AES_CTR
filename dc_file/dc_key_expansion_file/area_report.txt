@@ -1,0 +1,75 @@
+ 
+****************************************
+Report : area
+Design : key_expansion
+Version: U-2022.12
+Date   : Wed May 29 15:26:00 2024
+****************************************
+
+Library(s) Used:
+
+    sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c (File: /cad/CBDK/CBDK_TSMC40_Arm_f2.0/CIC/SynopsysDC/db/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db)
+
+Number of ports:                         1427
+Number of nets:                          4236
+Number of cells:                         2969
+Number of combinational cells:           2553
+Number of sequential cells:               384
+Number of macros/black boxes:               0
+Number of buf/inv:                        722
+Number of references:                      26
+
+Combinational area:               2468.037561
+Buf/Inv area:                      344.962794
+Noncombinational area:            1916.006409
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  4384.043970
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  --------------
+key_expansion                     4384.0440    100.0  1410.6960  1916.0064  0.0000  key_expansion
+dut_subBytes_1                     213.6456      4.9     0.6804     0.0000  0.0000  SubBytes_mix_0
+dut_subBytes_1/cbot_inst            83.2356      1.9    83.2356     0.0000  0.0000  cbot_0
+dut_subBytes_1/ctop_inst            68.2668      1.6    68.2668     0.0000  0.0000  ctop_0
+dut_subBytes_1/inv_inst             11.5668      0.3    11.5668     0.0000  0.0000  inv_0
+dut_subBytes_1/muln_inst            12.2472      0.3    12.2472     0.0000  0.0000  muln_0
+dut_subBytes_1/mulx_inst            27.2160      0.6    27.2160     0.0000  0.0000  mulx_0
+dut_subBytes_1/s1_inst              10.4328      0.2    10.4328     0.0000  0.0000  s1_0
+dut_subBytes_2                     213.6456      4.9     0.6804     0.0000  0.0000  SubBytes_mix_3
+dut_subBytes_2/cbot_inst            83.2356      1.9    83.2356     0.0000  0.0000  cbot_3
+dut_subBytes_2/ctop_inst            68.2668      1.6    68.2668     0.0000  0.0000  ctop_3
+dut_subBytes_2/inv_inst             11.5668      0.3    11.5668     0.0000  0.0000  inv_3
+dut_subBytes_2/muln_inst            12.2472      0.3    12.2472     0.0000  0.0000  muln_3
+dut_subBytes_2/mulx_inst            27.2160      0.6    27.2160     0.0000  0.0000  mulx_3
+dut_subBytes_2/s1_inst              10.4328      0.2    10.4328     0.0000  0.0000  s1_3
+dut_subBytes_3                     213.6456      4.9     0.6804     0.0000  0.0000  SubBytes_mix_2
+dut_subBytes_3/cbot_inst            83.2356      1.9    83.2356     0.0000  0.0000  cbot_2
+dut_subBytes_3/ctop_inst            68.2668      1.6    68.2668     0.0000  0.0000  ctop_2
+dut_subBytes_3/inv_inst             11.5668      0.3    11.5668     0.0000  0.0000  inv_2
+dut_subBytes_3/muln_inst            12.2472      0.3    12.2472     0.0000  0.0000  muln_2
+dut_subBytes_3/mulx_inst            27.2160      0.6    27.2160     0.0000  0.0000  mulx_2
+dut_subBytes_3/s1_inst              10.4328      0.2    10.4328     0.0000  0.0000  s1_2
+dut_subBytes_4                     213.1920      4.9     0.6804     0.0000  0.0000  SubBytes_mix_1
+dut_subBytes_4/cbot_inst            82.7820      1.9    82.7820     0.0000  0.0000  cbot_1
+dut_subBytes_4/ctop_inst            68.2668      1.6    68.2668     0.0000  0.0000  ctop_1
+dut_subBytes_4/inv_inst             11.5668      0.3    11.5668     0.0000  0.0000  inv_1
+dut_subBytes_4/muln_inst            12.2472      0.3    12.2472     0.0000  0.0000  muln_1
+dut_subBytes_4/mulx_inst            27.2160      0.6    27.2160     0.0000  0.0000  mulx_1
+dut_subBytes_4/s1_inst              10.4328      0.2    10.4328     0.0000  0.0000  s1_1
+xor1                                50.8032      1.2    50.8032     0.0000  0.0000  xor_32b_0
+xor2                                50.8032      1.2    50.8032     0.0000  0.0000  xor_32b_3
+xor3                                50.8032      1.2    50.8032     0.0000  0.0000  xor_32b_2
+xor4                                50.8032      1.2    50.8032     0.0000  0.0000  xor_32b_1
+--------------------------------  ---------  -------  ---------  ---------  ------  --------------
+Total                                                 2468.0376  1916.0064  0.0000
+
+1

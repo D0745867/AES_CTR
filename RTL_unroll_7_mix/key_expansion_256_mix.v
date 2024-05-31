@@ -8,14 +8,6 @@ module xor_32b (
     assign xor_32b_o = xor_32b_inA ^ xor_32b_inB;
 endmodule
 
-module xor_8b (
-    output [7:0] xor_8b_o,
-    input [7:0] xor_8b_inA,
-    input [7:0] xor_8b_inB
-);
-    assign xor_8b_o = xor_8b_inA ^ xor_8b_inB;
-endmodule
-
 // Single round keygeneration
 // Key_in only needed when first round
 module key_expansion #(
@@ -76,10 +68,6 @@ wire [31:0] xor_A1_in, xor_A2_in, xor_A3_in
 // XOR output C
 wire [31:0] xor1_out, xor2_out, xor3_out, xor4_out;
 
-// XOR for g function
-wire [7:0] xor_A5_in, xor_B5_in, xor5_out;
-assign xor_A5_in = w_g_sub[3];
-assign xor_B5_in = (is_odd == 1'b1) ? 8'b0 : rc_table[round_to_RCnum];
 
 // w_g_in signals are condition with mux
 assign w_g_in[0] = (inv_en == 1'b0) ? w_matrix[7][7:0] : xor3_out[7:0];
@@ -89,13 +77,19 @@ assign w_g_in[3] = (inv_en == 1'b0) ? w_matrix[7][31:24]: xor3_out[31:24];
 
 // w XOR in the last step
 // w_matrix_cur is new key
-always @(*) begin
-    w_matrix_cur[0] = xor4_out;
-    w_matrix_cur[1] = xor1_out;
-    w_matrix_cur[2] = xor2_out;
-    w_matrix_cur[3] = xor3_out;
+always @(posedge clk or negedge rst_n) begin
+    if (~rst_n) begin
+        w_matrix_cur[0] <= 32'd0;
+        w_matrix_cur[1] <= 32'd0;
+        w_matrix_cur[2] <= 32'd0;
+        w_matrix_cur[3] <= 32'd0;
+    end else begin
+        w_matrix_cur[0] <= xor4_out;
+        w_matrix_cur[1] <= xor1_out;
+        w_matrix_cur[2] <= xor2_out;
+        w_matrix_cur[3] <= xor3_out;
+    end
 end
-
 // Regular Signal A 會變
 assign xor_A1_in = (inv_en == 1'b0) ? w_matrix_cur[0] : w_matrix[0];
 assign xor_A2_in = (inv_en == 1'b0) ? w_matrix_cur[1] : w_matrix[1];
@@ -112,7 +106,6 @@ xor_32b xor2(xor2_out, xor_A2_in, xor_B2_in);
 xor_32b xor3(xor3_out, xor_A3_in, xor_B3_in);
 // Option 
 xor_32b xor4(xor4_out, xor_A4_in, xor_B4_in);
-xor_8b xor5(xor5_out, xor_A5_in, xor_B5_in);
  
 // RotWord (Lest Shift - 1)
 always @(*) begin

@@ -22,13 +22,13 @@ alias h history
 #Path_Syn:合成後report.txt檔案要放置的根位置，需自行在目錄下創建名為dc_out_file之資料夾
 #Dump_file_name:合成後產生檔案之名字
 set Path_Top		"./"
-set Path_Syn		"./dc_sbox_v4_file"
+set Path_Syn		"./dc_sbox_v4_mix_file"
 if {![file exists $Path_Syn]} {
     file mkdir $Path_Syn
 }
 set Dump_file_name "subBytes_v4_syn"
 #設定Top module 名稱，需跟自行設計之電路的top module name相同
-set Top				"SubBytes"
+set Top				"SubBytes_mix"
 #Specify Clock，clock名需和top module中clk port相同
 set Clk_pin			"clk"
 set Clk_period		"0.1"
@@ -37,7 +37,7 @@ set Clk_period		"0.1"
 #如果設計有parameter設計，read_file指定不能用，需使用analyze + elaborate指令並自行更改路徑
 # read_file -format verilog {/home/m103040049/HDL_HW/multiplier.v}
 # current_design $Top
-analyze -format verilog {/home/che0514/AES_proto/sub_bytes_v4.v}
+analyze -format verilog {/home/che0514/AES_CTR/RTL_unroll_7_mix/sub_bytes_v4_mix.v}
 elaborate $Top
 
 #檢查是否讀取成功

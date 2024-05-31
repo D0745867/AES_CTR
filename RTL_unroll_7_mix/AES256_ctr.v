@@ -96,10 +96,22 @@ always @(posedge clk or negedge rst_n) begin
     end
 end
 
+// Round Key selection
+wire [4*4*8 - 1 : 0] round_key_imc;
+wire [block_size - 1 : 0] round_key_select;
+
+assign round_key_select = (inv_en == 1'b0) ? round_key_o : round_key_imc ; // RKS is for the inverse key-expand
+
 // Key Expansion 
-// TODO: KE256 combinatial
 key_expansion ke_dut(.round_key_o(round_key_o)
 , .key_in(master_key), .round(PIPE_CNT), .inv_en(inv_en), .rst_n(rst_n), .clk(clk));
+// ----------------INV mix column for encryption with Roundkey-------------
+
+mix_columns_mix mcm_1 (.mix_col_o(round_key_imc[(32*4 - 1) -: 32]), .mix_col_in(round_key_o[(32*4 - 1) -: 32]), .inv_en(1'b1));
+mix_columns_mix mcm_2 (.mix_col_o(round_key_imc[(32*3 - 1) -: 32]), .mix_col_in(round_key_o[(32*3 - 1) -: 32]), .inv_en(1'b1));
+mix_columns_mix mcm_3 (.mix_col_o(round_key_imc[(32*2 - 1) -: 32]), .mix_col_in(round_key_o[(32*2 - 1) -: 32]), .inv_en(1'b1));
+mix_columns_mix mcm_4 (.mix_col_o(round_key_imc[(32*1 - 1) -: 32]), .mix_col_in(round_key_o[(32*1 - 1) -: 32]), .inv_en(1'b1));
+
 
 // For round key input
 reg [block_size - 1 : 0] RK [0 : 13]; // Store all keys
@@ -154,7 +166,7 @@ always @(posedge clk or negedge rst_n ) begin
     end
     else begin
         if (load) begin // Fill 14rounds key into the RK at first sets
-            RK[0] <= round_key_o;
+            RK[0] <= round_key_select;
             RK[1] <= RK[0];
             RK[2] <= RK[1];
             RK[3] <= RK[2];
@@ -178,9 +190,9 @@ end
 reg [block_size - 1 : 0] ARK_out_1, ARK_out_2, ARK_out_3;
 reg [block_size - 1 : 0] ARK_out_reg_1, ARK_out_reg_2, ARK_out_reg_3;
 // 0522_TODO---
-ARK ark_dut_1(.ARK_out(ARK_out_reg_1), .ARK_in(IV[0]), .ARK_key(round_key_o));
-ARK ark_dut_2(.ARK_out(ARK_out_reg_2), .ARK_in(IV[1]), .ARK_key(round_key_o));
-ARK ark_dut_3(.ARK_out(ARK_out_reg_3), .ARK_in(IV[2]), .ARK_key(round_key_o));
+ARK ark_dut_1(.ARK_out(ARK_out_reg_1), .ARK_in(IV[0]), .ARK_key(round_key_select));
+ARK ark_dut_2(.ARK_out(ARK_out_reg_2), .ARK_in(IV[1]), .ARK_key(round_key_select));
+ARK ark_dut_3(.ARK_out(ARK_out_reg_3), .ARK_in(IV[2]), .ARK_key(round_key_select));
 // 0522_TODO---
 
 always @(posedge clk or negedge rst_n) begin

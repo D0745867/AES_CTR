@@ -6,9 +6,10 @@
 
 interface aes_inter #(
     parameter batch_block_byte = 64,
-    parameter key_byte_lenth = 32
+    parameter key_byte_lenth = 32,
+    block_size = 128
 );
-    logic [batch_block_byte * 8 - 1 : 0] batch_block_out;
+    logic [block_size * 16 - 1 : 0] batch_block_out;
     logic finished;
     logic [key_byte_lenth * 8 - 1 : 0] master_key;
     logic [7:0] nonce_a;
@@ -108,7 +109,12 @@ module TB_aes;
     end
 
     initial begin
-        $fsdbDumpfile("AES_256_CTR.fsdb");
+        #2000;
+        $finish;
+    end
+
+    initial begin
+        $fsdbDumpfile("AES_256_CTR_para.fsdb");
         $fsdbDumpvars;
         $fsdbDumpMDA();
     end
