@@ -20,7 +20,9 @@ generate;
             .output_text(stage_wire[para_num]), 
             .input_text(input_text[((para_num + 1) * block_size - 1) -: 128]), 
             .round(round),
-            .round_key(round_key)
+            .round_key(round_key),
+            .clk(clk),
+            .rst_n(rst_n)
         );
     end
 endgenerate
@@ -31,5 +33,6 @@ always @(*) begin
         output_text[((i + 1) * block_size - 1) -: 128] = stage_wire[i];
     end
 end
+
 
 endmodule

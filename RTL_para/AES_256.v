@@ -4,18 +4,20 @@ module AES_256_roundop (
     output[ 4*4*8 - 1 : 0 ] output_text,
     input [ 4*4*8 - 1 : 0 ] input_text,
     input [ 4*4*8 - 1 : 0 ] round_key,
-    input [ 3 : 0 ] round
+    input [ 3 : 0 ] round,
+    input clk, rst_n
 );
 
 wire [ 4*4*8 - 1 : 0 ] state;
 
 // SubBytes input: 8bits, output: 8bits
 reg [7:0] subBytes_i [0:15];
-reg [7:0] subBytes_o [0:15];
+wire [7:0] subBytes_o [0:15];
+reg [4*4*8 - 1 : 0] output_text_reg;
 
 // Select part to replace with subBytes
 integer i;
-assign state = input_text;
+assign state = (round == 4'd0) ? input_text : output_text_reg;
 
 //------------------SubBytes matrix--------------------
 always @(*) begin
@@ -63,8 +65,33 @@ endgenerate
 //------------------------------------------------------
 
 //------------------Add Round Key------------------
-wire [4*4*8 - 1 : 0] ARK_in;
-assign ARK_in = (round == 4'd13) ?{mc_in[0], mc_in[1], mc_in[2], mc_in[3]}  : {mc_out[0], mc_out[1], mc_out[2], mc_out[3]};
+reg [4*4*8 - 1 : 0] ARK_in;
+// assign ARK_in = (round == 4'd13) 
+//     ?{mc_in[0], mc_in[1], mc_in[2], mc_in[3]}  
+//     : {mc_out[0], mc_out[1], mc_out[2], mc_out[3]};
+
+always @(*) begin
+    case (round)
+        4'd0 : begin
+            ARK_in = input_text;
+        end
+        4'd13: begin
+            ARK_in = {mc_in[0], mc_in[1], mc_in[2], mc_in[3]};
+        end
+        default: begin
+            ARK_in = {mc_out[0], mc_out[1], mc_out[2], mc_out[3]};
+        end
+    endcase
+end
+
 ARK ark_dut(.ARK_out(output_text), .ARK_in(ARK_in), .ARK_key(round_key));
+always @(posedge clk or negedge rst_n) begin
+    if (~rst_n) begin
+        output_text_reg <= 128'b0;
+    end
+    else begin
+        output_text_reg <= output_text;
+    end
+end
 
 endmodule

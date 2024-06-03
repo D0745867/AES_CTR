@@ -8,7 +8,7 @@ Report : power
         -analysis_effort low
 Design : AES_256_CTR
 Version: U-2022.12
-Date   : Fri May 31 22:13:24 2024
+Date   : Sun Jun  2 23:54:09 2024
 ****************************************
 
 
@@ -39,12 +39,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   1.0102 mW   (72%)
-  Net Switching Power  = 392.0072 uW   (28%)
+  Cell Internal Power  = 714.7878 uW   (73%)
+  Net Switching Power  = 260.2346 uW   (27%)
                          ---------
-Total Dynamic Power    =   1.4022 mW  (100%)
+Total Dynamic Power    = 975.0225 uW  (100%)
 
-Cell Leakage Power     = 820.3474 uW
+Cell Leakage Power     = 787.4188 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -53,10 +53,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network      0.2522            0.0000            0.0000            0.2522  (  11.35%)  i
-register       8.5157e-02        5.4198e-03          105.1189            0.1957  (   8.81%)
+clock_network      0.2522            0.0000            0.0000            0.2522  (  14.31%)  i
+register       6.6111e-02        5.4006e-03          105.1226            0.1766  (  10.02%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      0.6727            0.3866          715.2256            1.7746  (  79.85%)
+combinational      0.3965            0.2548          682.2933            1.3336  (  75.67%)
 --------------------------------------------------------------------------------------------------
-Total              1.0101 mW         0.3920 mW       820.3445 uW         2.2225 mW
+Total              0.7148 mW         0.2602 mW       787.4160 uW         1.7624 mW
 1

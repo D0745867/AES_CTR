@@ -10,7 +10,7 @@ module AES_256_CTR#(
     parameter PRF_mode = 1,
     parameter block_size = 128
 )(
-    output reg [block_size * 16 - 1 : 0] batch_block_out,
+    output [block_size * 16 - 1 : 0] batch_block_out,
     output reg finished,
     input [key_byte_length * 8 - 1 : 0] master_key,
     input [7:0] nonce_a,
@@ -126,52 +126,53 @@ key_expansion ke_dut(.round_key_o(round_key_o)
 
 // First Round Add round key
 
-wire [block_size - 1 : 0] ARK_out [ 0 : 15 ];
+// wire [block_size - 1 : 0] ARK_out [ 0 : 15 ];
 // reg [block_size - 1 : 0] ARK_out_reg [ 0 : 15 ];
 
-// Initial round add round key
-genvar ARK_num;
-generate;
-    for (ARK_num = 0 ; ARK_num < 16 ; ARK_num = ARK_num + 1) begin
-        ARK ark_dut(.ARK_out(ARK_out[ARK_num]), .ARK_in(IV[ARK_num]), .ARK_key(round_key_o));
-    end
-endgenerate
+// // Initial round add round key
+// genvar ARK_num;
+// generate;
+//     for (ARK_num = 0 ; ARK_num < 16 ; ARK_num = ARK_num + 1) begin
+//         ARK ark_dut(.ARK_out(ARK_out[ARK_num]), .ARK_in(IV[ARK_num]), .ARK_key(round_key_o));
+//     end
+// endgenerate
 
-always @(posedge clk or negedge rst_n) begin
-    if (~rst_n) begin
-        for (i = 0 ; i < 15 ; i = i + 1) begin
-            ARK_out_reg[i] <= 128'd0;
-        end
-    end
-    else begin
-        for (i = 0 ; i < 15 ; i = i + 1) begin
-            ARK_out_reg[i] <= ARK_out[i];
-        end
-    end
-end
+// always @(posedge clk or negedge rst_n) begin
+//     if (~rst_n) begin
+//         for (i = 0 ; i < 15 ; i = i + 1) begin
+//             ARK_out_reg[i] <= 128'd0;
+//         end
+//     end
+//     else begin
+//         for (i = 0 ; i < 15 ; i = i + 1) begin
+//             ARK_out_reg[i] <= ARK_out[i];
+//         end
+//     end
+// end
 
-always @(posedge clk or negedge rst_n) begin
-    if (~rst_n) begin
-        batch_block_out <= {(block_size * 16 - 1){1'b0}};
-    end
-    else begin
-        batch_block_out <= output_text;
-    end
-end
+// always @(posedge clk or negedge rst_n) begin
+//     if (~rst_n) begin
+//         batch_block_out <= {(block_size * 16 - 1){1'b0}};
+//     end
+//     else begin
+//         batch_block_out <= output_text;
+//     end
+// end
 
-reg [block_size * 16 - 1 : 0] ARK_out_combine;
+reg [block_size * 16 - 1 : 0] IV_combine;
 always @(*) begin
     for (i = 0 ; i < 16 ; i = i + 1) begin
-        ARK_out_combine[((i + 1) * 128 - 1 ) -: 128] = ARK_out[i];
+        IV_combine[((i + 1) * 128 - 1 ) -: 128] = IV[i];
     end
 end
 
-wire [block_size * 16 - 1 : 0] AES_para_in;
-assign AES_para_in = (PIPE_CNT == 1'b0) ? ARK_out_combine : batch_block_out;
-
+// wire [block_size * 16 - 1 : 0] AES_para_in;
+// assign AES_para_in = (PIPE_CNT == 1'b0) ? ARK_out_combine : batch_block_out;
+// 直接丟入一筆就不用丟了
+assign batch_block_out = output_text;
 AES_256_para_16 AES_para_16(
     .output_text(output_text),
-    .input_text(AES_para_in),
+    .input_text(IV_combine),
     .round_key(round_key_o),
     .round(PIPE_CNT),
     .clk(clk),

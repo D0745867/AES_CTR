@@ -2,7 +2,9 @@
 
 module SubBytes (
     output [7:0] byte_o,
-    input [7:0] byte_in
+    input [7:0] byte_in,
+    input clk,
+    input rst_n
 );
     // Top Signal
     wire U0, U1, U2, U3, U4, U5, U6, U7;
@@ -18,15 +20,13 @@ module SubBytes (
     assign U7 = byte_in[0];
 
     assign byte_o = {R0, R1, R2, R3, R4, R5, R6, R7};
-     
-    // 信号连接
+// 信号连接
     wire Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17;
     wire x0, x1, x2, x3;
     wire Y00, Y01, Y02, Y13, Y23, Y0, Y1, Y2, Y3;
     wire N0, N1, N2, N3, N4, N5, N6, N7, N8, N9, N10, N11, N12, N13, N14, N15, N16, N17;
     wire T0, T3;
-
-    // 实例化 ftop 模块
+// 实例化 ftop 模块
     ftop ftop_inst (
         .U0(U0), .U1(U1), .U2(U2), .U3(U3), .U4(U4), .U5(U5), .U6(U6), .U7(U7),
         .Q0(Q0), .Q1(Q1), .Q2(Q2), .Q3(Q3), .Q4(Q4), .Q5(Q5), .Q6(Q6), .Q7(Q7),
@@ -48,18 +48,41 @@ module SubBytes (
         .Y0(Y0), .Y1(Y1), .Y2(Y2), .Y3(Y3)
     );
 
+    // 插入管线寄存器
+    reg [17:0] Q_reg;
+    reg [8:0] Y_reg;
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            Q_reg <= 18'b0;
+            Y_reg <= 9'b0;
+        end else begin
+            Q_reg <= {Q17, Q16, Q15, Q14, Q13, Q12, Q11, Q10, Q9, Q8, Q7, Q6, Q5, Q4, Q3, Q2, Q1, Q0};
+            Y_reg <= {Y23, Y13, Y02, Y01, Y00, Y3, Y2, Y1, Y0};
+        end
+    end
+
+    // 将管线寄存器的输出连接到 s1 模块的输入
+    wire [17:0] Q_pipeline = Q_reg;
+    wire [8:0] Y_pipeline = Y_reg;
+
     // 实例化 s1 模块
     s1 s1_inst (
-        .x0(x0), .x1(x1), .x2(x2), .x3(x3), .T0(T0), .T3(T3),
-        .Y0(Y0), .Y1(Y1), .Y2(Y2), .Y3(Y3),
-        .Y00(Y00), .Y01(Y01), .Y02(Y02), .Y13(Y13), .Y23(Y23)
+        .x0(x0), .x1(x1), .x2(x2), .x3(x3),
+        .T0(T0), .T3(T3),
+        .Y0(Y_pipeline[0]), .Y1(Y_pipeline[1]), .Y2(Y_pipeline[2]), .Y3(Y_pipeline[3]),
+        .Y00(Y_pipeline[4]), .Y01(Y_pipeline[5]), .Y02(Y_pipeline[6]), .Y13(Y_pipeline[7]), .Y23(Y_pipeline[8])
     );
 
     // 实例化 muln 模块
     muln muln_inst (
-        .Y00(Y00), .Y01(Y01), .Y02(Y02), .Y0(Y0), .Y1(Y1), .Y2(Y2), .Y3(Y3), .Y13(Y13), .Y23(Y23),
-        .Q0(Q0), .Q1(Q1), .Q2(Q2), .Q3(Q3), .Q4(Q4), .Q5(Q5), .Q6(Q6), .Q7(Q7),
-        .Q8(Q8), .Q9(Q9), .Q10(Q10), .Q11(Q11), .Q12(Q12), .Q13(Q13), .Q14(Q14), .Q15(Q15), .Q16(Q16), .Q17(Q17),
+        .Y00(Y_pipeline[4]), .Y01(Y_pipeline[5]), .Y02(Y_pipeline[6]), 
+        .Y0(Y_pipeline[0]), .Y1(Y_pipeline[1]), .Y2(Y_pipeline[2]), .Y3(Y_pipeline[3]), 
+        .Y13(Y_pipeline[7]), .Y23(Y_pipeline[8]),
+        .Q0(Q_pipeline[0]), .Q1(Q_pipeline[1]), .Q2(Q_pipeline[2]), .Q3(Q_pipeline[3]), 
+        .Q4(Q_pipeline[4]), .Q5(Q_pipeline[5]), .Q6(Q_pipeline[6]), .Q7(Q_pipeline[7]), 
+        .Q8(Q_pipeline[8]), .Q9(Q_pipeline[9]), .Q10(Q_pipeline[10]), .Q11(Q_pipeline[11]), 
+        .Q12(Q_pipeline[12]), .Q13(Q_pipeline[13]), .Q14(Q_pipeline[14]), .Q15(Q_pipeline[15]), 
+        .Q16(Q_pipeline[16]), .Q17(Q_pipeline[17]),
         .N0(N0), .N1(N1), .N2(N2), .N3(N3), .N4(N4), .N5(N5), .N6(N6), .N7(N7),
         .N8(N8), .N9(N9), .N10(N10), .N11(N11), .N12(N12), .N13(N13), .N14(N14), .N15(N15), .N16(N16), .N17(N17)
     );
