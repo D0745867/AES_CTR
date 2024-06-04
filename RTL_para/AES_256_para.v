@@ -12,6 +12,8 @@ module AES_256_para_16 #(
 );
 
 wire [block_size - 1 : 0] stage_wire [0 : 15];
+reg [3:0] round_reg [0:15];
+
 
 genvar para_num;
 generate;
@@ -19,7 +21,7 @@ generate;
         AES_256_roundop AES_PE(
             .output_text(stage_wire[para_num]), 
             .input_text(input_text[((para_num + 1) * block_size - 1) -: 128]), 
-            .round(round),
+            .round(round_reg[para_num]),
             .round_key(round_key),
             .clk(clk),
             .rst_n(rst_n)
@@ -28,6 +30,14 @@ generate;
 endgenerate
 
 integer i;
+
+always @(posedge clk) begin
+    for (i = 0 ; i < 16 ; i = i + 1) begin
+        round_reg[i] <= round;
+    end
+end
+
+
 always @(*) begin
     for (i = 0 ; i < 16 ; i = i + 1) begin
         output_text[((i + 1) * block_size - 1) -: 128] = stage_wire[i];

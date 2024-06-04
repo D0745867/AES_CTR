@@ -3,7 +3,7 @@
 Report : area
 Design : AES_256_CTR
 Version: U-2022.12
-Date   : Sun Jun  2 23:54:05 2024
+Date   : Tue Jun  4 03:09:31 2024
 ****************************************
 
 Library(s) Used:
@@ -11,21 +11,21 @@ Library(s) Used:
     sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c (File: /cad/CBDK/CBDK_TSMC40_Arm_f2.0/CIC/SynopsysDC/db/sc9_base_rvt/sc9_cln40g_base_rvt_ss_typical_max_0p81v_125c.db)
 
 Number of ports:                        69120
-Number of nets:                        120034
-Number of cells:                        54897
-Number of combinational cells:          50650
-Number of sequential cells:              2313
+Number of nets:                        120055
+Number of cells:                        54918
+Number of combinational cells:          50607
+Number of sequential cells:              2377
 Number of macros/black boxes:               0
-Number of buf/inv:                       4300
+Number of buf/inv:                       4257
 Number of references:                      34
 
-Combinational area:              64562.475157
-Buf/Inv area:                     2308.823991
-Noncombinational area:           10665.949975
+Combinational area:              64533.217956
+Buf/Inv area:                     2279.566790
+Noncombinational area:           10912.708382
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                 75228.425131
+Total cell area:                 75445.926338
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -36,9 +36,9 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
                                   Total       Total    national    national    boxes   Design
 --------------------------------  ----------  -------  ----------  ----------  ------  ------------------
-AES_256_CTR                       75228.4251    100.0    616.6692     40.8240  0.0000  AES_256_CTR
-AES_para_16                       71199.3231     94.6      9.5256      0.0000  0.0000  AES_256_para_16
-AES_para_16/genblk1_0__AES_PE      4448.6819      5.9    558.6084    580.6080  0.0000  AES_256_roundop_0
+AES_256_CTR                       75445.9263    100.0    616.6692     40.8240  0.0000  AES_256_CTR
+AES_para_16                       71418.8655     94.7      1.3608    246.7584  0.0000  AES_256_para_16
+AES_para_16/genblk1_0__AES_PE      4447.3211      5.9    557.2476    580.6080  0.0000  AES_256_roundop_0
 AES_para_16/genblk1_0__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000  ARK_0
 AES_para_16/genblk1_0__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_256
 AES_para_16/genblk1_0__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_256
@@ -157,7 +157,7 @@ AES_para_16/genblk1_0__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752   
 AES_para_16/genblk1_0__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_62
 AES_para_16/genblk1_0__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_61
 AES_para_16/genblk1_0__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000  0.0000  shift_rows_0
-AES_para_16/genblk1_10__AES_PE     4449.1355      5.9    559.0620    580.6080  0.0000  AES_256_roundop_6
+AES_para_16/genblk1_10__AES_PE     4447.7747      5.9    557.7012    580.6080  0.0000  AES_256_roundop_6
 AES_para_16/genblk1_10__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000 ARK_6
 AES_para_16/genblk1_10__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_96
 AES_para_16/genblk1_10__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_96
@@ -276,7 +276,7 @@ AES_para_16/genblk1_10__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752  
 AES_para_16/genblk1_10__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_22
 AES_para_16/genblk1_10__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_21
 AES_para_16/genblk1_10__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000 0.0000  shift_rows_6
-AES_para_16/genblk1_11__AES_PE     4449.8159      5.9    559.7424    580.6080  0.0000  AES_256_roundop_5
+AES_para_16/genblk1_11__AES_PE     4448.4551      5.9    558.3816    580.6080  0.0000  AES_256_roundop_5
 AES_para_16/genblk1_11__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000 ARK_5
 AES_para_16/genblk1_11__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_80
 AES_para_16/genblk1_11__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_80
@@ -395,7 +395,7 @@ AES_para_16/genblk1_11__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752  
 AES_para_16/genblk1_11__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_18
 AES_para_16/genblk1_11__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_17
 AES_para_16/genblk1_11__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000 0.0000  shift_rows_5
-AES_para_16/genblk1_12__AES_PE     4448.4551      5.9    558.3816    580.6080  0.0000  AES_256_roundop_4
+AES_para_16/genblk1_12__AES_PE     4447.0943      5.9    557.0208    580.6080  0.0000  AES_256_roundop_4
 AES_para_16/genblk1_12__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000 ARK_4
 AES_para_16/genblk1_12__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_64
 AES_para_16/genblk1_12__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_64
@@ -514,7 +514,7 @@ AES_para_16/genblk1_12__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752  
 AES_para_16/genblk1_12__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_14
 AES_para_16/genblk1_12__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_13
 AES_para_16/genblk1_12__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000 0.0000  shift_rows_4
-AES_para_16/genblk1_13__AES_PE     4449.3623      5.9    559.2888    580.6080  0.0000  AES_256_roundop_3
+AES_para_16/genblk1_13__AES_PE     4448.6819      5.9    558.6084    580.6080  0.0000  AES_256_roundop_3
 AES_para_16/genblk1_13__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000 ARK_3
 AES_para_16/genblk1_13__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_48
 AES_para_16/genblk1_13__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_48
@@ -633,7 +633,7 @@ AES_para_16/genblk1_13__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752  
 AES_para_16/genblk1_13__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_10
 AES_para_16/genblk1_13__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_9
 AES_para_16/genblk1_13__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000 0.0000  shift_rows_3
-AES_para_16/genblk1_14__AES_PE     4449.3623      5.9    559.2888    580.6080  0.0000  AES_256_roundop_2
+AES_para_16/genblk1_14__AES_PE     4448.0015      5.9    557.9280    580.6080  0.0000  AES_256_roundop_2
 AES_para_16/genblk1_14__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000 ARK_2
 AES_para_16/genblk1_14__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_32
 AES_para_16/genblk1_14__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_32
@@ -752,7 +752,7 @@ AES_para_16/genblk1_14__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752  
 AES_para_16/genblk1_14__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_6
 AES_para_16/genblk1_14__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_5
 AES_para_16/genblk1_14__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000 0.0000  shift_rows_2
-AES_para_16/genblk1_15__AES_PE     4450.0427      5.9    559.9692    580.6080  0.0000  AES_256_roundop_1
+AES_para_16/genblk1_15__AES_PE     4448.6819      5.9    558.6084    580.6080  0.0000  AES_256_roundop_1
 AES_para_16/genblk1_15__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000 ARK_1
 AES_para_16/genblk1_15__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_16
 AES_para_16/genblk1_15__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_16
@@ -871,7 +871,7 @@ AES_para_16/genblk1_15__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752  
 AES_para_16/genblk1_15__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_2
 AES_para_16/genblk1_15__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_1
 AES_para_16/genblk1_15__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000 0.0000  shift_rows_1
-AES_para_16/genblk1_1__AES_PE      4449.5891      5.9    559.5156    580.6080  0.0000  AES_256_roundop_15
+AES_para_16/genblk1_1__AES_PE      4448.9087      5.9    558.8352    580.6080  0.0000  AES_256_roundop_15
 AES_para_16/genblk1_1__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000  ARK_15
 AES_para_16/genblk1_1__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_240
 AES_para_16/genblk1_1__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_240
@@ -990,7 +990,7 @@ AES_para_16/genblk1_1__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752   
 AES_para_16/genblk1_1__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_58
 AES_para_16/genblk1_1__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_57
 AES_para_16/genblk1_1__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000  0.0000  shift_rows_15
-AES_para_16/genblk1_2__AES_PE      4449.5891      5.9    559.5156    580.6080  0.0000  AES_256_roundop_14
+AES_para_16/genblk1_2__AES_PE      4448.2283      5.9    558.1548    580.6080  0.0000  AES_256_roundop_14
 AES_para_16/genblk1_2__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000  ARK_14
 AES_para_16/genblk1_2__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_224
 AES_para_16/genblk1_2__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_224
@@ -1109,7 +1109,7 @@ AES_para_16/genblk1_2__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752   
 AES_para_16/genblk1_2__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_54
 AES_para_16/genblk1_2__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_53
 AES_para_16/genblk1_2__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000  0.0000  shift_rows_14
-AES_para_16/genblk1_3__AES_PE      4450.2695      5.9    560.1960    580.6080  0.0000  AES_256_roundop_13
+AES_para_16/genblk1_3__AES_PE      4448.9087      5.9    558.8352    580.6080  0.0000  AES_256_roundop_13
 AES_para_16/genblk1_3__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000  ARK_13
 AES_para_16/genblk1_3__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_208
 AES_para_16/genblk1_3__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_208
@@ -1228,7 +1228,7 @@ AES_para_16/genblk1_3__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752   
 AES_para_16/genblk1_3__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_50
 AES_para_16/genblk1_3__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_49
 AES_para_16/genblk1_3__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000  0.0000  shift_rows_13
-AES_para_16/genblk1_4__AES_PE      4448.9087      5.9    558.8352    580.6080  0.0000  AES_256_roundop_12
+AES_para_16/genblk1_4__AES_PE      4447.5479      5.9    557.4744    580.6080  0.0000  AES_256_roundop_12
 AES_para_16/genblk1_4__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000  ARK_12
 AES_para_16/genblk1_4__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_192
 AES_para_16/genblk1_4__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_192
@@ -1347,7 +1347,7 @@ AES_para_16/genblk1_4__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752   
 AES_para_16/genblk1_4__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_46
 AES_para_16/genblk1_4__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_45
 AES_para_16/genblk1_4__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000  0.0000  shift_rows_12
-AES_para_16/genblk1_5__AES_PE      4449.5891      5.9    559.5156    580.6080  0.0000  AES_256_roundop_11
+AES_para_16/genblk1_5__AES_PE      4448.9087      5.9    558.8352    580.6080  0.0000  AES_256_roundop_11
 AES_para_16/genblk1_5__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000  ARK_11
 AES_para_16/genblk1_5__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_176
 AES_para_16/genblk1_5__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_176
@@ -1466,7 +1466,7 @@ AES_para_16/genblk1_5__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752   
 AES_para_16/genblk1_5__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_42
 AES_para_16/genblk1_5__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_41
 AES_para_16/genblk1_5__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000  0.0000  shift_rows_11
-AES_para_16/genblk1_6__AES_PE      4449.5891      5.9    559.5156    580.6080  0.0000  AES_256_roundop_10
+AES_para_16/genblk1_6__AES_PE      4448.2283      5.9    558.1548    580.6080  0.0000  AES_256_roundop_10
 AES_para_16/genblk1_6__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000  ARK_10
 AES_para_16/genblk1_6__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_160
 AES_para_16/genblk1_6__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_160
@@ -1585,7 +1585,7 @@ AES_para_16/genblk1_6__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752   
 AES_para_16/genblk1_6__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_38
 AES_para_16/genblk1_6__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_37
 AES_para_16/genblk1_6__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000  0.0000  shift_rows_10
-AES_para_16/genblk1_7__AES_PE      4449.8159      5.9    559.7424    580.6080  0.0000  AES_256_roundop_9
+AES_para_16/genblk1_7__AES_PE      4448.4551      5.9    558.3816    580.6080  0.0000  AES_256_roundop_9
 AES_para_16/genblk1_7__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000  ARK_9
 AES_para_16/genblk1_7__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_144
 AES_para_16/genblk1_7__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_144
@@ -1704,7 +1704,7 @@ AES_para_16/genblk1_7__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752   
 AES_para_16/genblk1_7__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_34
 AES_para_16/genblk1_7__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_33
 AES_para_16/genblk1_7__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000  0.0000  shift_rows_9
-AES_para_16/genblk1_8__AES_PE      4448.4551      5.9    558.3816    580.6080  0.0000  AES_256_roundop_8
+AES_para_16/genblk1_8__AES_PE      4447.0943      5.9    557.0208    580.6080  0.0000  AES_256_roundop_8
 AES_para_16/genblk1_8__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000  ARK_8
 AES_para_16/genblk1_8__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_128
 AES_para_16/genblk1_8__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_128
@@ -1823,7 +1823,7 @@ AES_para_16/genblk1_8__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752   
 AES_para_16/genblk1_8__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_30
 AES_para_16/genblk1_8__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_29
 AES_para_16/genblk1_8__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000  0.0000  shift_rows_8
-AES_para_16/genblk1_9__AES_PE      4449.1355      5.9    559.0620    580.6080  0.0000  AES_256_roundop_7
+AES_para_16/genblk1_9__AES_PE      4448.4551      5.9    558.3816    580.6080  0.0000  AES_256_roundop_7
 AES_para_16/genblk1_9__AES_PE/ark_dut   203.2128     0.3   203.2128     0.0000 0.0000  ARK_7
 AES_para_16/genblk1_9__AES_PE/genblk1_0__dut_subBytes   150.8220     0.2     0.0000     0.0000 0.0000 SubBytes_112
 AES_para_16/genblk1_9__AES_PE/genblk1_0__dut_subBytes/fbot_inst    50.8032     0.1    50.8032     0.0000 0.0000 fbot_112
@@ -1942,7 +1942,7 @@ AES_para_16/genblk1_9__AES_PE/genblk2_1__mc_dut   173.2752     0.2   173.2752   
 AES_para_16/genblk1_9__AES_PE/genblk2_2__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_26
 AES_para_16/genblk1_9__AES_PE/genblk2_3__mc_dut   173.2752     0.2   173.2752     0.0000 0.0000 mix_columns_25
 AES_para_16/genblk1_9__AES_PE/sr_dut     0.0000     0.0     0.0000     0.0000  0.0000  shift_rows_7
-ke_dut                             3371.6088      4.5   1431.1080   1335.3984  0.0000  key_expansion
+ke_dut                             3369.5676      4.5   1429.0668   1335.3984  0.0000  key_expansion
 ke_dut/dut_subBytes_1               151.2756      0.2      0.0000      0.0000  0.0000  SubBytes_0
 ke_dut/dut_subBytes_1/fbot_inst      51.2568      0.1     51.2568      0.0000  0.0000  fbot_0
 ke_dut/dut_subBytes_1/ftop_inst      38.5560      0.1     38.5560      0.0000  0.0000  ftop_0
@@ -1972,6 +1972,6 @@ ke_dut/dut_subBytes_4/muln_inst      12.2472      0.0     12.2472      0.0000  0
 ke_dut/dut_subBytes_4/mulx_inst      27.2160      0.0     27.2160      0.0000  0.0000  mulx_257
 ke_dut/dut_subBytes_4/s1_inst        10.4328      0.0     10.4328      0.0000  0.0000  s1_257
 --------------------------------  ----------  -------  ----------  ----------  ------  ------------------
-Total                                                  64562.4752  10665.9500  0.0000
+Total                                                  64533.2180  10912.7084  0.0000
 
 1

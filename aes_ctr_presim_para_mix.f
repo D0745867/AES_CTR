@@ -1,0 +1,9 @@
+./Testbench/TB_aes256_ctr_mix.sv
+./RTL_para_mix/AES256_ctr.v
+./RTL_para_mix/AES_256_para.v
+./RTL_para_mix/AES_256.v
+./RTL_para_mix/key_expansion_256_mix.v 
+./RTL_para_mix/sub_bytes_v4_mix.v
+./RTL_para_mix/mix_columns.v
+./RTL_para_mix/shift_rows.v
+./RTL_para_mix/add_roundkey.v
